@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DietApp.Entities
 {
-    public class Kullanici
+    public class KullaniciKisisel
     {
     }
 }
