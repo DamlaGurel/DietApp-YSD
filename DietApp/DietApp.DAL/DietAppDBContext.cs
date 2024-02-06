@@ -1,4 +1,5 @@
-﻿using DietApp.Entities;
+﻿using DietApp.DAL.EntityTypeConfiguration;
+using DietApp.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace DietApp.DAL
             modelBuilder.Entity<GunlukRapor>();
             modelBuilder.Entity<Kategori>();
             modelBuilder.Entity<KullaniciGiris>();
-            modelBuilder.Entity<KullaniciKisisel>().HasOne(x=>x.KullaniciGiris).WithOne(x=>x.KullaniciKisisel).HasForeignKey<KullaniciGiris>(x=>x.KullaniciKisiselID);
+            modelBuilder.ApplyConfiguration(new KullaniciKisiselConfiguration());
             modelBuilder.Entity<Ogun>();
             modelBuilder.Entity<Su>();
             modelBuilder.Entity<Yemek>();
