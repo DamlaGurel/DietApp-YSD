@@ -9,7 +9,9 @@ namespace DietApp.Entities
 {
     public class YemekOgun : BaseEntity
     {
-        //public Yemek Yemek { get; set; }
-        //public Ogun Ogun { get; set; }
+        public int YemekID { get; set; }
+        public int OgunID { get; set; }
+        public Yemek Yemek { get; set; }
+        public Ogun Ogun { get; set; }
     }
 }

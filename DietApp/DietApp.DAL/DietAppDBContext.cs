@@ -10,17 +10,17 @@ namespace DietApp.DAL
 {
     public class DietAppDBContext : DbContext
     {
-        DbSet<BesinDegeri> besinDegerleri;
+        //DbSet<BesinDegeri> besinDegerleri;
         DbSet<GunlukRapor> gunlukRaporlari;
         DbSet<Kategori> kategoriler;
         DbSet<KullaniciGiris> kullaniciGirisleri;
         DbSet<KullaniciKisisel> kullaniciKisiseller;
         DbSet<Ogun> ogunler;
-        //DbSet<OgunKullanici> ogunKullanicilar;
+        DbSet<OgunKullanici> ogunKullanicilar;
         DbSet<Su> sular;
         DbSet<Yemek> yemekler;
         DbSet<YemekMiktari> yemekMiktarlari;
-        //DbSet<YemekOgun> yemekOgunleri;
+        DbSet<YemekOgun> yemekOgunleri;
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -35,18 +35,22 @@ namespace DietApp.DAL
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BesinDegeri>();
+            //modelBuilder.Entity<BesinDegeri>();
             modelBuilder.Entity<GunlukRapor>();
             modelBuilder.Entity<Kategori>();
             modelBuilder.Entity<KullaniciGiris>();
             modelBuilder.Entity<KullaniciKisisel>();
             modelBuilder.Entity<Ogun>();
-           // modelBuilder.Entity<OgunKullanici>();
+           modelBuilder.Entity<OgunKullanici>();
             modelBuilder.Entity<Su>();
             modelBuilder.Entity<Yemek>();
             modelBuilder.Entity<YemekMiktari>();
-            //modelBuilder.Entity<YemekOgun>();
-           
+            modelBuilder.Entity<YemekOgun>().HasOne(yo => yo.Yemek).WithMany(y => y.YemeginOgunleri).HasForeignKey(yo => yo.YemekID);
+
+            modelBuilder.Entity<YemekOgun>().HasOne(yo => yo.Ogun).WithMany(o => o.OgununYemekleri).HasForeignKey(yo => yo.OgunID);
+
+
+
         }
     }
 }
