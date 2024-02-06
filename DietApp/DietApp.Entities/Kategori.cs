@@ -8,5 +8,9 @@ namespace DietApp.Entities
 {
     public class Kategori
     {
+        public string KategoriAdi { get; set; }
+        public List<Yemek> KategorininYemekListesi { get; set; }
+
+        
     }
 }

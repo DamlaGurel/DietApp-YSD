@@ -8,5 +8,6 @@ namespace DietApp.Entities
 {
     public class Su
     {
+        public double Miktar { get; set; }
     }
 }
