@@ -1,11 +1,11 @@
-<mxfile host="Electron" modified="2024-02-06T09:19:58.540Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="PsRRrQ8woEcWj-6pyDd0" version="23.0.2" type="device">
+<mxfile host="Electron" modified="2024-02-06T10:14:08.110Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="wPMUdTr6-0l9YIpHGvLg" version="23.0.2" type="device">
   <diagram name="Sayfa -1" id="c_g-0_3isNhMuVo7Gvfg">
-    <mxGraphModel dx="1845" dy="1780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1236" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-3" value="OzetEkrani" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-10" y="490" width="700" height="380" as="geometry" />
+          <mxGeometry x="10" y="490" width="700" height="380" as="geometry" />
         </mxCell>
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-4" value="YEMEK EKLE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-3">
           <mxGeometry x="20" y="45" width="110" height="50" as="geometry" />
@@ -16,7 +16,7 @@
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-8" value="KALDIR" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-3">
           <mxGeometry x="300" y="45" width="110" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-9" value="YEMEĞİ GÜNCELLE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-3">
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-9" value="SU TAKİP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-3">
           <mxGeometry x="430" y="45" width="110" height="50" as="geometry" />
         </mxCell>
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-10" value="RAPORLAR" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-3">
@@ -79,10 +79,7 @@
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-44" value="Bitiş Tarihini Seçiniz:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-39">
           <mxGeometry x="300" y="40" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-47" value="Tarih seçme butonu" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-39">
-          <mxGeometry x="440" y="45" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-46" value="Tarih seçme butonu" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-39">
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-46" value="Tarih seçilecek" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-39">
           <mxGeometry x="160" y="45" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-58" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-39">
@@ -121,59 +118,11 @@
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-83" value="Kullanıcı Ortalama Kalori Miktarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-39">
           <mxGeometry x="355" y="255" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-86" value="Manuel Yemek Ekleme Paneli" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1260" y="460" width="490" height="340" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-90" value="Yemek&amp;nbsp; Adı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="40" y="40" width="90" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-89" value="Kalori Değeri:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="40" y="75" width="80" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-88" value="Karbonhidrat Miktarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="5" y="115" width="120" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-87" value="Yağ Mikarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="20" y="160" width="130" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-91" value="Protein Mikarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="10" y="195" width="130" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-92" value="Kategori Seçiniz:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry y="235" width="130" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-94" value="Porsiyon (gr):" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="30" y="270" width="90" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-97" value="Kaydet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="340" y="245" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-96" value="Yemek Görseli" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="330" y="40" width="120" height="115" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-104" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="140" y="290" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-103" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="140" y="245" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-102" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="140" y="200" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-101" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="140" y="165" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-100" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="140" y="125" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-98" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="140" y="45" width="120" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-99" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-86">
-          <mxGeometry x="140" y="80" width="120" height="20" as="geometry" />
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-210" value="Tarih seçilecek" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-39">
+          <mxGeometry x="440" y="45" width="120" height="20" as="geometry" />
         </mxCell>
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-108" value="User Bilgileri Alma Ekranı" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="1450" y="-30" width="730" height="400" as="geometry" />
+          <mxGeometry x="1950" y="50" width="730" height="400" as="geometry" />
         </mxCell>
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-112" value="Boy:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-108">
           <mxGeometry x="86" y="50" width="60" height="30" as="geometry" />
@@ -233,7 +182,7 @@
           <mxGeometry x="500" y="340" width="220" height="50" as="geometry" />
         </mxCell>
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-141" value="Yemek Güncelle" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="770" y="440" width="460" height="500" as="geometry" />
+          <mxGeometry x="840" y="400" width="460" height="500" as="geometry" />
         </mxCell>
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-142" value="Kategori Seçiniz:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-141">
           <mxGeometry x="21" y="40" width="130" height="30" as="geometry" />
@@ -282,6 +231,102 @@
         </mxCell>
         <mxCell id="W21Ck2xdBPvoDj6ZBOtF-171" value="Liste" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-141">
           <mxGeometry x="-10" y="370" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-174" value="Manuel Yemek Ekleme Paneli" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="20" width="490" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-175" value="Yemek&amp;nbsp; Adı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="40" y="40" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-176" value="Kalori Değeri:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="40" y="75" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-177" value="Karbonhidrat Miktarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="5" y="115" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-178" value="Yağ Mikarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="20" y="160" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-179" value="Protein Mikarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="10" y="195" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-180" value="Kategori Seçiniz:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry y="235" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-181" value="Porsiyon (gr):" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="30" y="270" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-182" value="Kaydet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="340" y="245" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-183" value="Yemek Görseli" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="330" y="40" width="120" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-184" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="140" y="290" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-185" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="140" y="245" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-186" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="140" y="200" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-187" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="140" y="165" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-188" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="140" y="125" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-189" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="140" y="45" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-190" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-174">
+          <mxGeometry x="140" y="80" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-193" value="User Yemek Ekle" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1760" y="560" width="460" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-194" value="Kategori Seçiniz:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="21" y="40" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-195" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="151" y="90" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-196" value="Yemek&amp;nbsp; Girişi Yapınız:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="10" y="85" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-197" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="151" y="45" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-198" value="Yemek Miktarını Giriniz:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="10" y="130" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-199" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="151" y="130" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-200" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="10" y="190" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-201" value="Kalori Detay Paneli" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="10" y="190" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-202" value="Kalori Değeri:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="46" y="230" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-203" value="Karbonhidrat Miktarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="10" y="255" width="120" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-204" value="Yağ Mikarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="30" y="280" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-205" value="Protein Mikarı:" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="21" y="300" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-206" value="Yemek Görseli" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="320" y="42.5" width="120" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="W21Ck2xdBPvoDj6ZBOtF-97" value="Kaydet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="W21Ck2xdBPvoDj6ZBOtF-193">
+          <mxGeometry x="310" y="200" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

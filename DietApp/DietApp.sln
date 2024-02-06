@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.UI", "DietApp.UI\DietApp.UI.csproj", "{50330DCA-91BD-4BD6-890E-D6FD50E4E5F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DietApp.UI", "DietApp.UI\DietApp.UI.csproj", "{50330DCA-91BD-4BD6-890E-D6FD50E4E5F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.Core", "DietApp.Core\DietApp.Core.csproj", "{87331DCE-667B-4BE0-95CC-7BAB48908998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.DAL", "DietApp.DAL\DietApp.DAL.csproj", "{1972914A-174B-4AF0-89CD-FCF69B3FB4BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.DAL.IRepositories", "DietApp.DAL.IRepositories\DietApp.DAL.IRepositories.csproj", "{F65CEEF2-67F1-4FA9-9A3F-34218B352C2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.DAL.Repositories", "DietApp.DAL.Repositories\DietApp.DAL.Repositories.csproj", "{2F8E9EF7-6997-4E0C-8FBD-4706152476B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.BLL.IServices", "DietApp.BLL.IServices\DietApp.BLL.IServices.csproj", "{251CC1EA-CD5C-418F-8B77-825BA77CF9DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.BLL.Services", "DietApp.BLL.Services\DietApp.BLL.Services.csproj", "{9651B60F-4AD3-46A3-ABB8-572616EE1334}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.Entities", "DietApp.Entities\DietApp.Entities.csproj", "{DC88EE2B-F71B-4632-9B15-4757F6B8D2E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.ViewModels", "DietApp.ViewModels\DietApp.ViewModels.csproj", "{BBF16456-4563-4288-BDA0-3B7C980B7652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietApp.Enums", "DietApp.Enums\DietApp.Enums.csproj", "{815EC38D-B4BD-45E7-AFCC-5F68704C2A5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +33,42 @@ Global
 		{50330DCA-91BD-4BD6-890E-D6FD50E4E5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50330DCA-91BD-4BD6-890E-D6FD50E4E5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50330DCA-91BD-4BD6-890E-D6FD50E4E5F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87331DCE-667B-4BE0-95CC-7BAB48908998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87331DCE-667B-4BE0-95CC-7BAB48908998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87331DCE-667B-4BE0-95CC-7BAB48908998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87331DCE-667B-4BE0-95CC-7BAB48908998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1972914A-174B-4AF0-89CD-FCF69B3FB4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1972914A-174B-4AF0-89CD-FCF69B3FB4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1972914A-174B-4AF0-89CD-FCF69B3FB4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1972914A-174B-4AF0-89CD-FCF69B3FB4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F65CEEF2-67F1-4FA9-9A3F-34218B352C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F65CEEF2-67F1-4FA9-9A3F-34218B352C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F65CEEF2-67F1-4FA9-9A3F-34218B352C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F65CEEF2-67F1-4FA9-9A3F-34218B352C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8E9EF7-6997-4E0C-8FBD-4706152476B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8E9EF7-6997-4E0C-8FBD-4706152476B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8E9EF7-6997-4E0C-8FBD-4706152476B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8E9EF7-6997-4E0C-8FBD-4706152476B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{251CC1EA-CD5C-418F-8B77-825BA77CF9DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{251CC1EA-CD5C-418F-8B77-825BA77CF9DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{251CC1EA-CD5C-418F-8B77-825BA77CF9DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{251CC1EA-CD5C-418F-8B77-825BA77CF9DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9651B60F-4AD3-46A3-ABB8-572616EE1334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9651B60F-4AD3-46A3-ABB8-572616EE1334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9651B60F-4AD3-46A3-ABB8-572616EE1334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9651B60F-4AD3-46A3-ABB8-572616EE1334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC88EE2B-F71B-4632-9B15-4757F6B8D2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC88EE2B-F71B-4632-9B15-4757F6B8D2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC88EE2B-F71B-4632-9B15-4757F6B8D2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC88EE2B-F71B-4632-9B15-4757F6B8D2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBF16456-4563-4288-BDA0-3B7C980B7652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF16456-4563-4288-BDA0-3B7C980B7652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF16456-4563-4288-BDA0-3B7C980B7652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF16456-4563-4288-BDA0-3B7C980B7652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{815EC38D-B4BD-45E7-AFCC-5F68704C2A5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815EC38D-B4BD-45E7-AFCC-5F68704C2A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815EC38D-B4BD-45E7-AFCC-5F68704C2A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815EC38D-B4BD-45E7-AFCC-5F68704C2A5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DietApp.DAL.IRepositories\DietApp.DAL.IRepositories.csproj" />
+    <ProjectReference Include="..\DietApp.DAL\DietApp.DAL.csproj" />
+  </ItemGroup>
+
+</Project>
