@@ -21,7 +21,7 @@ namespace DietApp.Entities
         public double Protein { get; set; }
 
         public double Kalori { get; set; }
-        public virtual List<YemekOgun> YemeginOgunleri { get; set; }
+        
 
     }
 }

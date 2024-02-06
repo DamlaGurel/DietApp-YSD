@@ -20,15 +20,15 @@ namespace DietApp.DAL
         DbSet<Su> sular;
         DbSet<Yemek> yemekler;
         DbSet<YemekMiktari> yemekMiktarlari;
-        DbSet<YemekOgun> yemekOgunleri;
+        DbSet<YemekMiktarOgun> yemekOgunleri;
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            // optionsBuilder.UseSqlServer(@"Server=DESKTOP-LLGUTIH; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
+           optionsBuilder.UseSqlServer(@"Server=DESKTOP-LLGUTIH; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
 
-             optionsBuilder.UseSqlServer(@"Server=DESKTOP-VU62QDF\SQLSERVERMS; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
+            // optionsBuilder.UseSqlServer(@"Server=DESKTOP-VU62QDF\SQLSERVERMS; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
 
             //optionsBuilder.UseSqlServer(@"Server=DESKTOP-G2S16HQ; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
 
@@ -39,15 +39,12 @@ namespace DietApp.DAL
             modelBuilder.Entity<GunlukRapor>();
             modelBuilder.Entity<Kategori>();
             modelBuilder.Entity<KullaniciGiris>();
-            modelBuilder.Entity<KullaniciKisisel>();
+            modelBuilder.Entity<KullaniciKisisel>().HasOne(x=>x.KullaniciGiris).WithOne(x=>x.KullaniciKisisel).HasForeignKey<KullaniciGiris>(x=>x.KullaniciKisiselID);
             modelBuilder.Entity<Ogun>();
-           modelBuilder.Entity<OgunKullanici>();
             modelBuilder.Entity<Su>();
             modelBuilder.Entity<Yemek>();
             modelBuilder.Entity<YemekMiktari>();
-            modelBuilder.Entity<YemekOgun>().HasOne(yo => yo.Yemek).WithMany(y => y.YemeginOgunleri).HasForeignKey(yo => yo.YemekID);
-
-            modelBuilder.Entity<YemekOgun>().HasOne(yo => yo.Ogun).WithMany(o => o.OgununYemekleri).HasForeignKey(yo => yo.OgunID);
+            modelBuilder.Entity<YemekMiktarOgun>().HasOne(yo => yo.Yemek).WithMany(y => y.YemeginOgunleri).HasForeignKey(yo => yo.YemekMiktarID).HasForeignKey(yo => yo.OgunID);
 
 
 

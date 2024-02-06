@@ -12,5 +12,6 @@ namespace DietApp.Entities
        
         public double MiktarGr { get; set; }
         public Yemek YenilenYemek { get; set; }
+        public virtual List<YemekMiktarOgun> YemeginOgunleri { get; set; }
     }
 }

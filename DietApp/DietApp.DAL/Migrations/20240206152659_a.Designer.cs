@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-    [Migration("20240206150151_tablodeneme")]
-    partial class tablodeneme
+    [Migration("20240206152659_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,6 +38,9 @@ namespace DietApp.DAL.Migrations
                     b.Property<double>("KarbonhidratMiktari")
                         .HasColumnType("float");
 
+                    b.Property<int?>("KullaniciKisiselID")
+                        .HasColumnType("int");
+
                     b.Property<double>("ProteinMiktari")
                         .HasColumnType("float");
 
@@ -55,6 +58,8 @@ namespace DietApp.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("KullaniciKisiselID");
 
                     b.ToTable("GunlukRapor");
                 });
@@ -88,11 +93,17 @@ namespace DietApp.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("KullaniciKisiselID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Sifre")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("KullaniciKisiselID")
+                        .IsUnique();
 
                     b.ToTable("KullaniciGiris");
                 });
@@ -130,9 +141,6 @@ namespace DietApp.DAL.Migrations
                     b.Property<decimal>("Kilo")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("OgunID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Soyisim")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -144,8 +152,6 @@ namespace DietApp.DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("OgunID");
 
                     b.ToTable("KullaniciKisisel");
                 });
@@ -181,19 +187,6 @@ namespace DietApp.DAL.Migrations
                     b.ToTable("Ogun");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.OgunKullanici", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
-
-                    b.HasKey("ID");
-
-                    b.ToTable("OgunKullanici");
-                });
-
             modelBuilder.Entity("DietApp.Entities.Su", b =>
                 {
                     b.Property<int>("ID")
@@ -202,10 +195,15 @@ namespace DietApp.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<int?>("KullaniciKisiselID")
+                        .HasColumnType("int");
+
                     b.Property<double>("SuMiktari")
                         .HasColumnType("float");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("KullaniciKisiselID");
 
                     b.ToTable("Su");
                 });
@@ -277,7 +275,7 @@ namespace DietApp.DAL.Migrations
                     b.ToTable("YemekMiktari");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.YemekOgun", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekOgunmiktar", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -288,23 +286,59 @@ namespace DietApp.DAL.Migrations
                     b.Property<int>("OgunID")
                         .HasColumnType("int");
 
-                    b.Property<int>("YemekID")
+                    b.Property<int>("OgunID1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("YemekMiktarID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
                     b.HasIndex("OgunID");
 
-                    b.HasIndex("YemekID");
+                    b.HasIndex("OgunID1");
 
-                    b.ToTable("YemekOgun");
+                    b.ToTable("YemekOgunmiktar");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.KullaniciKisisel", b =>
+            modelBuilder.Entity("KullaniciKisiselOgun", b =>
                 {
-                    b.HasOne("DietApp.Entities.Ogun", null)
-                        .WithMany("OgunlerinKullanicilari")
-                        .HasForeignKey("OgunID");
+                    b.Property<int>("KullanicilarinOgunleriID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OgunlerinKullanicilariID")
+                        .HasColumnType("int");
+
+                    b.HasKey("KullanicilarinOgunleriID", "OgunlerinKullanicilariID");
+
+                    b.HasIndex("OgunlerinKullanicilariID");
+
+                    b.ToTable("KullaniciKisiselOgun");
+                });
+
+            modelBuilder.Entity("DietApp.Entities.GunlukRapor", b =>
+                {
+                    b.HasOne("DietApp.Entities.KullaniciKisisel", null)
+                        .WithMany("KullanicininRaporlari")
+                        .HasForeignKey("KullaniciKisiselID");
+                });
+
+            modelBuilder.Entity("DietApp.Entities.KullaniciGiris", b =>
+                {
+                    b.HasOne("DietApp.Entities.KullaniciKisisel", "KullaniciKisisel")
+                        .WithOne("KullaniciGiris")
+                        .HasForeignKey("DietApp.Entities.KullaniciGiris", "KullaniciKisiselID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("KullaniciKisisel");
+                });
+
+            modelBuilder.Entity("DietApp.Entities.Su", b =>
+                {
+                    b.HasOne("DietApp.Entities.KullaniciKisisel", null)
+                        .WithMany("IcilenSu")
+                        .HasForeignKey("KullaniciKisiselID");
                 });
 
             modelBuilder.Entity("DietApp.Entities.Yemek", b =>
@@ -329,17 +363,17 @@ namespace DietApp.DAL.Migrations
                     b.Navigation("YenilenYemek");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.YemekOgun", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekOgunmiktar", b =>
                 {
-                    b.HasOne("DietApp.Entities.Ogun", "Ogun")
-                        .WithMany("OgununYemekleri")
+                    b.HasOne("DietApp.Entities.YemekMiktari", "Yemek")
+                        .WithMany("YemeginOgunleri")
                         .HasForeignKey("OgunID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DietApp.Entities.Yemek", "Yemek")
-                        .WithMany("YemeginOgunleri")
-                        .HasForeignKey("YemekID")
+                    b.HasOne("DietApp.Entities.Ogun", "Ogun")
+                        .WithMany("OgununYemekleri")
+                        .HasForeignKey("OgunID1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -348,14 +382,37 @@ namespace DietApp.DAL.Migrations
                     b.Navigation("Yemek");
                 });
 
+            modelBuilder.Entity("KullaniciKisiselOgun", b =>
+                {
+                    b.HasOne("DietApp.Entities.Ogun", null)
+                        .WithMany()
+                        .HasForeignKey("KullanicilarinOgunleriID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("DietApp.Entities.KullaniciKisisel", null)
+                        .WithMany()
+                        .HasForeignKey("OgunlerinKullanicilariID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("DietApp.Entities.KullaniciKisisel", b =>
+                {
+                    b.Navigation("IcilenSu");
+
+                    b.Navigation("KullaniciGiris")
+                        .IsRequired();
+
+                    b.Navigation("KullanicininRaporlari");
+                });
+
             modelBuilder.Entity("DietApp.Entities.Ogun", b =>
                 {
-                    b.Navigation("OgunlerinKullanicilari");
-
                     b.Navigation("OgununYemekleri");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.Yemek", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekMiktari", b =>
                 {
                     b.Navigation("YemeginOgunleri");
                 });
