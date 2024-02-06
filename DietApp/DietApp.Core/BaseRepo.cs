@@ -33,7 +33,7 @@ namespace DietApp.Core
 
         public TEntity GetByID(int id)
         {
-            return _context.Set<TEntity>().FirstOrDefault(x => x.Id == id);
+            return _context.Set<TEntity>().FirstOrDefault(x => x.ID == id);
         }
 
         public int Update(TEntity entity)
