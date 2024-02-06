@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace DietApp.Entities
 {
-    public class YemekMiktari:BaseEntity
+    public class YemekMiktari:BesinDegeri
     {
-        public double Karbonhidrat { get; set; }
-        public double Yag { get; set; }
-        public double Protein { get; set; }
-        public double Kalori { get; set; }
+       
         public double MiktarGr { get; set; }
         public Yemek YenilenYemek { get; set; }
     }

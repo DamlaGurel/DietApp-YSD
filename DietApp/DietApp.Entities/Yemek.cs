@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DietApp.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace DietApp.Entities
 {
 
-    public class Yemek
+    public class Yemek : BaseEntity
     {
         public string YemekAdi { get; set; }
 
@@ -18,6 +19,7 @@ namespace DietApp.Entities
         public double Protein { get; set; }
 
         public double Kalori { get; set; }
+        //public List<YemekOgun> YemeginOgunleri { get; set; }
 
     }
 }

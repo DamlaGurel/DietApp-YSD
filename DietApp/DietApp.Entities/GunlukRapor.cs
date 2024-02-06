@@ -11,5 +11,7 @@ namespace DietApp.Entities
         public DateTime SecilenRaporTarihi { get; set; }
         public string YemekAdi { get; set; }
         public int SuMiktari { get; set; }
+        //public List<Ogun> GunlukRaporunOgunListesi { get; set; }
+
     }
 }

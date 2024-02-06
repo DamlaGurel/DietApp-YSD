@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DietApp.Core\DietApp.Core.csproj" />
+    <ProjectReference Include="..\DietApp.Enums\DietApp.Enums.csproj" />
   </ItemGroup>
 
 </Project>

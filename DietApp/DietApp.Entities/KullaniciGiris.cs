@@ -9,7 +9,7 @@ namespace DietApp.Entities
 {
     public class KullaniciGiris:BaseEntity
     {
-        public string Nick { get; set; }
-        public string Password { get; set; }
+        public string KullaniciAdi { get; set; }
+        public string Sifre { get; set; }
     }
 }

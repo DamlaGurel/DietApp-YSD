@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace DietApp.Entities
 {
-    public class Kategori : BaseEntity
+    public class YemekOgun : BaseEntity
     {
-        public string KategoriAdi { get; set; }
-        //public List<Yemek> KategorininYemekListesi { get; set; }
-
-        
+        //public Yemek Yemek { get; set; }
+        //public Ogun Ogun { get; set; }
     }
 }
