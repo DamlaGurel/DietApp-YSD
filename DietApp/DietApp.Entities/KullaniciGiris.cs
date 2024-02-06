@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DietApp.Entities
 {
-    internal class KullaniciGiris
+    public class KullaniciGiris
     {
     }
 }

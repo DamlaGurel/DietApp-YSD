@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DietApp.Entities
 {
-    public class GunlukRapor
+    public class GunlukRapor : BesinDegeri
     {
+        public DateTime SecilenRaporTarihi { get; set; }
+        public string YemekAdi { get; set; }
+        public int SuMiktari { get; set; }
     }
 }
