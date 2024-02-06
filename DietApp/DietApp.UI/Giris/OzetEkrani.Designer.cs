@@ -43,6 +43,7 @@
             label2 = new Label();
             cmbOgun = new ComboBox();
             btnRaporlar = new Button();
+            btnSuTakip = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             // 
             // btnEkle
             // 
-            btnEkle.Location = new Point(95, 35);
+            btnEkle.Location = new Point(49, 35);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(132, 63);
             btnEkle.TabIndex = 5;
@@ -83,16 +84,17 @@
             // 
             // btnDegistir
             // 
-            btnDegistir.Location = new Point(373, 35);
+            btnDegistir.Location = new Point(243, 35);
             btnDegistir.Name = "btnDegistir";
             btnDegistir.Size = new Size(194, 63);
             btnDegistir.TabIndex = 6;
             btnDegistir.Text = "YEMEĞİ GÜNCELLE";
             btnDegistir.UseVisualStyleBackColor = true;
+            btnDegistir.Click += btnDegistir_Click;
             // 
             // btnKaldir
             // 
-            btnKaldir.Location = new Point(740, 35);
+            btnKaldir.Location = new Point(535, 35);
             btnKaldir.Name = "btnKaldir";
             btnKaldir.Size = new Size(131, 63);
             btnKaldir.TabIndex = 7;
@@ -176,11 +178,21 @@
             btnRaporlar.Text = "RAPORLAR";
             btnRaporlar.UseVisualStyleBackColor = true;
             // 
+            // btnSuTakip
+            // 
+            btnSuTakip.Location = new Point(757, 35);
+            btnSuTakip.Name = "btnSuTakip";
+            btnSuTakip.Size = new Size(112, 63);
+            btnSuTakip.TabIndex = 18;
+            btnSuTakip.Text = "SU TAKİP";
+            btnSuTakip.UseVisualStyleBackColor = true;
+            // 
             // OzetEkrani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1202, 651);
+            Controls.Add(btnSuTakip);
             Controls.Add(btnRaporlar);
             Controls.Add(label2);
             Controls.Add(cmbOgun);
@@ -221,5 +233,6 @@
         private Label label2;
         private ComboBox cmbOgun;
         private Button btnRaporlar;
+        private Button btnSuTakip;
     }
 }

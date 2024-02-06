@@ -1,0 +1,68 @@
+<mxfile host="Electron" modified="2024-02-05T19:09:43.329Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="1xNfZtD8r-TSCTbQUIKu" version="23.0.2" type="device">
+  <diagram name="Sayfa -1" id="LDa76Zrl1Tld2mOF6Zla">
+    <mxGraphModel dx="1293" dy="741" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-1" target="Nvj3_1tinCZPrjMhKbGr-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-1" value="CORE" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="10" y="150" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-2" target="Nvj3_1tinCZPrjMhKbGr-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-2" value="DAL" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="150" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-5" value="DAL.REPOSITORIES" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="345" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-6" target="Nvj3_1tinCZPrjMhKbGr-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-6" value="DAL.IREPOSITORIES" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="190" y="345" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-7" target="Nvj3_1tinCZPrjMhKbGr-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-7" value="BLL.ISERVICE" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="185" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-8" target="Nvj3_1tinCZPrjMhKbGr-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-8" value="BLL.SERVICE" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="350" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-9" target="Nvj3_1tinCZPrjMhKbGr-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-9" target="Nvj3_1tinCZPrjMhKbGr-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-9" value="ENTITIES" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="190" y="150" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-10" value="UI" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="560" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="Nvj3_1tinCZPrjMhKbGr-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Nvj3_1tinCZPrjMhKbGr-11" value="VIEW" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="10" width="120" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

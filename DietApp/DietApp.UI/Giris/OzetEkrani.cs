@@ -21,5 +21,10 @@ namespace DietApp.UI
         {
 
         }
+
+        private void btnDegistir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
