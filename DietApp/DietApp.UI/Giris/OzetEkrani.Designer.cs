@@ -50,7 +50,7 @@
             // dtpTarih
             // 
             dtpTarih.Location = new Point(524, 261);
-            dtpTarih.Margin = new Padding(2, 2, 2, 2);
+            dtpTarih.Margin = new Padding(2);
             dtpTarih.Name = "dtpTarih";
             dtpTarih.Size = new Size(241, 27);
             dtpTarih.TabIndex = 0;
@@ -69,7 +69,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(1, 315);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
@@ -79,17 +79,18 @@
             // btnEkle
             // 
             btnEkle.Location = new Point(39, 28);
-            btnEkle.Margin = new Padding(2, 2, 2, 2);
+            btnEkle.Margin = new Padding(2);
             btnEkle.Name = "btnEkle";
             btnEkle.Size = new Size(106, 50);
             btnEkle.TabIndex = 5;
             btnEkle.Text = "YEMEK EKLE";
             btnEkle.UseVisualStyleBackColor = true;
+            btnEkle.Click += btnEkle_Click;
             // 
             // btnDegistir
             // 
             btnDegistir.Location = new Point(194, 28);
-            btnDegistir.Margin = new Padding(2, 2, 2, 2);
+            btnDegistir.Margin = new Padding(2);
             btnDegistir.Name = "btnDegistir";
             btnDegistir.Size = new Size(155, 50);
             btnDegistir.TabIndex = 6;
@@ -100,7 +101,7 @@
             // btnKaldir
             // 
             btnKaldir.Location = new Point(428, 28);
-            btnKaldir.Margin = new Padding(2, 2, 2, 2);
+            btnKaldir.Margin = new Padding(2);
             btnKaldir.Name = "btnKaldir";
             btnKaldir.Size = new Size(105, 50);
             btnKaldir.TabIndex = 7;
@@ -139,7 +140,7 @@
             // progressBar1
             // 
             progressBar1.Location = new Point(262, 135);
-            progressBar1.Margin = new Padding(2, 2, 2, 2);
+            progressBar1.Margin = new Padding(2);
             progressBar1.Name = "progressBar1";
             progressBar1.Size = new Size(270, 50);
             progressBar1.TabIndex = 12;
@@ -178,7 +179,7 @@
             cmbOgun.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbOgun.FormattingEnabled = true;
             cmbOgun.Location = new Point(184, 263);
-            cmbOgun.Margin = new Padding(2, 2, 2, 2);
+            cmbOgun.Margin = new Padding(2);
             cmbOgun.Name = "cmbOgun";
             cmbOgun.Size = new Size(121, 28);
             cmbOgun.TabIndex = 15;
@@ -186,7 +187,7 @@
             // btnRaporlar
             // 
             btnRaporlar.Location = new Point(806, 28);
-            btnRaporlar.Margin = new Padding(2, 2, 2, 2);
+            btnRaporlar.Margin = new Padding(2);
             btnRaporlar.Name = "btnRaporlar";
             btnRaporlar.Size = new Size(90, 50);
             btnRaporlar.TabIndex = 17;
@@ -196,7 +197,7 @@
             // btnSuTakip
             // 
             btnSuTakip.Location = new Point(606, 28);
-            btnSuTakip.Margin = new Padding(2, 2, 2, 2);
+            btnSuTakip.Margin = new Padding(2);
             btnSuTakip.Name = "btnSuTakip";
             btnSuTakip.Size = new Size(90, 50);
             btnSuTakip.TabIndex = 18;
@@ -225,7 +226,7 @@
             Controls.Add(dataGridView1);
             Controls.Add(label1);
             Controls.Add(dtpTarih);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "OzetEkrani";
             Text = "OzetEkrani";
             Load += OzetEkrani_Load;

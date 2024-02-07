@@ -9,7 +9,7 @@ namespace DietApp.Entities
 {
     public class OgunKullanici :BaseEntity
     {
-        //public KullaniciKisisel Kullanici { get; set; }
-        //public Ogun Ogun { get; set; }
+        public KullaniciKisisel Kullanici { get; set; }
+        public Ogun Ogun { get; set; }
     }
 }

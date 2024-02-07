@@ -11,6 +11,8 @@ namespace DietApp.BLL.IServices
     public interface IUserYemekEklemeService
     {
         List<Yemek> YemekGetir(Kategori kat=null);
+        List<Kategori> KategoriGetir();
+
         void UserYemekEkleme(UserYemekEklemePaneliVm userYemekEkleme, Ogun ogun);
     }
 }

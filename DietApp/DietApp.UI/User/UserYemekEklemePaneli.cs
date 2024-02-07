@@ -21,7 +21,7 @@ namespace DietApp.UI
         {
             InitializeComponent();
             _service = new UserYemekEklemeService();
-          
+
 
         }
 
@@ -29,14 +29,27 @@ namespace DietApp.UI
         {
             UserYemekEklemePaneliVm userYemekEkleme = new UserYemekEklemePaneliVm()
             {
-                // YemekID = cmbYemekGirisi.SelectedItem.
+                YemekID = cmbYemekGirisi.SelectedIndex,
+                MiktarGr = double.Parse(txtMiktar.Text)
             };
+
+            //_service.UserYemekEkleme(userYemekEkleme, );
         }
 
         private void UserYemekEklemePaneli_Load(object sender, EventArgs e)
         {
-            cmbYemekGirisi.DataSource=_service.YemekGetir();
+            cmbYemekGirisi.DataSource = _service.YemekGetir();
             cmbYemekGirisi.DisplayMember = "YemekAdi";
+            cmbYemekGirisi.Text = string.Empty;
+
+            cmbKategori.DataSource = _service.KategoriGetir();
+            cmbKategori.DisplayMember = "KategoriAdi";
+            cmbKategori.Text = string.Empty;
+        }
+
+        private void cmbYemekGirisi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

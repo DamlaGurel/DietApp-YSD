@@ -39,5 +39,11 @@ namespace DietApp.UI
             SuTakipEkrani suTakipEkrani = new SuTakipEkrani(id = 1);
             suTakipEkrani.ShowDialog();
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli();
+            userYemekEkleme.ShowDialog();
+        }
     }
 }

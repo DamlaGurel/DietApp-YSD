@@ -17,12 +17,14 @@ namespace DietApp.BLL.Services
         IYemekRepository _yemekRepo;
         IYemekMiktariRepository _yemekMiktariRepo;
         IYemekMiktarOgunRepository _yemekMiktariOgunRepo;
+        IKategoriRepository _kategoriRepo;
         public UserYemekEklemeService()
         {
             _ogunRepo = new OgunRepository();
             _yemekRepo = new YemekRepository();
             _yemekMiktariRepo = new YemekMiktariRepository();
             _yemekMiktariOgunRepo = new YemekMiktarOgunRepository();
+            _kategoriRepo = new KategoriRepository();
         }
 
         public void UserYemekEkleme(UserYemekEklemePaneliVm userYemekEkleme, Ogun ogun)
@@ -54,6 +56,11 @@ namespace DietApp.BLL.Services
             if(kat == null) { return _yemekRepo.GetAll().ToList(); }
 
            return _yemekRepo.GetAll().Where(x => x.Kategori == kat).ToList();
+        }
+
+        public List<Kategori> KategoriGetir()
+        {
+            return _kategoriRepo.GetAll().ToList();
         }
     }
 }
