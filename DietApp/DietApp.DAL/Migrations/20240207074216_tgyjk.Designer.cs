@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240207091501_initial.Designer.cs
-    [Migration("20240207091501_initial")]
-    partial class initial
-========
-    [Migration("20240207074148_tgyj")]
-    partial class tgyj
->>>>>>>> Yalin:DietApp/DietApp.DAL/Migrations/20240207074148_tgyj.Designer.cs
+    [Migration("20240207074216_tgyjk")]
+    partial class tgyjk
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -165,11 +160,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240207091501_initial.Designer.cs
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 12, 15, 0, 835, DateTimeKind.Local).AddTicks(9177),
-========
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 10, 41, 48, 267, DateTimeKind.Local).AddTicks(2449),
->>>>>>>> Yalin:DietApp/DietApp.DAL/Migrations/20240207074148_tgyj.Designer.cs
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 10, 42, 15, 876, DateTimeKind.Local).AddTicks(6963),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,

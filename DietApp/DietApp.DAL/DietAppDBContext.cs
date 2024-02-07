@@ -39,7 +39,7 @@ namespace DietApp.DAL
             //modelBuilder.Entity<BesinDegeri>();
             modelBuilder.Entity<GunlukRapor>();
             modelBuilder.Entity<Kategori>();
-            modelBuilder.Entity<KullaniciGiris>();
+            modelBuilder.ApplyConfiguration(new KullaniciGirisConfiguration());
             modelBuilder.ApplyConfiguration(new KullaniciKisiselConfiguration());
             modelBuilder.Entity<Ogun>();
             modelBuilder.Entity<Su>();
