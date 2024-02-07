@@ -34,7 +34,7 @@
             rbErkek = new RadioButton();
             label3 = new Label();
             lblVucutIndeksi = new Label();
-            button1 = new Button();
+            btnIndexHesapla = new Button();
             txtBoy = new TextBox();
             txtKilo = new TextBox();
             label5 = new Label();
@@ -52,27 +52,30 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(167, 112);
+            label1.Location = new Point(117, 67);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(46, 25);
+            label1.Size = new Size(30, 15);
             label1.TabIndex = 0;
             label1.Text = "Boy:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(167, 167);
+            label2.Location = new Point(117, 100);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(45, 25);
+            label2.Size = new Size(30, 15);
             label2.TabIndex = 1;
             label2.Text = "Kilo:";
             // 
             // rbKadin
             // 
             rbKadin.AutoSize = true;
-            rbKadin.Location = new Point(168, 218);
+            rbKadin.Location = new Point(118, 131);
+            rbKadin.Margin = new Padding(2, 2, 2, 2);
             rbKadin.Name = "rbKadin";
-            rbKadin.Size = new Size(81, 29);
+            rbKadin.Size = new Size(55, 19);
             rbKadin.TabIndex = 2;
             rbKadin.TabStop = true;
             rbKadin.Text = "Kadın";
@@ -81,9 +84,10 @@
             // rbErkek
             // 
             rbErkek.AutoSize = true;
-            rbErkek.Location = new Point(351, 218);
+            rbErkek.Location = new Point(246, 131);
+            rbErkek.Margin = new Padding(2, 2, 2, 2);
             rbErkek.Name = "rbErkek";
-            rbErkek.Size = new Size(79, 29);
+            rbErkek.Size = new Size(53, 19);
             rbErkek.TabIndex = 3;
             rbErkek.TabStop = true;
             rbErkek.Text = "Erkek";
@@ -92,82 +96,93 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(16, 60);
+            label3.Location = new Point(11, 36);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(144, 25);
+            label3.Size = new Size(96, 15);
             label3.TabIndex = 4;
             label3.Text = "Vücut İndeksiniz:";
             // 
             // lblVucutIndeksi
             // 
             lblVucutIndeksi.AutoSize = true;
-            lblVucutIndeksi.Location = new Point(189, 60);
+            lblVucutIndeksi.Location = new Point(132, 36);
+            lblVucutIndeksi.Margin = new Padding(2, 0, 2, 0);
             lblVucutIndeksi.Name = "lblVucutIndeksi";
-            lblVucutIndeksi.Size = new Size(17, 25);
+            lblVucutIndeksi.Size = new Size(10, 15);
             lblVucutIndeksi.TabIndex = 5;
             lblVucutIndeksi.Text = " ";
             // 
-            // button1
+            // btnIndexHesapla
             // 
-            button1.Location = new Point(69, 126);
-            button1.Name = "button1";
-            button1.Size = new Size(211, 74);
-            button1.TabIndex = 6;
-            button1.Text = "VÜCUT İNDEKSİ HESAPLA";
-            button1.UseVisualStyleBackColor = true;
+            btnIndexHesapla.Location = new Point(48, 76);
+            btnIndexHesapla.Margin = new Padding(2, 2, 2, 2);
+            btnIndexHesapla.Name = "btnIndexHesapla";
+            btnIndexHesapla.Size = new Size(148, 44);
+            btnIndexHesapla.TabIndex = 6;
+            btnIndexHesapla.Text = "VÜCUT İNDEKSİ HESAPLA";
+            btnIndexHesapla.UseVisualStyleBackColor = true;
+            btnIndexHesapla.Click += btnIndexHesapla_Click;
             // 
             // txtBoy
             // 
-            txtBoy.Location = new Point(280, 106);
+            txtBoy.Location = new Point(196, 64);
+            txtBoy.Margin = new Padding(2, 2, 2, 2);
             txtBoy.Name = "txtBoy";
-            txtBoy.Size = new Size(150, 31);
+            txtBoy.Size = new Size(106, 23);
             txtBoy.TabIndex = 7;
             // 
             // txtKilo
             // 
-            txtKilo.Location = new Point(280, 161);
+            txtKilo.Location = new Point(196, 97);
+            txtKilo.Margin = new Padding(2, 2, 2, 2);
             txtKilo.Name = "txtKilo";
-            txtKilo.Size = new Size(150, 31);
+            txtKilo.Size = new Size(106, 23);
             txtKilo.TabIndex = 8;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(557, 137);
+            label5.Location = new Point(390, 82);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(126, 25);
+            label5.Size = new Size(84, 15);
             label5.TabIndex = 9;
             label5.Text = "Hedef Kilonuz:";
             // 
             // txtHedefKilo
             // 
-            txtHedefKilo.Location = new Point(702, 137);
+            txtHedefKilo.Location = new Point(491, 82);
+            txtHedefKilo.Margin = new Padding(2, 2, 2, 2);
             txtHedefKilo.Name = "txtHedefKilo";
-            txtHedefKilo.Size = new Size(150, 31);
+            txtHedefKilo.Size = new Size(106, 23);
             txtHedefKilo.TabIndex = 10;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(31, 60);
+            label4.Location = new Point(22, 36);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(202, 25);
+            label4.Size = new Size(137, 15);
             label4.TabIndex = 11;
             label4.Text = "Günlük Kalori İhtiyacınız:";
             // 
             // lblGunlukKaloriIhtiyaci
             // 
             lblGunlukKaloriIhtiyaci.AutoSize = true;
-            lblGunlukKaloriIhtiyaci.Location = new Point(284, 60);
+            lblGunlukKaloriIhtiyaci.Location = new Point(199, 36);
+            lblGunlukKaloriIhtiyaci.Margin = new Padding(2, 0, 2, 0);
             lblGunlukKaloriIhtiyaci.Name = "lblGunlukKaloriIhtiyaci";
-            lblGunlukKaloriIhtiyaci.Size = new Size(0, 25);
+            lblGunlukKaloriIhtiyaci.Size = new Size(0, 15);
             lblGunlukKaloriIhtiyaci.TabIndex = 12;
             // 
             // btnKaloriIhtiyaciniHesapla
             // 
-            btnKaloriIhtiyaciniHesapla.Location = new Point(96, 122);
+            btnKaloriIhtiyaciniHesapla.Location = new Point(67, 73);
+            btnKaloriIhtiyaciniHesapla.Margin = new Padding(2, 2, 2, 2);
             btnKaloriIhtiyaciniHesapla.Name = "btnKaloriIhtiyaciniHesapla";
-            btnKaloriIhtiyaciniHesapla.Size = new Size(207, 88);
+            btnKaloriIhtiyaciniHesapla.Size = new Size(145, 53);
             btnKaloriIhtiyaciniHesapla.TabIndex = 13;
             btnKaloriIhtiyaciniHesapla.Text = "GÜNLÜK KALORİ İHTİYACINI HESAPLA";
             btnKaloriIhtiyaciniHesapla.UseVisualStyleBackColor = true;
@@ -176,10 +191,12 @@
             // 
             grpVucutIndeksBilgi.Controls.Add(lblVucutIndeksi);
             grpVucutIndeksBilgi.Controls.Add(label3);
-            grpVucutIndeksBilgi.Controls.Add(button1);
-            grpVucutIndeksBilgi.Location = new Point(53, 265);
+            grpVucutIndeksBilgi.Controls.Add(btnIndexHesapla);
+            grpVucutIndeksBilgi.Location = new Point(37, 159);
+            grpVucutIndeksBilgi.Margin = new Padding(2, 2, 2, 2);
             grpVucutIndeksBilgi.Name = "grpVucutIndeksBilgi";
-            grpVucutIndeksBilgi.Size = new Size(412, 216);
+            grpVucutIndeksBilgi.Padding = new Padding(2, 2, 2, 2);
+            grpVucutIndeksBilgi.Size = new Size(288, 130);
             grpVucutIndeksBilgi.TabIndex = 14;
             grpVucutIndeksBilgi.TabStop = false;
             grpVucutIndeksBilgi.Text = "Vücut İndeks Bilgi Paneli";
@@ -189,18 +206,21 @@
             grpGunlukKalori.Controls.Add(btnKaloriIhtiyaciniHesapla);
             grpGunlukKalori.Controls.Add(lblGunlukKaloriIhtiyaci);
             grpGunlukKalori.Controls.Add(label4);
-            grpGunlukKalori.Location = new Point(498, 265);
+            grpGunlukKalori.Location = new Point(349, 159);
+            grpGunlukKalori.Margin = new Padding(2, 2, 2, 2);
             grpGunlukKalori.Name = "grpGunlukKalori";
-            grpGunlukKalori.Size = new Size(412, 216);
+            grpGunlukKalori.Padding = new Padding(2, 2, 2, 2);
+            grpGunlukKalori.Size = new Size(288, 130);
             grpGunlukKalori.TabIndex = 7;
             grpGunlukKalori.TabStop = false;
             grpGunlukKalori.Text = "Günlük Kalori İhtiyacı Paneli";
             // 
             // btnAnaEkranaGec
             // 
-            btnAnaEkranaGec.Location = new Point(766, 523);
+            btnAnaEkranaGec.Location = new Point(536, 314);
+            btnAnaEkranaGec.Margin = new Padding(2, 2, 2, 2);
             btnAnaEkranaGec.Name = "btnAnaEkranaGec";
-            btnAnaEkranaGec.Size = new Size(210, 103);
+            btnAnaEkranaGec.Size = new Size(147, 62);
             btnAnaEkranaGec.TabIndex = 15;
             btnAnaEkranaGec.Text = "Kalorileri Hesaplamaya Hazırsın! BAŞLA";
             btnAnaEkranaGec.UseVisualStyleBackColor = true;
@@ -208,9 +228,9 @@
             // 
             // UserBilgileriAlmaEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1035, 650);
+            ClientSize = new Size(724, 390);
             Controls.Add(btnAnaEkranaGec);
             Controls.Add(grpGunlukKalori);
             Controls.Add(grpVucutIndeksBilgi);
@@ -222,6 +242,7 @@
             Controls.Add(rbKadin);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "UserBilgileriAlmaEkrani";
             Text = "UserBilgileriAlmaEkrani";
             grpVucutIndeksBilgi.ResumeLayout(false);
@@ -240,7 +261,7 @@
         private RadioButton rbErkek;
         private Label label3;
         private Label lblVucutIndeksi;
-        private Button button1;
+        private Button btnIndexHesapla;
         private TextBox txtBoy;
         private TextBox txtKilo;
         private Label label5;

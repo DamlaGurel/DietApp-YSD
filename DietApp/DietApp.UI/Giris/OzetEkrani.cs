@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DietApp.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace DietApp.UI
 {
     public partial class OzetEkrani : Form
     {
-        public OzetEkrani()
+        public KullaniciGiris Kullanici;
+
+        public OzetEkrani(KullaniciGiris kullanici)
         {
             InitializeComponent();
+            Kullanici = kullanici;
         }
 
         private void OzetEkrani_Load(object sender, EventArgs e)

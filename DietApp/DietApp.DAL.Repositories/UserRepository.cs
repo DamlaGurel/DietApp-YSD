@@ -12,7 +12,7 @@ namespace DietApp.DAL.Repositories
 {
     public class UserRepository : BaseRepository<KullaniciGiris>, IUserRepository
     {
-        public UserRepository(DbContext db) : base(db)
+        public UserRepository(DbContext db=null) : base(db??new DietAppDBContext())
         {
         }
     }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-    [Migration("20240206152659_a")]
-    partial class a
+    [Migration("20240207074230_tgyjkk")]
+    partial class tgyjkk
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -93,7 +93,7 @@ namespace DietApp.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("KullaniciKisiselID")
+                    b.Property<int?>("KullaniciKisiselID")
                         .HasColumnType("int");
 
                     b.Property<string>("Sifre")
@@ -103,9 +103,36 @@ namespace DietApp.DAL.Migrations
                     b.HasKey("ID");
 
                     b.HasIndex("KullaniciKisiselID")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[KullaniciKisiselID] IS NOT NULL");
 
                     b.ToTable("KullaniciGiris");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            KullaniciAdi = "YalinTuzmen",
+                            Sifre = "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            KullaniciAdi = "SilaYildirim",
+                            Sifre = "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            KullaniciAdi = "DamlaGurel",
+                            Sifre = "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            KullaniciAdi = "admin",
+                            Sifre = "admin"
+                        });
                 });
 
             modelBuilder.Entity("DietApp.Entities.KullaniciKisisel", b =>
@@ -154,6 +181,23 @@ namespace DietApp.DAL.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("KullaniciKisisel");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 10, 42, 30, 670, DateTimeKind.Local).AddTicks(6992),
+                            BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Boy = 170m,
+                            Cinsiyet = false,
+                            GunlukKalori = 3000.0,
+                            HedefKilo = 70m,
+                            Isim = "ahmet",
+                            Kilo = 80m,
+                            Soyisim = "mehmet",
+                            SuMiktari = 0.0,
+                            Yas = 18
+                        });
                 });
 
             modelBuilder.Entity("DietApp.Entities.Ogun", b =>
@@ -275,7 +319,7 @@ namespace DietApp.DAL.Migrations
                     b.ToTable("YemekMiktari");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.YemekOgunmiktar", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekMiktarOgun", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -298,7 +342,7 @@ namespace DietApp.DAL.Migrations
 
                     b.HasIndex("OgunID1");
 
-                    b.ToTable("YemekOgunmiktar");
+                    b.ToTable("YemekMiktarOgun");
                 });
 
             modelBuilder.Entity("KullaniciKisiselOgun", b =>
@@ -327,9 +371,7 @@ namespace DietApp.DAL.Migrations
                 {
                     b.HasOne("DietApp.Entities.KullaniciKisisel", "KullaniciKisisel")
                         .WithOne("KullaniciGiris")
-                        .HasForeignKey("DietApp.Entities.KullaniciGiris", "KullaniciKisiselID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DietApp.Entities.KullaniciGiris", "KullaniciKisiselID");
 
                     b.Navigation("KullaniciKisisel");
                 });
@@ -363,7 +405,7 @@ namespace DietApp.DAL.Migrations
                     b.Navigation("YenilenYemek");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.YemekOgunmiktar", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekMiktarOgun", b =>
                 {
                     b.HasOne("DietApp.Entities.YemekMiktari", "Yemek")
                         .WithMany("YemeginOgunleri")

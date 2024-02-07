@@ -1,4 +1,8 @@
-﻿using System;
+﻿using DietApp.BLL.IServices;
+using DietApp.BLL.Services;
+using DietApp.Entities;
+using DietApp.ViewModels.KullaniciGiris;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +16,11 @@ namespace DietApp.UI
 {
     public partial class GirisEkrani : Form
     {
+        KullaniciGirisService _service;
         public GirisEkrani()
         {
             InitializeComponent();
+            _service = new KullaniciGirisService();
         }
 
         private void btnUyeOl_Click(object sender, EventArgs e)
@@ -25,8 +31,27 @@ namespace DietApp.UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            Form frm = new OzetEkrani();
-            frm.ShowDialog();
+            KullaniciGirisVm vm=    new KullaniciGirisVm()
+            {
+                KullaniciAdi=txtKullaniciAdi.Text,
+                Password=txtSifre.Text
+            };
+
+
+          if (_service.KullaniciGirisYap(vm))
+            {
+
+
+                Form frm = new OzetEkrani(_service.KullaniciBul(vm.KullaniciAdi));
+                frm.ShowDialog();
+                this.Hide();
+            }
+          else
+            {
+                MessageBox.Show("Yanlış kullanıcı adı ya da şifre!");
+            }
+
+           
         }
     }
 }
