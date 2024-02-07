@@ -65,6 +65,8 @@ namespace DietApp.UI
             cmbKategori.DataSource = _service.KategoriGetir();
             cmbKategori.DisplayMember = "KategoriAdi";
             cmbKategori.Text = string.Empty;
+
+            grpOgunAdi.Text = _ogunCesidi;
         }
 
         private void cmbYemekGirisi_KeyPress(object sender, KeyPressEventArgs e)

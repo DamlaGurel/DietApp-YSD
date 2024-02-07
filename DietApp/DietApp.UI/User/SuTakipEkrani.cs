@@ -71,10 +71,14 @@ namespace DietApp.UI
 
         private void UpdateProgressBar()
         {
-            double mevcutSuMiktari = _suTakipService.GetById(KullaniciKisiselId).SuMiktari;
+            double mevcutSuMiktari;
+            if (_suTakipService.GetById(KullaniciKisiselId) == null)
+                mevcutSuMiktari = 0;
+            else
+                 mevcutSuMiktari = _suTakipService.GetById(KullaniciKisiselId).SuMiktari;
+
             pbSuTakip.Value = (int)mevcutSuMiktari;
             lblKalanSu.Text = (pbSuTakip.Maximum - mevcutSuMiktari) + ("mL");
         }
-
     }
 }
