@@ -77,6 +77,13 @@ namespace DietApp.DAL.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Kategori");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            KategoriAdi = "Meyve"
+                        });
                 });
 
             modelBuilder.Entity("DietApp.Entities.KullaniciGiris", b =>
@@ -159,6 +166,9 @@ namespace DietApp.DAL.Migrations
                     b.Property<decimal>("HedefKilo")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<double>("HedefSuMiktari")
+                        .HasColumnType("float");
+
                     b.Property<string>("Isim")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -169,9 +179,6 @@ namespace DietApp.DAL.Migrations
                     b.Property<string>("Soyisim")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("SuMiktari")
-                        .HasColumnType("float");
 
                     b.Property<int>("Yas")
                         .HasColumnType("int");
@@ -184,16 +191,27 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
+<<<<<<< HEAD
                             BaslangicTarihi = new DateTime(2024, 2, 7, 13, 49, 35, 47, DateTimeKind.Local).AddTicks(6034),
+=======
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 13, 39, 23, 840, DateTimeKind.Local).AddTicks(9720),
+>>>>>>> origin/sila
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
                             GunlukKalori = 3000.0,
                             HedefKilo = 70m,
+<<<<<<< HEAD
                             Isim = "ahmet",
                             Kilo = 80m,
                             Soyisim = "mehmet",
                             SuMiktari = 0.0,
+=======
+                            HedefSuMiktari = 2000.0,
+                            Isim = "ahmet",
+                            Kilo = 80m,
+                            Soyisim = "mehmet",
+>>>>>>> origin/sila
                             Yas = 18
                         });
                 });
@@ -237,7 +255,7 @@ namespace DietApp.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int?>("KullaniciKisiselID")
+                    b.Property<int>("KullaniciKisiselId")
                         .HasColumnType("int");
 
                     b.Property<double>("SuMiktari")
@@ -245,7 +263,7 @@ namespace DietApp.DAL.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("KullaniciKisiselID");
+                    b.HasIndex("KullaniciKisiselId");
 
                     b.ToTable("Su");
                 });
@@ -261,16 +279,16 @@ namespace DietApp.DAL.Migrations
                     b.Property<double>("Kalori")
                         .HasColumnType("float");
 
-                    b.Property<double>("Karbonhidrat")
+                    b.Property<double>("KarbonhidratMiktari")
                         .HasColumnType("float");
 
                     b.Property<int>("KategoriID")
                         .HasColumnType("int");
 
-                    b.Property<double>("Protein")
+                    b.Property<double>("ProteinMiktari")
                         .HasColumnType("float");
 
-                    b.Property<double>("Yag")
+                    b.Property<double>("YagMiktari")
                         .HasColumnType("float");
 
                     b.Property<string>("YemekAdi")
@@ -282,6 +300,18 @@ namespace DietApp.DAL.Migrations
                     b.HasIndex("KategoriID");
 
                     b.ToTable("Yemek");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Kalori = 95.0,
+                            KarbonhidratMiktari = 19.0,
+                            KategoriID = 1,
+                            ProteinMiktari = 0.29999999999999999,
+                            YagMiktari = 0.29999999999999999,
+                            YemekAdi = "Elma"
+                        });
                 });
 
             modelBuilder.Entity("DietApp.Entities.YemekMiktari", b =>
@@ -376,15 +406,19 @@ namespace DietApp.DAL.Migrations
 
             modelBuilder.Entity("DietApp.Entities.Su", b =>
                 {
-                    b.HasOne("DietApp.Entities.KullaniciKisisel", null)
+                    b.HasOne("DietApp.Entities.KullaniciKisisel", "KullaniciKisisel")
                         .WithMany("IcilenSu")
-                        .HasForeignKey("KullaniciKisiselID");
+                        .HasForeignKey("KullaniciKisiselId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("KullaniciKisisel");
                 });
 
             modelBuilder.Entity("DietApp.Entities.Yemek", b =>
                 {
                     b.HasOne("DietApp.Entities.Kategori", "Kategori")
-                        .WithMany()
+                        .WithMany("KategorininYemekListesi")
                         .HasForeignKey("KategoriID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -435,6 +469,11 @@ namespace DietApp.DAL.Migrations
                         .HasForeignKey("OgunlerinKullanicilariID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DietApp.Entities.Kategori", b =>
+                {
+                    b.Navigation("KategorininYemekListesi");
                 });
 
             modelBuilder.Entity("DietApp.Entities.KullaniciKisisel", b =>

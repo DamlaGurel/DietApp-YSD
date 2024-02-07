@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace DietApp.DAL.Repositories
 {
-    public class UserRepository : BaseRepository<KullaniciGiris>, IUserRepository
+    public class GunlukRaporRepository : BaseRepository<GunlukRapor>, IGunlukRaporRepository
     {
-        public UserRepository(DbContext db = null) : base(db ?? new DietAppDBContext())
+        public GunlukRaporRepository(DbContext db = null) : base(db ?? new DietAppDBContext())
         {
         }
     }

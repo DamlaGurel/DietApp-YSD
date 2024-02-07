@@ -21,6 +21,8 @@ namespace DietApp.UI
             Kullanici = kullanici;
         }
 
+
+
         private void OzetEkrani_Load(object sender, EventArgs e)
         {
 
@@ -29,6 +31,13 @@ namespace DietApp.UI
         private void btnDegistir_Click(object sender, EventArgs e)
         {
 
+        }
+
+        int id;
+        private void btnSuTakip_Click(object sender, EventArgs e)
+        {
+            SuTakipEkrani suTakipEkrani = new SuTakipEkrani(id = 1);
+            suTakipEkrani.ShowDialog();
         }
     }
 }

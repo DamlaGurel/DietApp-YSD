@@ -8,20 +8,10 @@ using System.Threading.Tasks;
 namespace DietApp.Entities
 {
 
-    public class Yemek : BaseEntity
+    public class Yemek : BesinDegeri
     {
         public string YemekAdi { get; set; }
-
         public virtual Kategori Kategori { get; set; }
-
         public int KategoriID { get; set; }
-
-        public double Karbonhidrat { get; set; }
-        public double Yag { get; set; }
-        public double Protein { get; set; }
-
-        public double Kalori { get; set; }
-        
-
     }
 }

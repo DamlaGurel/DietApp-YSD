@@ -31,8 +31,8 @@ namespace DietApp.DAL.EntityTypeConfiguration
                     Kilo = 80,
                     Soyisim = "mehmet",
                     Yas = 18,
-                }
-                );
+                    HedefSuMiktari = 2000
+                });
         }
     }
 }

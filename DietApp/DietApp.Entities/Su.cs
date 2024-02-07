@@ -10,5 +10,7 @@ namespace DietApp.Entities
     public class Su : BaseEntity
     {
         public double SuMiktari { get; set; }
+        public KullaniciKisisel KullaniciKisisel { get; set; }
+        public int KullaniciKisiselId { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace DietApp.Entities
     public class Kategori : BaseEntity
     {
         public string KategoriAdi { get; set; }
-        //public List<Yemek> KategorininYemekListesi { get; set; }
+        public List<Yemek> KategorininYemekListesi { get; set; }
 
         
     }
