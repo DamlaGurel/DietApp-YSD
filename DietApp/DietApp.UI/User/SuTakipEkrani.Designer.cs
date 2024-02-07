@@ -30,8 +30,8 @@
         {
             txtSu = new TextBox();
             pbSuTakip = new ProgressBar();
-            button1 = new Button();
-            button2 = new Button();
+            btnSuEkle = new Button();
+            btnSuCikar = new Button();
             label1 = new Label();
             label2 = new Label();
             lblKalanSu = new Label();
@@ -39,76 +39,87 @@
             // 
             // txtSu
             // 
-            txtSu.Location = new Point(276, 97);
+            txtSu.Location = new Point(221, 78);
+            txtSu.Margin = new Padding(2);
             txtSu.Name = "txtSu";
-            txtSu.Size = new Size(150, 31);
+            txtSu.Size = new Size(121, 27);
             txtSu.TabIndex = 0;
             // 
             // pbSuTakip
             // 
-            pbSuTakip.Location = new Point(106, 294);
+            pbSuTakip.Location = new Point(85, 235);
+            pbSuTakip.Margin = new Padding(2);
             pbSuTakip.Name = "pbSuTakip";
-            pbSuTakip.Size = new Size(320, 34);
+            pbSuTakip.Size = new Size(256, 27);
             pbSuTakip.TabIndex = 1;
             // 
-            // button1
+            // btnSuEkle
             // 
-            button1.Location = new Point(106, 168);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 60);
-            button1.TabIndex = 2;
-            button1.Text = "SU EKLE";
-            button1.UseVisualStyleBackColor = true;
+            btnSuEkle.Location = new Point(85, 134);
+            btnSuEkle.Margin = new Padding(2);
+            btnSuEkle.Name = "btnSuEkle";
+            btnSuEkle.Size = new Size(90, 48);
+            btnSuEkle.TabIndex = 2;
+            btnSuEkle.Text = "SU EKLE";
+            btnSuEkle.UseVisualStyleBackColor = true;
+            btnSuEkle.Click += btnSuEkle_Click;
             // 
-            // button2
+            // btnSuCikar
             // 
-            button2.Location = new Point(314, 166);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 64);
-            button2.TabIndex = 3;
-            button2.Text = "SU ÇIKAR";
-            button2.UseVisualStyleBackColor = true;
+            btnSuCikar.Location = new Point(251, 133);
+            btnSuCikar.Margin = new Padding(2);
+            btnSuCikar.Name = "btnSuCikar";
+            btnSuCikar.Size = new Size(90, 51);
+            btnSuCikar.TabIndex = 3;
+            btnSuCikar.Text = "SU ÇIKAR";
+            btnSuCikar.UseVisualStyleBackColor = true;
+            btnSuCikar.Click += btnSuCikar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(81, 100);
+            label1.Location = new Point(65, 80);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(175, 25);
+            label1.Size = new Size(147, 20);
             label1.TabIndex = 4;
             label1.Text = "Su Miktarı Girin (mL):";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(106, 361);
+            label2.Location = new Point(85, 289);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(339, 25);
+            label2.Size = new Size(284, 20);
             label2.TabIndex = 5;
             label2.Text = "Su Hedefine Ulaşmak için Gereken Miktar:";
             // 
             // lblKalanSu
             // 
             lblKalanSu.AutoSize = true;
-            lblKalanSu.Location = new Point(466, 361);
+            lblKalanSu.Location = new Point(373, 289);
+            lblKalanSu.Margin = new Padding(2, 0, 2, 0);
             lblKalanSu.Name = "lblKalanSu";
-            lblKalanSu.Size = new Size(0, 25);
+            lblKalanSu.Size = new Size(0, 20);
             lblKalanSu.TabIndex = 6;
             // 
             // SuTakipEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(585, 543);
+            ClientSize = new Size(468, 434);
             Controls.Add(lblKalanSu);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnSuCikar);
+            Controls.Add(btnSuEkle);
             Controls.Add(pbSuTakip);
             Controls.Add(txtSu);
+            Margin = new Padding(2);
             Name = "SuTakipEkrani";
             Text = "SuTakipEkrani";
+            Load += SuTakipEkrani_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -117,8 +128,8 @@
 
         private TextBox txtSu;
         private ProgressBar pbSuTakip;
-        private Button button1;
-        private Button button2;
+        private Button btnSuEkle;
+        private Button btnSuCikar;
         private Label label1;
         private Label label2;
         private Label lblKalanSu;

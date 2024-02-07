@@ -77,6 +77,13 @@ namespace DietApp.DAL.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Kategori");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            KategoriAdi = "Meyve"
+                        });
                 });
 
             modelBuilder.Entity("DietApp.Entities.KullaniciGiris", b =>
@@ -132,6 +139,9 @@ namespace DietApp.DAL.Migrations
                     b.Property<decimal>("HedefKilo")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<double>("HedefSuMiktari")
+                        .HasColumnType("float");
+
                     b.Property<string>("Isim")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -143,15 +153,29 @@ namespace DietApp.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("SuMiktari")
-                        .HasColumnType("float");
-
                     b.Property<int>("Yas")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
                     b.ToTable("KullaniciKisisel");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 13, 39, 23, 840, DateTimeKind.Local).AddTicks(9720),
+                            BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Boy = 170m,
+                            Cinsiyet = false,
+                            GunlukKalori = 3000.0,
+                            HedefKilo = 70m,
+                            HedefSuMiktari = 2000.0,
+                            Isim = "ahmet",
+                            Kilo = 80m,
+                            Soyisim = "mehmet",
+                            Yas = 18
+                        });
                 });
 
             modelBuilder.Entity("DietApp.Entities.Ogun", b =>
@@ -193,7 +217,7 @@ namespace DietApp.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
-                    b.Property<int?>("KullaniciKisiselID")
+                    b.Property<int>("KullaniciKisiselId")
                         .HasColumnType("int");
 
                     b.Property<double>("SuMiktari")
@@ -201,7 +225,7 @@ namespace DietApp.DAL.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("KullaniciKisiselID");
+                    b.HasIndex("KullaniciKisiselId");
 
                     b.ToTable("Su");
                 });
@@ -217,16 +241,16 @@ namespace DietApp.DAL.Migrations
                     b.Property<double>("Kalori")
                         .HasColumnType("float");
 
-                    b.Property<double>("Karbonhidrat")
+                    b.Property<double>("KarbonhidratMiktari")
                         .HasColumnType("float");
 
                     b.Property<int>("KategoriID")
                         .HasColumnType("int");
 
-                    b.Property<double>("Protein")
+                    b.Property<double>("ProteinMiktari")
                         .HasColumnType("float");
 
-                    b.Property<double>("Yag")
+                    b.Property<double>("YagMiktari")
                         .HasColumnType("float");
 
                     b.Property<string>("YemekAdi")
@@ -238,6 +262,18 @@ namespace DietApp.DAL.Migrations
                     b.HasIndex("KategoriID");
 
                     b.ToTable("Yemek");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Kalori = 95.0,
+                            KarbonhidratMiktari = 19.0,
+                            KategoriID = 1,
+                            ProteinMiktari = 0.29999999999999999,
+                            YagMiktari = 0.29999999999999999,
+                            YemekAdi = "Elma"
+                        });
                 });
 
             modelBuilder.Entity("DietApp.Entities.YemekMiktari", b =>
@@ -273,7 +309,7 @@ namespace DietApp.DAL.Migrations
                     b.ToTable("YemekMiktari");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.YemekOgunmiktar", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekMiktarOgun", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -296,7 +332,7 @@ namespace DietApp.DAL.Migrations
 
                     b.HasIndex("OgunID1");
 
-                    b.ToTable("YemekOgunmiktar");
+                    b.ToTable("YemekMiktarOgun");
                 });
 
             modelBuilder.Entity("KullaniciKisiselOgun", b =>
@@ -334,15 +370,19 @@ namespace DietApp.DAL.Migrations
 
             modelBuilder.Entity("DietApp.Entities.Su", b =>
                 {
-                    b.HasOne("DietApp.Entities.KullaniciKisisel", null)
+                    b.HasOne("DietApp.Entities.KullaniciKisisel", "KullaniciKisisel")
                         .WithMany("IcilenSu")
-                        .HasForeignKey("KullaniciKisiselID");
+                        .HasForeignKey("KullaniciKisiselId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("KullaniciKisisel");
                 });
 
             modelBuilder.Entity("DietApp.Entities.Yemek", b =>
                 {
                     b.HasOne("DietApp.Entities.Kategori", "Kategori")
-                        .WithMany()
+                        .WithMany("KategorininYemekListesi")
                         .HasForeignKey("KategoriID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -361,7 +401,7 @@ namespace DietApp.DAL.Migrations
                     b.Navigation("YenilenYemek");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.YemekOgunmiktar", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekMiktarOgun", b =>
                 {
                     b.HasOne("DietApp.Entities.YemekMiktari", "Yemek")
                         .WithMany("YemeginOgunleri")
@@ -393,6 +433,11 @@ namespace DietApp.DAL.Migrations
                         .HasForeignKey("OgunlerinKullanicilariID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DietApp.Entities.Kategori", b =>
+                {
+                    b.Navigation("KategorininYemekListesi");
                 });
 
             modelBuilder.Entity("DietApp.Entities.KullaniciKisisel", b =>

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DietApp.BLL.IServices;
+using DietApp.BLL.Services;
+using DietApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +15,19 @@ namespace DietApp.UI
 {
     public partial class UserYemekEklemePaneli : Form
     {
+        IUserYemekEklemeService _service;
         public UserYemekEklemePaneli()
         {
             InitializeComponent();
+            _service = new UserYemekEklemeService();
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            UserYemekEklemePaneliVm userYemekEkleme = new UserYemekEklemePaneliVm()
+            {
+                YemekID = cmbYemekGirisi.SelectedItem.
+            };
         }
     }
 }

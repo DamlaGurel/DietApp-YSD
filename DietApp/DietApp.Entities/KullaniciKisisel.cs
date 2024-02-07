@@ -17,7 +17,7 @@ namespace DietApp.Entities
         public decimal Kilo { get; set; }
         public decimal HedefKilo { get; set; }
         public double GunlukKalori { get; set; }
-        public double SuMiktari { get; set; }
+        public double HedefSuMiktari { get; set; }
         public DateTime BaslangicTarihi { get; set; }
         public DateTime BitisTarihi { get; set; }
         public List<Ogun>? KullanicilarinOgunleri { get; set; }
