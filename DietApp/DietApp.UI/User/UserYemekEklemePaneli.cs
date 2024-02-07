@@ -1,6 +1,7 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.BLL.Services;
 using DietApp.Entities;
+using DietApp.Enums;
 using DietApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -11,18 +12,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DietApp.UI
 {
     public partial class UserYemekEklemePaneli : Form
     {
         IUserYemekEklemeService _service;
+        string _ogunCesidi;
         public UserYemekEklemePaneli()
         {
             InitializeComponent();
             _service = new UserYemekEklemeService();
 
+            
+        }
+        public UserYemekEklemePaneli(string ogunCesidi)
+        {
+            InitializeComponent();
+            _service = new UserYemekEklemeService();
 
+            _ogunCesidi = ogunCesidi;
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -32,9 +42,19 @@ namespace DietApp.UI
                 YemekID = cmbYemekGirisi.SelectedIndex,
                 MiktarGr = double.Parse(txtMiktar.Text)
             };
+          
 
-            //_service.UserYemekEkleme(userYemekEkleme, );
+            if (Enum.TryParse(_ogunCesidi, out OgunCesitleri ogunCesiti))
+            {
+               
+                Ogun _ogun = new Ogun()
+                {
+                    OgunAdi = ogunCesiti,
+                };
+                _service.UserYemekEkleme(userYemekEkleme, _ogun);
+            }
         }
+
 
         private void UserYemekEklemePaneli_Load(object sender, EventArgs e)
         {

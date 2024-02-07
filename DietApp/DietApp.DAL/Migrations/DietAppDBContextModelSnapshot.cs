@@ -191,7 +191,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 18, 1, 5, 404, DateTimeKind.Local).AddTicks(9462),
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 18, 31, 20, 48, DateTimeKind.Local).AddTicks(2400),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,

@@ -9,6 +9,7 @@ namespace DietApp.Entities
 {
     public class Ogun : BesinDegeri
     {
+
         public OgunCesitleri OgunAdi { get; set; }
        
         public DateTime Tarih { get; set; }

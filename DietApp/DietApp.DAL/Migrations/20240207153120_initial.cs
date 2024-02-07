@@ -252,7 +252,7 @@ namespace DietApp.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "KullaniciKisisel",
                 columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "Soyisim", "Yas" },
-                values: new object[] { 1, new DateTime(2024, 2, 7, 18, 1, 5, 404, DateTimeKind.Local).AddTicks(9462), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, "mehmet", 18 });
+                values: new object[] { 1, new DateTime(2024, 2, 7, 18, 31, 20, 48, DateTimeKind.Local).AddTicks(2400), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, "mehmet", 18 });
 
             migrationBuilder.InsertData(
                 table: "Yemek",
