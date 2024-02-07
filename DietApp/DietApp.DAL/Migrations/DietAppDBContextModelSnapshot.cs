@@ -152,6 +152,23 @@ namespace DietApp.DAL.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("KullaniciKisisel");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 12, 15, 0, 835, DateTimeKind.Local).AddTicks(9177),
+                            BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Boy = 170m,
+                            Cinsiyet = false,
+                            GunlukKalori = 3000.0,
+                            HedefKilo = 70m,
+                            Isim = "ahmet",
+                            Kilo = 80m,
+                            Soyisim = "mehmet",
+                            SuMiktari = 0.0,
+                            Yas = 18
+                        });
                 });
 
             modelBuilder.Entity("DietApp.Entities.Ogun", b =>
@@ -273,7 +290,7 @@ namespace DietApp.DAL.Migrations
                     b.ToTable("YemekMiktari");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.YemekOgunmiktar", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekMiktarOgun", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -296,7 +313,7 @@ namespace DietApp.DAL.Migrations
 
                     b.HasIndex("OgunID1");
 
-                    b.ToTable("YemekOgunmiktar");
+                    b.ToTable("YemekMiktarOgun");
                 });
 
             modelBuilder.Entity("KullaniciKisiselOgun", b =>
@@ -361,7 +378,7 @@ namespace DietApp.DAL.Migrations
                     b.Navigation("YenilenYemek");
                 });
 
-            modelBuilder.Entity("DietApp.Entities.YemekOgunmiktar", b =>
+            modelBuilder.Entity("DietApp.Entities.YemekMiktarOgun", b =>
                 {
                     b.HasOne("DietApp.Entities.YemekMiktari", "Yemek")
                         .WithMany("YemeginOgunleri")

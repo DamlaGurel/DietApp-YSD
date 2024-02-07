@@ -34,7 +34,7 @@
             rbErkek = new RadioButton();
             label3 = new Label();
             lblVucutIndeksi = new Label();
-            button1 = new Button();
+            btnVucutIndeksiHesapla = new Button();
             txtBoy = new TextBox();
             txtKilo = new TextBox();
             label5 = new Label();
@@ -43,6 +43,8 @@
             lblGunlukKaloriIhtiyaci = new Label();
             btnKaloriIhtiyaciniHesapla = new Button();
             grpVucutIndeksBilgi = new GroupBox();
+            lblIdealKilo = new Label();
+            label6 = new Label();
             grpGunlukKalori = new GroupBox();
             btnAnaEkranaGec = new Button();
             grpVucutIndeksBilgi.SuspendLayout();
@@ -107,14 +109,15 @@
             lblVucutIndeksi.TabIndex = 5;
             lblVucutIndeksi.Text = " ";
             // 
-            // button1
+            // btnVucutIndeksiHesapla
             // 
-            button1.Location = new Point(69, 126);
-            button1.Name = "button1";
-            button1.Size = new Size(211, 74);
-            button1.TabIndex = 6;
-            button1.Text = "VÜCUT İNDEKSİ HESAPLA";
-            button1.UseVisualStyleBackColor = true;
+            btnVucutIndeksiHesapla.Location = new Point(94, 221);
+            btnVucutIndeksiHesapla.Name = "btnVucutIndeksiHesapla";
+            btnVucutIndeksiHesapla.Size = new Size(211, 74);
+            btnVucutIndeksiHesapla.TabIndex = 6;
+            btnVucutIndeksiHesapla.Text = "VÜCUT İNDEKSİ HESAPLA";
+            btnVucutIndeksiHesapla.UseVisualStyleBackColor = true;
+            btnVucutIndeksiHesapla.Click += btnVucutIndeksiHesapla_Click;
             // 
             // txtBoy
             // 
@@ -171,18 +174,38 @@
             btnKaloriIhtiyaciniHesapla.TabIndex = 13;
             btnKaloriIhtiyaciniHesapla.Text = "GÜNLÜK KALORİ İHTİYACINI HESAPLA";
             btnKaloriIhtiyaciniHesapla.UseVisualStyleBackColor = true;
+            btnKaloriIhtiyaciniHesapla.Click += btnKaloriIhtiyaciniHesapla_Click;
             // 
             // grpVucutIndeksBilgi
             // 
+            grpVucutIndeksBilgi.Controls.Add(lblIdealKilo);
+            grpVucutIndeksBilgi.Controls.Add(label6);
             grpVucutIndeksBilgi.Controls.Add(lblVucutIndeksi);
             grpVucutIndeksBilgi.Controls.Add(label3);
-            grpVucutIndeksBilgi.Controls.Add(button1);
+            grpVucutIndeksBilgi.Controls.Add(btnVucutIndeksiHesapla);
             grpVucutIndeksBilgi.Location = new Point(53, 265);
             grpVucutIndeksBilgi.Name = "grpVucutIndeksBilgi";
-            grpVucutIndeksBilgi.Size = new Size(412, 216);
+            grpVucutIndeksBilgi.Size = new Size(412, 325);
             grpVucutIndeksBilgi.TabIndex = 14;
             grpVucutIndeksBilgi.TabStop = false;
             grpVucutIndeksBilgi.Text = "Vücut İndeks Bilgi Paneli";
+            // 
+            // lblIdealKilo
+            // 
+            lblIdealKilo.AutoSize = true;
+            lblIdealKilo.Location = new Point(211, 108);
+            lblIdealKilo.Name = "lblIdealKilo";
+            lblIdealKilo.Size = new Size(0, 25);
+            lblIdealKilo.TabIndex = 8;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(16, 108);
+            label6.Name = "label6";
+            label6.Size = new Size(165, 25);
+            label6.TabIndex = 7;
+            label6.Text = "İdeal Kilo Aralığınız:";
             // 
             // grpGunlukKalori
             // 
@@ -191,7 +214,7 @@
             grpGunlukKalori.Controls.Add(label4);
             grpGunlukKalori.Location = new Point(498, 265);
             grpGunlukKalori.Name = "grpGunlukKalori";
-            grpGunlukKalori.Size = new Size(412, 216);
+            grpGunlukKalori.Size = new Size(536, 216);
             grpGunlukKalori.TabIndex = 7;
             grpGunlukKalori.TabStop = false;
             grpGunlukKalori.Text = "Günlük Kalori İhtiyacı Paneli";
@@ -240,7 +263,7 @@
         private RadioButton rbErkek;
         private Label label3;
         private Label lblVucutIndeksi;
-        private Button button1;
+        private Button btnVucutIndeksiHesapla;
         private TextBox txtBoy;
         private TextBox txtKilo;
         private Label label5;
@@ -251,5 +274,7 @@
         private GroupBox grpVucutIndeksBilgi;
         private GroupBox grpGunlukKalori;
         private Button btnAnaEkranaGec;
+        private Label lblIdealKilo;
+        private Label label6;
     }
 }
