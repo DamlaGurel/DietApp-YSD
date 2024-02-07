@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-    [Migration("20240207172055_initial")]
-    partial class initial
+    [Migration("20240207181534_b")]
+    partial class b
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -193,7 +193,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 20, 20, 55, 330, DateTimeKind.Local).AddTicks(1363),
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 21, 15, 33, 940, DateTimeKind.Local).AddTicks(1263),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -333,12 +333,12 @@ namespace DietApp.DAL.Migrations
                     b.Property<double>("YagMiktari")
                         .HasColumnType("float");
 
-                    b.Property<int>("YenilenYemekID")
+                    b.Property<int>("YemekID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("YenilenYemekID");
+                    b.HasIndex("YemekID");
 
                     b.ToTable("YemekMiktari");
                 });
@@ -432,8 +432,8 @@ namespace DietApp.DAL.Migrations
             modelBuilder.Entity("DietApp.Entities.YemekMiktari", b =>
                 {
                     b.HasOne("DietApp.Entities.Yemek", "YenilenYemek")
-                        .WithMany()
-                        .HasForeignKey("YenilenYemekID")
+                        .WithMany("YemekMiktarlari")
+                        .HasForeignKey("YemekID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -497,6 +497,11 @@ namespace DietApp.DAL.Migrations
             modelBuilder.Entity("DietApp.Entities.Ogun", b =>
                 {
                     b.Navigation("OgununYemekleri");
+                });
+
+            modelBuilder.Entity("DietApp.Entities.Yemek", b =>
+                {
+                    b.Navigation("YemekMiktarlari");
                 });
 
             modelBuilder.Entity("DietApp.Entities.YemekMiktari", b =>

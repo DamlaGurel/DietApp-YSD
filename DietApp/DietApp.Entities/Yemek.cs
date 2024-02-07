@@ -13,5 +13,6 @@ namespace DietApp.Entities
         public string YemekAdi { get; set; }
         public virtual Kategori Kategori { get; set; }
         public int KategoriID { get; set; }
+        public List<YemekMiktari> YemekMiktarlari { get; set; }
     }
 }

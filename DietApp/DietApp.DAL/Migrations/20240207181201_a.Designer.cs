@@ -4,6 +4,7 @@ using DietApp.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-    partial class DietAppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240207181201_a")]
+    partial class a
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -191,7 +193,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 21, 16, 58, 260, DateTimeKind.Local).AddTicks(5878),
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 21, 12, 1, 242, DateTimeKind.Local).AddTicks(8429),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -352,6 +354,9 @@ namespace DietApp.DAL.Migrations
                     b.Property<int>("OgunID")
                         .HasColumnType("int");
 
+                    b.Property<int>("OgunID1")
+                        .HasColumnType("int");
+
                     b.Property<int>("YemekMiktarID")
                         .HasColumnType("int");
 
@@ -359,7 +364,7 @@ namespace DietApp.DAL.Migrations
 
                     b.HasIndex("OgunID");
 
-                    b.HasIndex("YemekMiktarID");
+                    b.HasIndex("OgunID1");
 
                     b.ToTable("YemekMiktarOgun");
                 });
@@ -437,15 +442,15 @@ namespace DietApp.DAL.Migrations
 
             modelBuilder.Entity("DietApp.Entities.YemekMiktarOgun", b =>
                 {
-                    b.HasOne("DietApp.Entities.Ogun", "Ogun")
-                        .WithMany("OgununYemekleri")
+                    b.HasOne("DietApp.Entities.YemekMiktari", "Yemek")
+                        .WithMany("YemeginOgunleri")
                         .HasForeignKey("OgunID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DietApp.Entities.YemekMiktari", "Yemek")
-                        .WithMany("YemeginOgunleri")
-                        .HasForeignKey("YemekMiktarID")
+                    b.HasOne("DietApp.Entities.Ogun", "Ogun")
+                        .WithMany("OgununYemekleri")
+                        .HasForeignKey("OgunID1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

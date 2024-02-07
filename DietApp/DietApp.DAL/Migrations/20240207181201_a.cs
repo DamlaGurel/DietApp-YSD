@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DietApp.DAL.Migrations
 {
-    public partial class initial : Migration
+    public partial class a : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -141,7 +141,7 @@ namespace DietApp.DAL.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MiktarGr = table.Column<double>(type: "float", nullable: false),
-                    YenilenYemekID = table.Column<int>(type: "int", nullable: false),
+                    YemekID = table.Column<int>(type: "int", nullable: false),
                     Kalori = table.Column<double>(type: "float", nullable: false),
                     KarbonhidratMiktari = table.Column<double>(type: "float", nullable: false),
                     ProteinMiktari = table.Column<double>(type: "float", nullable: false),
@@ -151,8 +151,8 @@ namespace DietApp.DAL.Migrations
                 {
                     table.PrimaryKey("PK_YemekMiktari", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_YemekMiktari_Yemek_YenilenYemekID",
-                        column: x => x.YenilenYemekID,
+                        name: "FK_YemekMiktari_Yemek_YemekID",
+                        column: x => x.YemekID,
                         principalTable: "Yemek",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
@@ -252,7 +252,7 @@ namespace DietApp.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "KullaniciKisisel",
                 columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "Soyisim", "Yas" },
-                values: new object[] { 1, new DateTime(2024, 2, 7, 20, 20, 55, 330, DateTimeKind.Local).AddTicks(1363), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, "mehmet", 18 });
+                values: new object[] { 1, new DateTime(2024, 2, 7, 21, 12, 1, 242, DateTimeKind.Local).AddTicks(8429), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, "mehmet", 18 });
 
             migrationBuilder.InsertData(
                 table: "Yemek",
@@ -292,9 +292,9 @@ namespace DietApp.DAL.Migrations
                 column: "KategoriID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_YemekMiktari_YenilenYemekID",
+                name: "IX_YemekMiktari_YemekID",
                 table: "YemekMiktari",
-                column: "YenilenYemekID");
+                column: "YemekID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_YemekMiktarOgun_OgunID",

@@ -37,9 +37,12 @@ namespace DietApp.UI
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
+
+            Yemek yemek=cmbYemekGirisi.SelectedItem as Yemek;
+
             UserYemekEklemePaneliVm userYemekEkleme = new UserYemekEklemePaneliVm()
             {
-                YemekID = cmbYemekGirisi.SelectedIndex,
+                YemekID = yemek.ID,
                 MiktarGr = double.Parse(txtMiktar.Text)
             };
           

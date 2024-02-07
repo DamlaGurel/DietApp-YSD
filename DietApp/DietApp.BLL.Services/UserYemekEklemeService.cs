@@ -33,7 +33,7 @@ namespace DietApp.BLL.Services
 
             YemekMiktari yemekMiktari = new YemekMiktari()
             {
-                YenilenYemek = yemek,
+                YemekID = userYemekEkleme.YemekID,
                 MiktarGr = userYemekEkleme.MiktarGr,
                 Kalori = yemek.Kalori * userYemekEkleme.MiktarGr / 100,
                 KarbonhidratMiktari = yemek.KarbonhidratMiktari * userYemekEkleme.MiktarGr / 100,
