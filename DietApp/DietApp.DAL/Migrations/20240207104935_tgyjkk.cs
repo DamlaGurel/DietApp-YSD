@@ -5,11 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DietApp.DAL.Migrations
 {
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240207091501_initial.cs
-    public partial class initial : Migration
-========
-    public partial class tgyj : Migration
->>>>>>>> Yalin:DietApp/DietApp.DAL/Migrations/20240207074148_tgyj.cs
+    public partial class tgyjkk : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -231,13 +227,20 @@ namespace DietApp.DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "KullaniciGiris",
+                columns: new[] { "ID", "KullaniciAdi", "KullaniciKisiselID", "Sifre" },
+                values: new object[,]
+                {
+                    { 1, "YalinTuzmen", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
+                    { 2, "SilaYildirim", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
+                    { 3, "DamlaGurel", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
+                    { 4, "admin", null, "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "KullaniciKisisel",
                 columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "Isim", "Kilo", "Soyisim", "SuMiktari", "Yas" },
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240207091501_initial.cs
-                values: new object[] { 1, new DateTime(2024, 2, 7, 12, 15, 0, 835, DateTimeKind.Local).AddTicks(9177), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, "ahmet", 80m, "mehmet", 0.0, 18 });
-========
-                values: new object[] { 1, new DateTime(2024, 2, 7, 10, 41, 48, 267, DateTimeKind.Local).AddTicks(2449), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, "ahmet", 80m, "mehmet", 0.0, 18 });
->>>>>>>> Yalin:DietApp/DietApp.DAL/Migrations/20240207074148_tgyj.cs
+                values: new object[] { 1, new DateTime(2024, 2, 7, 13, 49, 35, 47, DateTimeKind.Local).AddTicks(6034), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, "ahmet", 80m, "mehmet", 0.0, 18 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_GunlukRapor_KullaniciKisiselID",

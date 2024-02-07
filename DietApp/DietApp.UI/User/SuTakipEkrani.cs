@@ -16,5 +16,10 @@ namespace DietApp.UI
         {
             InitializeComponent();
         }
+
+        private void SuTakipEkrani_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

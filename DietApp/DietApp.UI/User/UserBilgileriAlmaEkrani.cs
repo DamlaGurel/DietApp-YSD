@@ -1,5 +1,6 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.BLL.Services;
+using DietApp.ViewModels.KullaniciGiris;
 using DietApp.ViewModels.VucutIndeksiVms;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace DietApp.UI
     public partial class UserBilgileriAlmaEkrani : Form
     {
         IVucutIndeksiService _service;
+        KullaniciGirisService _kullaniciService;
+        public KullanicOlusturVm Vm { get; }
 
         public UserBilgileriAlmaEkrani()
         {
@@ -23,9 +26,14 @@ namespace DietApp.UI
             _service = new VucutIndeksiService();
         }
 
+        public UserBilgileriAlmaEkrani(KullanicOlusturVm vm)
+        {
+            Vm = vm;
+        }
+
         private void btnAnaEkranaGec_Click(object sender, EventArgs e)
         {
-            Form frm = new OzetEkrani();
+            Form frm = new OzetEkrani(_kullaniciService.KullaniciBul(Vm.KullaniciAdi));
             frm.ShowDialog();
         }
 
