@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240207104935_tgyjkk.Designer.cs
-    [Migration("20240207104935_tgyjkk")]
-    partial class tgyjkk
-========
-    [Migration("20240207103924_initial")]
-    partial class initial
->>>>>>>> origin/sila:DietApp/DietApp.DAL/Migrations/20240207103924_initial.Designer.cs
+    [Migration("20240207144257_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -198,27 +193,16 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240207104935_tgyjkk.Designer.cs
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 13, 49, 35, 47, DateTimeKind.Local).AddTicks(6034),
-========
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 13, 39, 23, 840, DateTimeKind.Local).AddTicks(9720),
->>>>>>>> origin/sila:DietApp/DietApp.DAL/Migrations/20240207103924_initial.Designer.cs
+                            BaslangicTarihi = new DateTime(2024, 2, 7, 17, 42, 56, 886, DateTimeKind.Local).AddTicks(4299),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
                             GunlukKalori = 3000.0,
                             HedefKilo = 70m,
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240207104935_tgyjkk.Designer.cs
-                            Isim = "ahmet",
-                            Kilo = 80m,
-                            Soyisim = "mehmet",
-                            SuMiktari = 0.0,
-========
                             HedefSuMiktari = 2000.0,
                             Isim = "ahmet",
                             Kilo = 80m,
                             Soyisim = "mehmet",
->>>>>>>> origin/sila:DietApp/DietApp.DAL/Migrations/20240207103924_initial.Designer.cs
                             Yas = 18
                         });
                 });
@@ -230,6 +214,9 @@ namespace DietApp.DAL.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<int?>("GunlukRaporID")
+                        .HasColumnType("int");
 
                     b.Property<double>("Kalori")
                         .HasColumnType("float");
@@ -250,6 +237,8 @@ namespace DietApp.DAL.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("GunlukRaporID");
 
                     b.ToTable("Ogun");
                 });
@@ -411,6 +400,13 @@ namespace DietApp.DAL.Migrations
                     b.Navigation("KullaniciKisisel");
                 });
 
+            modelBuilder.Entity("DietApp.Entities.Ogun", b =>
+                {
+                    b.HasOne("DietApp.Entities.GunlukRapor", null)
+                        .WithMany("GunlukRaporunOgunListesi")
+                        .HasForeignKey("GunlukRaporID");
+                });
+
             modelBuilder.Entity("DietApp.Entities.Su", b =>
                 {
                     b.HasOne("DietApp.Entities.KullaniciKisisel", "KullaniciKisisel")
@@ -476,6 +472,11 @@ namespace DietApp.DAL.Migrations
                         .HasForeignKey("OgunlerinKullanicilariID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("DietApp.Entities.GunlukRapor", b =>
+                {
+                    b.Navigation("GunlukRaporunOgunListesi");
                 });
 
             modelBuilder.Entity("DietApp.Entities.Kategori", b =>

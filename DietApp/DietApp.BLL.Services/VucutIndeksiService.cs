@@ -31,7 +31,7 @@ namespace DietApp.BLL.Services
                 Isim = vm.Isim,
                 Kilo = vm.Kilo,
                 Soyisim = vm.Soyisim,
-                SuMiktari = vm.SuMiktari,
+                HedefSuMiktari = vm.SuMiktari,
                 Yas = vm.Yas,
             }; return _repo.Create(kkVucutIndeksi);
 
@@ -51,7 +51,7 @@ namespace DietApp.BLL.Services
             kkVucutIndeksi.Isim = vm.Isim;
             kkVucutIndeksi.Kilo = vm.Kilo;
             kkVucutIndeksi.Soyisim = vm.Soyisim;
-            kkVucutIndeksi.SuMiktari = vm.SuMiktari;
+            kkVucutIndeksi.HedefSuMiktari = vm.SuMiktari;
             kkVucutIndeksi.Yas = vm.Yas;
 
             return _repo.Update(kkVucutIndeksi);
@@ -74,7 +74,7 @@ namespace DietApp.BLL.Services
                 Isim = kkVucutIndeksi.Isim,
                 Kilo = kkVucutIndeksi.Kilo,
                 Soyisim = kkVucutIndeksi.Soyisim,
-                SuMiktari = kkVucutIndeksi.SuMiktari,
+                SuMiktari = kkVucutIndeksi.HedefSuMiktari,
                 Yas = kkVucutIndeksi.Yas,
                 ID = id,
             };

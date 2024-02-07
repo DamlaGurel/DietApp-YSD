@@ -1,5 +1,6 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.BLL.Services;
+using DietApp.Entities;
 using DietApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,22 @@ namespace DietApp.UI
         {
             InitializeComponent();
             _service = new UserYemekEklemeService();
+          
+
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
             UserYemekEklemePaneliVm userYemekEkleme = new UserYemekEklemePaneliVm()
             {
-                YemekID = cmbYemekGirisi.SelectedItem.
+                // YemekID = cmbYemekGirisi.SelectedItem.
             };
+        }
+
+        private void UserYemekEklemePaneli_Load(object sender, EventArgs e)
+        {
+            cmbYemekGirisi.DataSource=_service.YemekGetir();
+            cmbYemekGirisi.DisplayMember = "YemekAdi";
         }
     }
 }
