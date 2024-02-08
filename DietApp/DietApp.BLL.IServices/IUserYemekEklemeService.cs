@@ -13,7 +13,7 @@ namespace DietApp.BLL.IServices
     {
         List<Yemek> YemekGetir(Kategori kat=null);
         List<Kategori> KategoriGetir();
-        Ogun TariheGoreOgunBul(OgunCesitleri cesit, DateTime time);
+        Ogun TariheGoreOgunBul(OgunCesitleri cesit, DateTime time, int KullaniciID);
         void UserYemekEkleme(UserYemekEklemePaneliVm userYemekEkleme, Ogun ogun);
     }
 }

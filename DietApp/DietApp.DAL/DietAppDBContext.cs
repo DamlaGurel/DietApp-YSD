@@ -35,20 +35,20 @@ namespace DietApp.DAL
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<BesinDegeri>();
+           
             modelBuilder.Entity<GunlukRapor>();
             modelBuilder.Entity<Kategori>();
             modelBuilder.ApplyConfiguration(new KullaniciGirisConfiguration());
-            //modelBuilder.Entity<Kategori>();
+       
             modelBuilder.ApplyConfiguration(new KategoriConfiguration());
             modelBuilder.Entity<KullaniciGiris>();
             modelBuilder.ApplyConfiguration(new KullaniciKisiselConfiguration());
             modelBuilder.Entity<Ogun>();
-            //modelBuilder.Entity<Su>();
+       
             modelBuilder.ApplyConfiguration(new KullaniciSuTakipConfiguration());
-            //modelBuilder.Entity<Yemek>();
+          
             modelBuilder.ApplyConfiguration(new UserYemekEklemeConfiguration());
-            //  modelBuilder.Entity<YemekMiktari>();
+    
             modelBuilder.ApplyConfiguration(new YemekMiktariConfiguration());
             modelBuilder.Entity<YemekMiktarOgun>().HasOne(yo => yo.Yemek).WithMany(y => y.YemeginOgunleri).HasForeignKey(yo => yo.OgunID).HasForeignKey(yo => yo.YemekMiktarID);
 

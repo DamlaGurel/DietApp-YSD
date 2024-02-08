@@ -23,26 +23,18 @@ namespace DietApp.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "KullaniciKisisel",
+                name: "KullaniciGiris",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Isim = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Soyisim = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Cinsiyet = table.Column<bool>(type: "bit", nullable: false),
-                    Yas = table.Column<int>(type: "int", nullable: false),
-                    Boy = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Kilo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    HedefKilo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    GunlukKalori = table.Column<double>(type: "float", nullable: false),
-                    HedefSuMiktari = table.Column<double>(type: "float", nullable: false),
-                    BaslangicTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    BitisTarihi = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Sifre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    KullaniciKisiselID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_KullaniciKisisel", x => x.ID);
+                    table.PrimaryKey("PK_KullaniciGiris", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -65,6 +57,60 @@ namespace DietApp.DAL.Migrations
                         name: "FK_Yemek_Kategori_KategoriID",
                         column: x => x.KategoriID,
                         principalTable: "Kategori",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "KullaniciKisisel",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Isim = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Soyisim = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Cinsiyet = table.Column<bool>(type: "bit", nullable: false),
+                    Yas = table.Column<int>(type: "int", nullable: false),
+                    Boy = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Kilo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    HedefKilo = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    GunlukKalori = table.Column<double>(type: "float", nullable: false),
+                    HedefSuMiktari = table.Column<double>(type: "float", nullable: false),
+                    BaslangicTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BitisTarihi = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    KullaniciGirisID = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_KullaniciKisisel", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_KullaniciKisisel_KullaniciGiris_KullaniciGirisID",
+                        column: x => x.KullaniciGirisID,
+                        principalTable: "KullaniciGiris",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "YemekMiktari",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MiktarGr = table.Column<double>(type: "float", nullable: false),
+                    YemekID = table.Column<int>(type: "int", nullable: false),
+                    Kalori = table.Column<double>(type: "float", nullable: false),
+                    KarbonhidratMiktari = table.Column<double>(type: "float", nullable: false),
+                    ProteinMiktari = table.Column<double>(type: "float", nullable: false),
+                    YagMiktari = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_YemekMiktari", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_YemekMiktari_Yemek_YemekID",
+                        column: x => x.YemekID,
+                        principalTable: "Yemek",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -95,26 +141,6 @@ namespace DietApp.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "KullaniciGiris",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    KullaniciAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Sifre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    KullaniciKisiselID = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_KullaniciGiris", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_KullaniciGiris_KullaniciKisisel_KullaniciKisiselID",
-                        column: x => x.KullaniciKisiselID,
-                        principalTable: "KullaniciKisisel",
-                        principalColumn: "ID");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Su",
                 columns: table => new
                 {
@@ -135,30 +161,6 @@ namespace DietApp.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "YemekMiktari",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MiktarGr = table.Column<double>(type: "float", nullable: false),
-                    YemekID = table.Column<int>(type: "int", nullable: false),
-                    Kalori = table.Column<double>(type: "float", nullable: false),
-                    KarbonhidratMiktari = table.Column<double>(type: "float", nullable: false),
-                    ProteinMiktari = table.Column<double>(type: "float", nullable: false),
-                    YagMiktari = table.Column<double>(type: "float", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_YemekMiktari", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_YemekMiktari_Yemek_YemekID",
-                        column: x => x.YemekID,
-                        principalTable: "Yemek",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Ogun",
                 columns: table => new
                 {
@@ -166,6 +168,7 @@ namespace DietApp.DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OgunAdi = table.Column<int>(type: "int", nullable: false),
                     Tarih = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    KullaniciKisiselID = table.Column<int>(type: "int", nullable: false),
                     GunlukRaporID = table.Column<int>(type: "int", nullable: true),
                     Kalori = table.Column<double>(type: "float", nullable: false),
                     KarbonhidratMiktari = table.Column<double>(type: "float", nullable: false),
@@ -180,28 +183,10 @@ namespace DietApp.DAL.Migrations
                         column: x => x.GunlukRaporID,
                         principalTable: "GunlukRapor",
                         principalColumn: "ID");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "KullaniciKisiselOgun",
-                columns: table => new
-                {
-                    KullanicilarinOgunleriID = table.Column<int>(type: "int", nullable: false),
-                    OgunlerinKullanicilariID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_KullaniciKisiselOgun", x => new { x.KullanicilarinOgunleriID, x.OgunlerinKullanicilariID });
                     table.ForeignKey(
-                        name: "FK_KullaniciKisiselOgun_KullaniciKisisel_OgunlerinKullanicilariID",
-                        column: x => x.OgunlerinKullanicilariID,
+                        name: "FK_Ogun_KullaniciKisisel_KullaniciKisiselID",
+                        column: x => x.KullaniciKisiselID,
                         principalTable: "KullaniciKisisel",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_KullaniciKisiselOgun_Ogun_KullanicilarinOgunleriID",
-                        column: x => x.KullanicilarinOgunleriID,
-                        principalTable: "Ogun",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -242,17 +227,24 @@ namespace DietApp.DAL.Migrations
                 columns: new[] { "ID", "KullaniciAdi", "KullaniciKisiselID", "Sifre" },
                 values: new object[,]
                 {
-                    { 1, "YalinTuzmen", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
-                    { 2, "SilaYildirim", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
-                    { 3, "DamlaGurel", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
-                    { 4, "admin", null, "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918" },
-                    { 5, "a", null, "CA978112CA1BBDCAFAC231B39A23DC4DA786EFF8147C4E72B9807785AFEE48BB" }
+                    { 1, "YalinTuzmen", 1, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
+                    { 2, "SilaYildirim", 2, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
+                    { 3, "DamlaGurel", 3, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
+                    { 4, "admin", 4, "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918" },
+                    { 5, "a", 5, "CA978112CA1BBDCAFAC231B39A23DC4DA786EFF8147C4E72B9807785AFEE48BB" }
                 });
 
             migrationBuilder.InsertData(
                 table: "KullaniciKisisel",
-                columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "Soyisim", "Yas" },
-                values: new object[] { 1, new DateTime(2024, 2, 8, 14, 9, 7, 431, DateTimeKind.Local).AddTicks(7989), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, "mehmet", 18 });
+                columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "KullaniciGirisID", "Soyisim", "Yas" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(840), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 1, "mehmet", 18 },
+                    { 2, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(849), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 2, "mehmet", 18 },
+                    { 3, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(851), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 3, "mehmet", 18 },
+                    { 4, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(852), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 4, "mehmet", 18 },
+                    { 5, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(854), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "admin", 80m, 5, "adminoğlu", 18 }
+                });
 
             migrationBuilder.InsertData(
                 table: "Yemek",
@@ -265,21 +257,20 @@ namespace DietApp.DAL.Migrations
                 column: "KullaniciKisiselID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_KullaniciGiris_KullaniciKisiselID",
-                table: "KullaniciGiris",
-                column: "KullaniciKisiselID",
-                unique: true,
-                filter: "[KullaniciKisiselID] IS NOT NULL");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_KullaniciKisiselOgun_OgunlerinKullanicilariID",
-                table: "KullaniciKisiselOgun",
-                column: "OgunlerinKullanicilariID");
+                name: "IX_KullaniciKisisel_KullaniciGirisID",
+                table: "KullaniciKisisel",
+                column: "KullaniciGirisID",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ogun_GunlukRaporID",
                 table: "Ogun",
                 column: "GunlukRaporID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Ogun_KullaniciKisiselID",
+                table: "Ogun",
+                column: "KullaniciKisiselID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Su_KullaniciKisiselId",
@@ -310,12 +301,6 @@ namespace DietApp.DAL.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "KullaniciGiris");
-
-            migrationBuilder.DropTable(
-                name: "KullaniciKisiselOgun");
-
-            migrationBuilder.DropTable(
                 name: "Su");
 
             migrationBuilder.DropTable(
@@ -338,6 +323,9 @@ namespace DietApp.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Kategori");
+
+            migrationBuilder.DropTable(
+                name: "KullaniciGiris");
         }
     }
 }

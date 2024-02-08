@@ -28,16 +28,21 @@ namespace DietApp.BLL.Services
             _kategoriRepo = new KategoriRepository();
         }
 
-        public Ogun TariheGoreOgunBul(OgunCesitleri cesit,DateTime time)
+        public Ogun TariheGoreOgunBul(OgunCesitleri cesit, DateTime time, int KullaniciID)
         {
             Ogun ogun = _ogunRepo.GetAll().FirstOrDefault(x => x.Tarih == time && x.OgunAdi == cesit);
 
-          if (ogun == null)
+            if (ogun == null)
             {
                 ogun = new Ogun()
                 {
-                    OgunAdi= cesit,
-                    Tarih= time,
+                    OgunAdi = cesit,
+                    Tarih = time,
+                    KullaniciKisiselID = KullaniciID,
+                    KarbonhidratMiktari = 0,
+                    ProteinMiktari = 0,
+                    Kalori = 0,
+                    YagMiktari = 0
                 };
                 _ogunRepo.Create(ogun);
             }
@@ -60,21 +65,28 @@ namespace DietApp.BLL.Services
                 YagMiktari = yemek.YagMiktari * userYemekEkleme.MiktarGr / 100,
             };
             _yemekMiktariRepo.Create(yemekMiktari);
+
+            ogun.Kalori += yemekMiktari.Kalori;
+            ogun.ProteinMiktari += yemekMiktari.ProteinMiktari;
+            ogun.KarbonhidratMiktari += yemekMiktari.KarbonhidratMiktari;
+            ogun.YagMiktari += yemekMiktari.YagMiktari;
+
             YemekMiktarOgun yemekMiktarOgun = new YemekMiktarOgun()
             {
                 OgunID = ogun.ID,
-                YemekMiktarID = yemekMiktari.ID
+                YemekMiktarID = yemekMiktari.ID,
+
             };
 
-          
+            _ogunRepo.Update(ogun);
             _yemekMiktariOgunRepo.Create(yemekMiktarOgun);
         }
 
-        public List<Yemek> YemekGetir(Kategori kat=null)
+        public List<Yemek> YemekGetir(Kategori kat = null)
         {
-            if(kat == null) { return _yemekRepo.GetAll().ToList(); }
+            if (kat == null) { return _yemekRepo.GetAll().ToList(); }
 
-           return _yemekRepo.GetAll().Where(x => x.Kategori == kat).ToList();
+            return _yemekRepo.GetAll().Where(x => x.Kategori == kat).ToList();
         }
 
         public List<Kategori> KategoriGetir()

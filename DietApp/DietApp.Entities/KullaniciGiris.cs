@@ -11,7 +11,7 @@ namespace DietApp.Entities
     {
         public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
-        public int? KullaniciKisiselID { get; set; }
-        public KullaniciKisisel? KullaniciKisisel { get; set; }
+        public int KullaniciKisiselID { get; set; }
+        public KullaniciKisisel KullaniciKisisel { get; set; }
     }
 }

@@ -23,35 +23,38 @@ namespace DietApp.UI
 
         public DateTime DtpTarih;
 
-        public UserYemekEklemePaneli(string ogunCesidi, DateTime tarih) 
+        public int ID { get; }
+
+        public UserYemekEklemePaneli(string ogunCesidi, DateTime tarih, int id)
         {
             InitializeComponent();
             _service = new UserYemekEklemeService();
 
             _ogunCesidi = ogunCesidi;
             DtpTarih = tarih;
+            ID = id;
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
 
-            Yemek yemek=cmbYemekGirisi.SelectedItem as Yemek;
+            Yemek yemek = cmbYemekGirisi.SelectedItem as Yemek;
 
             UserYemekEklemePaneliVm userYemekEkleme = new UserYemekEklemePaneliVm()
             {
                 YemekID = yemek.ID,
                 MiktarGr = double.Parse(txtMiktar.Text)
             };
-          
+
 
             if (Enum.TryParse(_ogunCesidi, out OgunCesitleri ogunCesiti))
             {
 
-              Ogun ogun=  _service.TariheGoreOgunBul(ogunCesiti,DtpTarih);
-
-
-
+                Ogun ogun = _service.TariheGoreOgunBul(ogunCesiti, DtpTarih.Date, ID);
                 _service.UserYemekEkleme(userYemekEkleme, ogun);
+
+              var owner = (this.Owner) as OzetEkrani;
+                owner.RefreshDataGrid();
             }
         }
 

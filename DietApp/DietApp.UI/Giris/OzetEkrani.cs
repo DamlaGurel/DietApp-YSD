@@ -1,4 +1,5 @@
-﻿using DietApp.Entities;
+﻿using DietApp.BLL.Services;
+using DietApp.Entities;
 using DietApp.Enums;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,27 @@ namespace DietApp.UI
 {
     public partial class OzetEkrani : Form
     {
-        public KullaniciKisisel _kullanici;
+        public KullaniciGiris _kullanici;
 
-        public OzetEkrani(KullaniciGiris kullanici = null)
+        public OzetEkrani(KullaniciGiris kullanici)
         {
             InitializeComponent();
-            _kullanici = kullanici.KullaniciKisisel;
+            _kullanici = kullanici;
             InitializeComboBox();
 
+
+        }
+
+        public void RefreshDataGrid()
+        {
+            if (cmbOgun.SelectedItem == null) return;
+            if (Enum.TryParse(cmbOgun.SelectedItem.ToString(), out OgunCesitleri ogunCesiti))
+            {
+                dgv_OgundekiYemekler.DataSource = new YemekMiktariService().YemekleriGetir(dtpTarih.Value, ogunCesiti);
+
+                dgv_OgundekiYemekler.Columns["ID"].Visible = false;
+                dgv_OgundekiYemekler.Columns["YemekMiktarID"].Visible = false;
+            }
 
         }
 
@@ -33,7 +47,7 @@ namespace DietApp.UI
 
         private void OzetEkrani_Load(object sender, EventArgs e)
         {
-            
+            RefreshDataGrid();
 
         }
 
@@ -51,11 +65,18 @@ namespace DietApp.UI
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            if(cmbOgun.SelectedItem==null) return;
+            if (cmbOgun.SelectedItem == null) return;
             string secilenOgun = cmbOgun.SelectedItem.ToString();
-            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun,dtpTarih.Value);
 
-            userYemekEkleme.ShowDialog();
+
+
+            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun, dtpTarih.Value, _kullanici.KullaniciKisiselID);
+            userYemekEkleme.ShowDialog(this);
+        }
+
+        private void cmbOgun_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshDataGrid();
         }
     }
 }
