@@ -27,10 +27,10 @@ namespace DietApp.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-           // optionsBuilder.UseSqlServer(@"Server=DESKTOP-LLGUTIH; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
-            //  optionsBuilder.UseSqlServer(@"Server=DESKTOP-VU62QDF\SQLSERVERMS; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
+          // optionsBuilder.UseSqlServer(@"Server=DESKTOP-LLGUTIH; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
+             optionsBuilder.UseSqlServer(@"Server=DESKTOP-VU62QDF\SQLSERVERMS; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
 
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-G2S16HQ; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
+            //optionsBuilder.UseSqlServer(@"Server=DESKTOP-G2S16HQ; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -48,9 +48,14 @@ namespace DietApp.DAL
             modelBuilder.ApplyConfiguration(new KullaniciSuTakipConfiguration());
           
             modelBuilder.ApplyConfiguration(new UserYemekEklemeConfiguration());
+<<<<<<< HEAD
     
             modelBuilder.ApplyConfiguration(new YemekMiktariConfiguration());
             modelBuilder.Entity<YemekMiktarOgun>().HasOne(yo => yo.Yemek).WithMany(y => y.YemeginOgunleri).HasForeignKey(yo => yo.OgunID).HasForeignKey(yo => yo.YemekMiktarID);
+=======
+            modelBuilder.Entity<YemekMiktari>();
+            modelBuilder.Entity<YemekMiktarOgun>().HasOne(yo => yo.Yemek).WithMany(y => y.YemeginOgunleri).HasForeignKey(yo => yo.YemekMiktarID).HasForeignKey(yo => yo.OgunID);
+>>>>>>> damla
 
 
 

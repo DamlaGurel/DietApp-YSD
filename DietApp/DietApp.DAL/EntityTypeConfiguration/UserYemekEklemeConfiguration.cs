@@ -24,8 +24,7 @@ namespace DietApp.DAL.EntityTypeConfiguration
                     KarbonhidratMiktari = 19,
                     ProteinMiktari = 0.3,
                     YagMiktari = 0.3,
-                    Kalori = 95,
-                    FotografYolu = "Fotograflar\\Elma.jpg"
+                    Kalori = 95
                 });
         }
     }
