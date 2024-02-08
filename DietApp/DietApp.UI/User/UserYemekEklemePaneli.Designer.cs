@@ -95,6 +95,7 @@
             cmbYemekGirisi.Name = "cmbYemekGirisi";
             cmbYemekGirisi.Size = new Size(121, 28);
             cmbYemekGirisi.TabIndex = 17;
+            cmbYemekGirisi.SelectedIndexChanged += cmbYemekGirisi_SelectedIndexChanged;
             cmbYemekGirisi.KeyPress += cmbYemekGirisi_KeyPress;
             // 
             // txtMiktar
@@ -237,6 +238,7 @@
             pbGorsel.Margin = new Padding(2, 3, 2, 3);
             pbGorsel.Name = "pbGorsel";
             pbGorsel.Size = new Size(125, 139);
+            pbGorsel.SizeMode = PictureBoxSizeMode.StretchImage;
             pbGorsel.TabIndex = 27;
             pbGorsel.TabStop = false;
             // 

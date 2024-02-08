@@ -9,9 +9,8 @@ namespace DietApp.ViewModels
 {
     public class YemekGuncelleVm
     {
-        public Ogun Ogun { get; set; }
+        public int YemekMiktarID { get; set; }
         public int YemekID { get; set; }
-        public double MiktarGr { get; set; }
-        public string OgunAdi { get; set; }
+        public double Miktar { get; set; }
     }
 }

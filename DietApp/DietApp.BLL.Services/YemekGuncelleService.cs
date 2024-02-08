@@ -33,21 +33,29 @@ namespace DietApp.BLL.Services
         }
         public int YemekGuncelle(YemekListVm vm)
         {
-            YemekMiktari ym = _yemekMiktariRepo.GetByID(vm.YemekMiktarID);
-            Yemek ymk = _yemekRepo.GetByID(ym.YemekID);
-            ymk.Kategori = vm.Kat ;
-            return _yemekMiktariRepo.Update(vm);
-        }
-        public List<Yemek> YemekGetir(Kategori kat = null)
-        {
-            if (kat == null) { return _yemekRepo.GetAll().ToList(); }
 
-            return _yemekRepo.GetAll().Where(x => x.Kategori == kat).ToList();
+            YemekMiktari ymk = _yemekMiktariRepo.GetByID(vm.YemekMiktarID);
+            ymk.MiktarGr = vm.Miktar;
+            ymk.YemekID = vm.YemekID;
+
+            return _yemekMiktariRepo.Update(ymk);
         }
 
-        public List<Kategori> KategoriGetir()
+        public Yemek YemekGetir(int id)
         {
-            return _kategoriRepo.GetAll().ToList();
+            return _yemekRepo.GetByID(id);
+        }
+
+        public YemekMiktari YemekMiktarGetir(int id)
+        {
+            return _yemekMiktariRepo.GetByID(id);
+        }
+     
+    
+
+        public Kategori KategoriGetir(int id)
+        {
+            return _kategoriRepo.GetByID(id);
         }
     }
 }

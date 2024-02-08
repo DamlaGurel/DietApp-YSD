@@ -11,8 +11,9 @@ namespace DietApp.BLL.IServices
 {
     public interface IYemekGuncelleService
     {
-        List<Yemek> YemekGetir(Kategori kat = null);
-        List<Kategori> KategoriGetir();
+        Yemek YemekGetir(int id);
+        YemekMiktari YemekMiktarGetir(int id);
+        Kategori KategoriGetir(int id);
         int YemekGuncelle(YemekGuncelleVm vm);
        
 
