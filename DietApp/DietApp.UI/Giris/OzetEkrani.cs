@@ -1,5 +1,7 @@
 ﻿using DietApp.Entities;
 using DietApp.Enums;
+using DietApp.ViewModels;
+using DietApp.ViewModels.KullaniciGiris;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,7 +41,24 @@ namespace DietApp.UI
 
         private void btnDegistir_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Değiştirilmesini istediğiniz bir satırı seçiniz.");
+                return;
+            }
+            else if (dataGridView1.SelectedRows.Count == 1)
+            {
+                //YemekListesiVm?? olvm = (YemekListesiVm)dataGridView1.SelectedRows[0].DataBoundItem;
+                YemekGuncelleVm ygvm = new YemekGuncelleVm()
+                {
+                   MiktarGr = olvm.MiktarGr,
+                   YemekID = olvm.YemekID,
+                   OgunAdi = cmbOgun.SelectedItem.ToString(),
+                };
+                YemekGuncelle form = new YemekGuncelle(ygvm);
+                form.ShowDialog();
+            }
+            
         }
 
         int id;
