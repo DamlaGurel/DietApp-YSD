@@ -17,41 +17,66 @@ namespace DietApp.UI
 {
     public partial class YemekGuncelle : Form
     {
+
         IYemekGuncellemeService _service;
-       
+
+        IUserYemekEklemeService _ymkservice;
+        YemekListVm _vm;
 
 
-        public YemekGuncelle()
+
+
+
+        public YemekGuncelle(YemekListVm yemekList)
         {
             InitializeComponent();
+            _service = new YemekGuncelleService();
+            _vm = yemekList;
 
-            _service = new YemekGuncelleService();
-        }
-        public YemekGuncelle(YemekGuncelleVm yemekGuncelleVm)
-        {
-            InitializeComponent();
-            _service = new YemekGuncelleService();
-           
+            _ymkservice = new UserYemekEklemeService();
+
+            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir();
+            cmbYemekGirisi.DisplayMember = "YemekAdi";
+            cmbYemekGirisi.Text = string.Empty;
+
+            cmbKategori.DataSource = _ymkservice.KategoriGetir();
+            cmbKategori.DisplayMember = "KategoriAdi";
+            cmbKategori.Text = string.Empty;
+
+
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-
-            YemekGuncelleVm yemekGuncelle = new YemekGuncelleVm()
+            double miktar;
+            if (double.TryParse(txtMiktar.Text, out miktar))
             {
-                YemekID = _ygvm.YemekID,
-                MiktarGr = _ygvm.MiktarGr,
-                OgunAdi = _ygvm.OgunAdi
-            };
+                YemekGuncelleVm vm = new YemekGuncelleVm()
+                {
+                    YemekMiktarID=_vm.YemekMiktarID,
+                    YemekID = (cmbYemekGirisi.SelectedItem as Yemek).ID,
+                    Miktar = miktar
+                };
+                _service.YemekGuncelle(vm);
 
-            _service.YemekGuncelle(yemekGuncelle);
-            
+                var owner = (this.Owner) as OzetEkrani;
+                owner.RefreshDataGrid();
+            }
+            else
+                MessageBox.Show("Bir sayı giriniz!");
+
+
+
         }
 
         private void YemekGuncelle_Load(object sender, EventArgs e)
         {
-            txtMiktar.Text = _ygvm.MiktarGr.ToString();
-                
+            cmbKategori.SelectedItem = _service.KategoriGetir(_vm.KategoriID);
+            cmbYemekGirisi.SelectedItem = _service.YemekGetir(_service.YemekMiktarGetir(_vm.YemekMiktarID).YemekID);
+            txtMiktar.Text = _vm.Miktar.ToString();
+
+            
+
         }
     }
 }
