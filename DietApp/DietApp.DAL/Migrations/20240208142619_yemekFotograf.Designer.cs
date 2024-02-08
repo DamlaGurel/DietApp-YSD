@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-    [Migration("20240208114004_a")]
-    partial class a
+    [Migration("20240208142619_yemekFotograf")]
+    partial class yemekFotograf
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -206,7 +206,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(840),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 17, 26, 18, 896, DateTimeKind.Local).AddTicks(5622),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -222,7 +222,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 2,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(849),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 17, 26, 18, 896, DateTimeKind.Local).AddTicks(5631),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -238,7 +238,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 3,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(851),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 17, 26, 18, 896, DateTimeKind.Local).AddTicks(5633),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -254,7 +254,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 4,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(852),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 17, 26, 18, 896, DateTimeKind.Local).AddTicks(5634),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -270,7 +270,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 5,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(854),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 17, 26, 18, 896, DateTimeKind.Local).AddTicks(5636),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -355,6 +355,10 @@ namespace DietApp.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<string>("FotografYolu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Kalori")
                         .HasColumnType("float");
 
@@ -384,6 +388,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
+                            FotografYolu = "Fotograflar\\Elma.jpg",
                             Kalori = 95.0,
                             KarbonhidratMiktari = 19.0,
                             KategoriID = 1,

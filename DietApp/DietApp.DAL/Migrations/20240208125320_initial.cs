@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DietApp.DAL.Migrations
 {
-    public partial class a : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -239,11 +239,11 @@ namespace DietApp.DAL.Migrations
                 columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "KullaniciGirisID", "Soyisim", "Yas" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(840), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 1, "mehmet", 18 },
-                    { 2, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(849), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 2, "mehmet", 18 },
-                    { 3, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(851), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 3, "mehmet", 18 },
-                    { 4, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(852), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 4, "mehmet", 18 },
-                    { 5, new DateTime(2024, 2, 8, 14, 40, 4, 328, DateTimeKind.Local).AddTicks(854), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "admin", 80m, 5, "adminoğlu", 18 }
+                    { 1, new DateTime(2024, 2, 8, 15, 53, 20, 31, DateTimeKind.Local).AddTicks(5409), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 1, "mehmet", 18 },
+                    { 2, new DateTime(2024, 2, 8, 15, 53, 20, 31, DateTimeKind.Local).AddTicks(5421), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 2, "mehmet", 18 },
+                    { 3, new DateTime(2024, 2, 8, 15, 53, 20, 31, DateTimeKind.Local).AddTicks(5422), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 3, "mehmet", 18 },
+                    { 4, new DateTime(2024, 2, 8, 15, 53, 20, 31, DateTimeKind.Local).AddTicks(5424), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 4, "mehmet", 18 },
+                    { 5, new DateTime(2024, 2, 8, 15, 53, 20, 31, DateTimeKind.Local).AddTicks(5425), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "admin", 80m, 5, "adminoğlu", 18 }
                 });
 
             migrationBuilder.InsertData(

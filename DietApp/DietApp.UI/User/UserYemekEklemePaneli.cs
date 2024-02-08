@@ -3,6 +3,7 @@ using DietApp.BLL.Services;
 using DietApp.Entities;
 using DietApp.Enums;
 using DietApp.ViewModels;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +54,7 @@ namespace DietApp.UI
                 Ogun ogun = _service.TariheGoreOgunBul(ogunCesiti, DtpTarih.Date, ID);
                 _service.UserYemekEkleme(userYemekEkleme, ogun);
 
-              var owner = (this.Owner) as OzetEkrani;
+                var owner = (this.Owner) as OzetEkrani;
                 owner.RefreshDataGrid();
             }
         }
@@ -68,13 +69,25 @@ namespace DietApp.UI
             cmbKategori.DataSource = _service.KategoriGetir();
             cmbKategori.DisplayMember = "KategoriAdi";
             cmbKategori.Text = string.Empty;
-
             grpOgunAdi.Text = _ogunCesidi;
+
+            pbGorsel.Image = null;
         }
 
         private void cmbYemekGirisi_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
+
+        private void cmbYemekGirisi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Yemek seciliYemek = cmbYemekGirisi.SelectedItem as Yemek;
+            if (seciliYemek != null)
+            {
+                string path = Path.Combine(Application.StartupPath, seciliYemek.FotografYolu);
+                pbGorsel.Image = Image.FromFile(path);
+            }
+        }
+
     }
 }
