@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietApp.ViewModels.VucutIndeksiVms
+namespace DietApp.ViewModels.KullaniciKisiselVms
 {
-    public class VucutIndeksiVm
+    public class KullaniciKisiselUpdateVm
     {
+        public int ID { get; set; }
         public string Isim { get; set; }
         public string Soyisim { get; set; }
         public bool Cinsiyet { get; set; }
@@ -19,8 +20,5 @@ namespace DietApp.ViewModels.VucutIndeksiVms
         public double SuMiktari { get; set; }
         public DateTime BaslangicTarihi { get; set; }
         public DateTime BitisTarihi { get; set; }
-
-        public decimal IdealKilo { get; set; }
-
     }
 }

@@ -89,7 +89,7 @@ namespace DietApp.BLL.Services
 
             return true;
         }
-        public void KullaniciYarat(KullanicOlusturVm vm)
+        public int KullaniciYarat(KullanicOlusturVm vm)
         {
             KullaniciGiris kullanici = new KullaniciGiris()
             {
@@ -97,7 +97,20 @@ namespace DietApp.BLL.Services
                 Sifre = sha256_hash(vm.Sifre),
             };
 
-            _userRepo.Create(kullanici);
+            int kgId = _userRepo.Create(kullanici);
+
+            KullaniciKisisel kullaniciKisisel = new KullaniciKisisel()
+            {
+                KullaniciGirisID = kgId
+            };
+
+            int kkId = _userRepo.Create(kullanici);
+
+            kullanici.KullaniciKisiselID = kkId;
+            kullanici.KullaniciKisisel = kullaniciKisisel;
+
+            _userRepo.Update(kullanici);
+            return kkId;
         }
 
         public bool KullaniciGirisYap(KullaniciGirisVm vm)

@@ -1,15 +1,16 @@
-﻿using DietApp.Entities;
-using DietApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DietApp.ViewModels.KullaniciKisiselVms;
+
 
 namespace DietApp.BLL.IServices
 {
     public interface IKullaniciKisiselService
     {
+        int Create(KullaniciKisiselCreateVm vm);
+        int Update(KullaniciKisiselUpdateVm vm);
+        decimal IdealKiloHesapla(KullaniciKisiselVm vm, bool cinsiyet);
+        decimal VucutKitleIndeksiHesapla(KullaniciKisiselVm vm);
+        KullaniciKisiselUpdateVm GetByID(int id);
+        decimal GunlukKaloriIhtiyaci(KullaniciKisiselVm vm);
         KullaniciKisiselSuTakipVm GetByIdKisiselSuTakipVm(int id);
     }
 }

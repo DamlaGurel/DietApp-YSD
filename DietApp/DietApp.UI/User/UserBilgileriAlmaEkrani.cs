@@ -1,30 +1,22 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.BLL.Services;
 using DietApp.ViewModels.KullaniciGiris;
-using DietApp.ViewModels.VucutIndeksiVms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using DietApp.ViewModels.KullaniciKisiselVms;
 
 namespace DietApp.UI
 {
     public partial class UserBilgileriAlmaEkrani : Form
     {
-        IVucutIndeksiService _service;
-        KullaniciGirisService _kullaniciService;
+        IKullaniciGirisService _kullaniciService;
+        IKullaniciKisiselService _kullaniciKisiselService;
         public KullanicOlusturVm Vm { get; }
 
         public UserBilgileriAlmaEkrani(KullanicOlusturVm vm)
         {
             InitializeComponent();
-            _service = new VucutIndeksiService();
-            _kullaniciService=new KullaniciGirisService();
+            _kullaniciService = new KullaniciGirisService();
+            _kullaniciKisiselService = new KullaniciKisiselService();
+
             Vm = vm;
         }
 
@@ -36,63 +28,65 @@ namespace DietApp.UI
             frm.Show();
         }
 
-        private void btnVucutIndeksiHesapla_Click(object sender, EventArgs e)
+        private void btnKullaniciKisiselHesapla_Click(object sender, EventArgs e)
         {
-            VucutIndeksiVm vivm = new VucutIndeksiVm()
-            {
-                Boy = decimal.Parse(txtBoy.Text),
-                Kilo = decimal.Parse(txtKilo.Text),
-            };
+            int kullaniciKisiselId = new KullaniciGirisService().KullaniciYarat(Vm);
 
-            VucutIndeksiCreateVm vicm = new VucutIndeksiCreateVm
+            KullaniciKisiselUpdateVm vivm = new KullaniciKisiselUpdateVm()
             {
+                ID = kullaniciKisiselId,
                 Boy = decimal.Parse(txtBoy.Text),
                 Kilo = decimal.Parse(txtKilo.Text),
-                Isim = "Damla",
-                BaslangicTarihi = DateTime.Now,
-                BitisTarihi = DateTime.Now,
-                GunlukKalori = 1.2,
-                HedefKilo = 1.2M,
-                SuMiktari = 1.2,
-                Soyisim = "gürel",
-                IdealKilo = 1.2,
-                Yas = 20,
             };
 
             if (rbErkek.Checked)
-                vicm.Cinsiyet = false;
+                vivm.Cinsiyet = false;
             else if (rbKadin.Checked)
-                vicm.Cinsiyet = true;
+                vivm.Cinsiyet = true;
 
-            decimal vki = _service.VucutKitleIndeksiHesapla(vivm);
+            Vm.kullaniciKisiselID = _kullaniciKisiselService.Update(vivm);
+
+
+            KullaniciKisiselVm kisiselVm = new KullaniciKisiselVm()
+            {
+                Boy = vivm.Boy,
+                Kilo = vivm.Kilo,
+                Cinsiyet = vivm.Cinsiyet,
+            };
+            
+            decimal vki = _kullaniciKisiselService.VucutKitleIndeksiHesapla(kisiselVm);
             if (vki >= 20 && vki < 25)
             {
-                lblVucutIndeksi.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığındasınız.";
+                lblKullaniciKisisel.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığındasınız.";
             }
             else if (vki >= 25)
             {
-                lblVucutIndeksi.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığının üstündesiniz.";
+                lblKullaniciKisisel.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığının üstündesiniz.";
             }
             else if (vki < 20)
             {
-                lblVucutIndeksi.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığının üstündesiniz.";
+                lblKullaniciKisisel.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığının üstündesiniz.";
             }
 
-            lblIdealKilo.Text = "İdeal Kilonuz:" +  _service.IdealKiloHesapla(vivm, vicm.Cinsiyet);
+            lblIdealKilo.Text = "İdeal Kilonuz:" + _kullaniciKisiselService.IdealKiloHesapla(kisiselVm, vivm.Cinsiyet);
 
             txtHedefKilo.Text = lblIdealKilo.Text;
-            lblGunlukKaloriIhtiyaci.Text = "Gunluk kalori ihtiyacınız: " + _service.GunlukKaloriIhtiyaci(vivm);
+            lblGunlukKaloriIhtiyaci.Text = "Gunluk kalori ihtiyacınız: " + _kullaniciKisiselService.GunlukKaloriIhtiyaci(kisiselVm);
 
-            Vm.kullaniciKisiselID=_service.Create(vicm);
 
-            new KullaniciGirisService().KullaniciYarat(Vm);
+            
 
         }
 
         private void btnKaloriIhtiyaciniHesapla_Click(object sender, EventArgs e)
         {
-           
-            
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
