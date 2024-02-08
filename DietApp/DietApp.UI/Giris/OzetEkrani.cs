@@ -1,8 +1,7 @@
 ﻿using DietApp.BLL.Services;
 using DietApp.Entities;
 using DietApp.Enums;
-using DietApp.ViewModels;
-using DietApp.ViewModels.KullaniciGiris;
+using DietApp.UI.Rapor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,25 +54,8 @@ namespace DietApp.UI
 
         private void btnDegistir_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Değiştirilmesini istediğiniz bir satırı seçiniz.");
-                return;
-            }
-            else if (dataGridView1.SelectedRows.Count == 1)
-            {
-                Ogun secilenOgun = (Yeme)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                Yemek ygvm = new Yemek()
-                {
-                   ID = secilenOgun.,
-                };
-                YemekGuncelle form = new YemekGuncelle(ygvm);
-                form.ShowDialog();
-            }
-            
         }
-
         int id;
         private void btnSuTakip_Click(object sender, EventArgs e)
         {
@@ -95,6 +77,17 @@ namespace DietApp.UI
         private void cmbOgun_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshDataGrid();
+        }
+
+        private void btnKaldir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRaporlar_Click(object sender, EventArgs e)
+        {
+            AnaRaporEkrani anaRaporEkrani = new AnaRaporEkrani();
+            anaRaporEkrani.ShowDialog();
         }
     }
 }
