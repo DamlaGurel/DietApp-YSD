@@ -45,11 +45,9 @@
             txtMiktar = new TextBox();
             cmbYemekGirisi = new ComboBox();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
             grpOgunAdi = new GroupBox();
             grpYemekDetay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbGorsel).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             grpOgunAdi.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,6 +59,7 @@
             btnGuncelle.TabIndex = 24;
             btnGuncelle.Text = "GÜNCELLE";
             btnGuncelle.UseVisualStyleBackColor = true;
+            btnGuncelle.Click += btnGuncelle_Click;
             // 
             // grpYemekDetay
             // 
@@ -207,16 +206,6 @@
             label2.TabIndex = 16;
             label2.Text = "Yemek Girişi Yapınız:";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 605);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(776, 110);
-            dataGridView1.TabIndex = 25;
-            // 
             // grpOgunAdi
             // 
             grpOgunAdi.Controls.Add(label4);
@@ -237,16 +226,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(777, 715);
             Controls.Add(grpOgunAdi);
-            Controls.Add(dataGridView1);
             Controls.Add(btnGuncelle);
             Controls.Add(grpYemekDetay);
             Controls.Add(pbGorsel);
             Name = "YemekGuncelle";
             Text = "YemekGuncelle";
+            Load += YemekGuncelle_Load;
             grpYemekDetay.ResumeLayout(false);
             grpYemekDetay.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbGorsel).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             grpOgunAdi.ResumeLayout(false);
             grpOgunAdi.PerformLayout();
             ResumeLayout(false);
@@ -271,7 +259,6 @@
         private TextBox txtMiktar;
         private ComboBox cmbYemekGirisi;
         private Label label2;
-        private DataGridView dataGridView1;
         private GroupBox grpOgunAdi;
     }
 }
