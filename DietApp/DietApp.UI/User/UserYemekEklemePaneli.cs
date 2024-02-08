@@ -20,19 +20,16 @@ namespace DietApp.UI
     {
         IUserYemekEklemeService _service;
         string _ogunCesidi;
-        public UserYemekEklemePaneli()
-        {
-            InitializeComponent();
-            _service = new UserYemekEklemeService();
 
-            
-        }
-        public UserYemekEklemePaneli(string ogunCesidi)
+        public DateTime DtpTarih;
+
+        public UserYemekEklemePaneli(string ogunCesidi, DateTime tarih) 
         {
             InitializeComponent();
             _service = new UserYemekEklemeService();
 
             _ogunCesidi = ogunCesidi;
+            DtpTarih = tarih;
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -49,12 +46,12 @@ namespace DietApp.UI
 
             if (Enum.TryParse(_ogunCesidi, out OgunCesitleri ogunCesiti))
             {
-               
-                Ogun _ogun = new Ogun()
-                {
-                    OgunAdi = ogunCesiti,
-                };
-                _service.UserYemekEkleme(userYemekEkleme, _ogun);
+
+              Ogun ogun=  _service.TariheGoreOgunBul(ogunCesiti,DtpTarih);
+
+
+
+                _service.UserYemekEkleme(userYemekEkleme, ogun);
             }
         }
 

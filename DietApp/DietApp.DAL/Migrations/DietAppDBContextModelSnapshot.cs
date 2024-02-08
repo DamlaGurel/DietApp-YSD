@@ -137,6 +137,12 @@ namespace DietApp.DAL.Migrations
                             ID = 4,
                             KullaniciAdi = "admin",
                             Sifre = "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            KullaniciAdi = "a",
+                            Sifre = "CA978112CA1BBDCAFAC231B39A23DC4DA786EFF8147C4E72B9807785AFEE48BB"
                         });
                 });
 
@@ -191,7 +197,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 21, 16, 58, 260, DateTimeKind.Local).AddTicks(5878),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 14, 9, 7, 431, DateTimeKind.Local).AddTicks(7989),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,

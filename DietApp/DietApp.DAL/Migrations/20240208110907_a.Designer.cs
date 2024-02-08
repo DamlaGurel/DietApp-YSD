@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-    [Migration("20240207181534_b")]
-    partial class b
+    [Migration("20240208110907_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -139,6 +139,12 @@ namespace DietApp.DAL.Migrations
                             ID = 4,
                             KullaniciAdi = "admin",
                             Sifre = "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            KullaniciAdi = "a",
+                            Sifre = "CA978112CA1BBDCAFAC231B39A23DC4DA786EFF8147C4E72B9807785AFEE48BB"
                         });
                 });
 
@@ -193,7 +199,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 7, 21, 15, 33, 940, DateTimeKind.Local).AddTicks(1263),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 14, 9, 7, 431, DateTimeKind.Local).AddTicks(7989),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -354,9 +360,6 @@ namespace DietApp.DAL.Migrations
                     b.Property<int>("OgunID")
                         .HasColumnType("int");
 
-                    b.Property<int>("OgunID1")
-                        .HasColumnType("int");
-
                     b.Property<int>("YemekMiktarID")
                         .HasColumnType("int");
 
@@ -364,7 +367,7 @@ namespace DietApp.DAL.Migrations
 
                     b.HasIndex("OgunID");
 
-                    b.HasIndex("OgunID1");
+                    b.HasIndex("YemekMiktarID");
 
                     b.ToTable("YemekMiktarOgun");
                 });
@@ -442,15 +445,15 @@ namespace DietApp.DAL.Migrations
 
             modelBuilder.Entity("DietApp.Entities.YemekMiktarOgun", b =>
                 {
-                    b.HasOne("DietApp.Entities.YemekMiktari", "Yemek")
-                        .WithMany("YemeginOgunleri")
+                    b.HasOne("DietApp.Entities.Ogun", "Ogun")
+                        .WithMany("OgununYemekleri")
                         .HasForeignKey("OgunID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("DietApp.Entities.Ogun", "Ogun")
-                        .WithMany("OgununYemekleri")
-                        .HasForeignKey("OgunID1")
+                    b.HasOne("DietApp.Entities.YemekMiktari", "Yemek")
+                        .WithMany("YemeginOgunleri")
+                        .HasForeignKey("YemekMiktarID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

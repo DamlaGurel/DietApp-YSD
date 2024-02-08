@@ -2,6 +2,7 @@
 using DietApp.DAL.IRepositories;
 using DietApp.DAL.Repositories;
 using DietApp.Entities;
+using DietApp.Enums;
 using DietApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,24 @@ namespace DietApp.BLL.Services
             _kategoriRepo = new KategoriRepository();
         }
 
+        public Ogun TariheGoreOgunBul(OgunCesitleri cesit,DateTime time)
+        {
+            Ogun ogun = _ogunRepo.GetAll().FirstOrDefault(x => x.Tarih == time && x.OgunAdi == cesit);
+
+          if (ogun == null)
+            {
+                ogun = new Ogun()
+                {
+                    OgunAdi= cesit,
+                    Tarih= time,
+                };
+                _ogunRepo.Create(ogun);
+            }
+
+
+            return ogun;
+        }
+
         public void UserYemekEkleme(UserYemekEklemePaneliVm userYemekEkleme, Ogun ogun)
         {
             Yemek yemek = _yemekRepo.GetByID(userYemekEkleme.YemekID);
@@ -40,14 +59,14 @@ namespace DietApp.BLL.Services
                 ProteinMiktari = yemek.ProteinMiktari * userYemekEkleme.MiktarGr / 100,
                 YagMiktari = yemek.YagMiktari * userYemekEkleme.MiktarGr / 100,
             };
-
+            _yemekMiktariRepo.Create(yemekMiktari);
             YemekMiktarOgun yemekMiktarOgun = new YemekMiktarOgun()
             {
                 OgunID = ogun.ID,
                 YemekMiktarID = yemekMiktari.ID
             };
 
-            _yemekMiktariRepo.Create(yemekMiktari);
+          
             _yemekMiktariOgunRepo.Create(yemekMiktarOgun);
         }
 

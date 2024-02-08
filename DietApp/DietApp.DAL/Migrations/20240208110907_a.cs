@@ -213,21 +213,20 @@ namespace DietApp.DAL.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     YemekMiktarID = table.Column<int>(type: "int", nullable: false),
-                    OgunID = table.Column<int>(type: "int", nullable: false),
-                    OgunID1 = table.Column<int>(type: "int", nullable: false)
+                    OgunID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_YemekMiktarOgun", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_YemekMiktarOgun_Ogun_OgunID1",
-                        column: x => x.OgunID1,
+                        name: "FK_YemekMiktarOgun_Ogun_OgunID",
+                        column: x => x.OgunID,
                         principalTable: "Ogun",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_YemekMiktarOgun_YemekMiktari_OgunID",
-                        column: x => x.OgunID,
+                        name: "FK_YemekMiktarOgun_YemekMiktari_YemekMiktarID",
+                        column: x => x.YemekMiktarID,
                         principalTable: "YemekMiktari",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
@@ -246,13 +245,14 @@ namespace DietApp.DAL.Migrations
                     { 1, "YalinTuzmen", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
                     { 2, "SilaYildirim", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
                     { 3, "DamlaGurel", null, "A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3" },
-                    { 4, "admin", null, "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918" }
+                    { 4, "admin", null, "8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918" },
+                    { 5, "a", null, "CA978112CA1BBDCAFAC231B39A23DC4DA786EFF8147C4E72B9807785AFEE48BB" }
                 });
 
             migrationBuilder.InsertData(
                 table: "KullaniciKisisel",
                 columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "Soyisim", "Yas" },
-                values: new object[] { 1, new DateTime(2024, 2, 7, 21, 12, 1, 242, DateTimeKind.Local).AddTicks(8429), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, "mehmet", 18 });
+                values: new object[] { 1, new DateTime(2024, 2, 8, 14, 9, 7, 431, DateTimeKind.Local).AddTicks(7989), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, "mehmet", 18 });
 
             migrationBuilder.InsertData(
                 table: "Yemek",
@@ -302,9 +302,9 @@ namespace DietApp.DAL.Migrations
                 column: "OgunID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_YemekMiktarOgun_OgunID1",
+                name: "IX_YemekMiktarOgun_YemekMiktarID",
                 table: "YemekMiktarOgun",
-                column: "OgunID1");
+                column: "YemekMiktarID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

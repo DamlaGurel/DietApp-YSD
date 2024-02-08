@@ -28,7 +28,8 @@ namespace DietApp.DAL.EntityTypeConfiguration
 new KullaniciGiris { ID = 1, KullaniciAdi = "YalinTuzmen", Sifre = sha256_hash("123")},
 new KullaniciGiris { ID = 2, KullaniciAdi = "SilaYildirim", Sifre = sha256_hash("123") },
 new KullaniciGiris { ID = 3, KullaniciAdi = "DamlaGurel", Sifre = sha256_hash("123")},
-new KullaniciGiris { ID=4,KullaniciAdi="admin",Sifre= sha256_hash("admin") }
+new KullaniciGiris { ID=4,KullaniciAdi="admin",Sifre= sha256_hash("admin") },
+new KullaniciGiris { ID=5,KullaniciAdi="a",Sifre= sha256_hash("a") }
 );
 
         }

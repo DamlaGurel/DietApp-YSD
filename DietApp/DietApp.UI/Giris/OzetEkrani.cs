@@ -53,7 +53,7 @@ namespace DietApp.UI
         {
             if(cmbOgun.SelectedItem==null) return;
             string secilenOgun = cmbOgun.SelectedItem.ToString();
-            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun);
+            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun,dtpTarih.Value);
 
             userYemekEkleme.ShowDialog();
         }
