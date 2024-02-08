@@ -45,12 +45,14 @@ namespace DietApp.BLL.Services
                         select new
                         {
                             YemekMiktarID = miktar.ID,
+                            KategoriID = kategori.ID,
                             YemekAdi=yemek.YemekAdi,
                             Kalori=yemek.Kalori,
                             Kategori= kategori.KategoriAdi,
                             Karbonhidrat =yemek.KarbonhidratMiktari,
                             Protein=yemek.ProteinMiktari,
-                            Yag=yemek.YagMiktari
+                            Yag=yemek.YagMiktari,
+                            
 
                         };
 
@@ -61,6 +63,7 @@ namespace DietApp.BLL.Services
                 YemekListVm vm=new YemekListVm()
                 {
                     YemekMiktarID=a.YemekMiktarID,
+                    KategoriID=a.KategoriID,
                     YemekAdi=a.YemekAdi,
                     Kalori=a.Kalori,
                     Kategori=a.Kategori,

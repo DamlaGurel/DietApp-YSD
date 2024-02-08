@@ -10,6 +10,7 @@ namespace DietApp.ViewModels
     public class YemekListVm:BesinDegeri
     {
         public int YemekMiktarID { get; set; }
+        public int KategoriID { get; set; }
         public string YemekAdi { get; set; }
         public string Kategori { get; set; }
 
