@@ -1,6 +1,6 @@
 ﻿using DietApp.Entities;
 using DietApp.ViewModels;
-using DietApp.ViewModels.VucutIndeksiVms;
+using DietApp.ViewModels.KullaniciKisiselVms;
 using System;
 using System.Collections.Generic;
 using System.Linq;

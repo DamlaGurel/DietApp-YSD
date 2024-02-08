@@ -17,7 +17,8 @@ namespace DietApp.Core
         public int Create(TEntity entity)
         {
             _context.Add(entity);
-            return _context.SaveChanges();
+            _context.SaveChanges();
+            return entity.ID;
         }
 
         public int Delete(TEntity entity)
