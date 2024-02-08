@@ -33,7 +33,7 @@ namespace DietApp.BLL.Services
         }
 
 
-        public bool KullaniciYarat(KullanicOlusturVm vm, ref string errorMessage)
+        public bool KullaniciYaratabilirMi(KullanicOlusturVm vm, ref string errorMessage)
         {
             bool kullaniciVarMi = _userRepo.GetAll().ToList().Exists(x => x.KullaniciAdi.Equals(vm.KullaniciAdi));
 
@@ -85,6 +85,12 @@ namespace DietApp.BLL.Services
                 return false;
             }
 
+
+
+            return true;
+        }
+        public void KullaniciYarat(KullanicOlusturVm vm)
+        {
             KullaniciGiris kullanici = new KullaniciGiris()
             {
                 KullaniciAdi = vm.KullaniciAdi,
@@ -92,8 +98,6 @@ namespace DietApp.BLL.Services
             };
 
             _userRepo.Create(kullanici);
-
-            return true;
         }
 
         public bool KullaniciGirisYap(KullaniciGirisVm vm)
@@ -120,6 +124,7 @@ namespace DietApp.BLL.Services
 
             return kullanici;
         }
+
 
     }
 }

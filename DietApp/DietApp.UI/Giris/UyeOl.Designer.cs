@@ -47,7 +47,7 @@
             // txtKullaniciAdi
             // 
             txtKullaniciAdi.Location = new Point(107, 40);
-            txtKullaniciAdi.Margin = new Padding(2, 2, 2, 2);
+            txtKullaniciAdi.Margin = new Padding(2);
             txtKullaniciAdi.Name = "txtKullaniciAdi";
             txtKullaniciAdi.Size = new Size(106, 23);
             txtKullaniciAdi.TabIndex = 0;
@@ -55,7 +55,7 @@
             // txtSifre
             // 
             txtSifre.Location = new Point(107, 80);
-            txtSifre.Margin = new Padding(2, 2, 2, 2);
+            txtSifre.Margin = new Padding(2);
             txtSifre.Name = "txtSifre";
             txtSifre.Size = new Size(106, 23);
             txtSifre.TabIndex = 1;
@@ -63,7 +63,7 @@
             // txtSifreTekrari
             // 
             txtSifreTekrari.Location = new Point(107, 121);
-            txtSifreTekrari.Margin = new Padding(2, 2, 2, 2);
+            txtSifreTekrari.Margin = new Padding(2);
             txtSifreTekrari.Name = "txtSifreTekrari";
             txtSifreTekrari.Size = new Size(106, 23);
             txtSifreTekrari.TabIndex = 2;
@@ -140,19 +140,19 @@
             grpUyelik.Controls.Add(label3);
             grpUyelik.Controls.Add(label2);
             grpUyelik.Location = new Point(23, 39);
-            grpUyelik.Margin = new Padding(2, 2, 2, 2);
+            grpUyelik.Margin = new Padding(2);
             grpUyelik.Name = "grpUyelik";
-            grpUyelik.Padding = new Padding(2, 2, 2, 2);
+            grpUyelik.Padding = new Padding(2);
             grpUyelik.Size = new Size(413, 265);
             grpUyelik.TabIndex = 9;
             grpUyelik.TabStop = false;
             grpUyelik.Text = "UyeOlmaPaneli";
             // 
-            // chkAydinlanmaMetni
+            // chkAydinlatmaMetni
             // 
             chkAydinlatmaMetni.Location = new Point(18, 153);
-            chkAydinlatmaMetni.Margin = new Padding(2, 2, 2, 2);
-            chkAydinlatmaMetni.Name = "chkAydinlanmaMetni";
+            chkAydinlatmaMetni.Margin = new Padding(2);
+            chkAydinlatmaMetni.Name = "chkAydinlatmaMetni";
             chkAydinlatmaMetni.Size = new Size(267, 58);
             chkAydinlatmaMetni.TabIndex = 13;
             chkAydinlatmaMetni.Text = "Kişisel verilerimin işlenmesine yönelik aydınlatma metinini okudum, anladım ve onaylıyorum.";
@@ -172,7 +172,7 @@
             // btnUyeOl
             // 
             btnUyeOl.Location = new Point(18, 229);
-            btnUyeOl.Margin = new Padding(2, 2, 2, 2);
+            btnUyeOl.Margin = new Padding(2);
             btnUyeOl.Name = "btnUyeOl";
             btnUyeOl.Size = new Size(191, 20);
             btnUyeOl.TabIndex = 10;
@@ -186,9 +186,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(443, 309);
             Controls.Add(grpUyelik);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UyeOl";
             Text = "UyeOl";
+            FormClosed += UyeOl_FormClosed;
             grpUyelik.ResumeLayout(false);
             grpUyelik.PerformLayout();
             ResumeLayout(false);

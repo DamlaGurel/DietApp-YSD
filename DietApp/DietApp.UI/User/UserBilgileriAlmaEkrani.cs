@@ -20,21 +20,20 @@ namespace DietApp.UI
         KullaniciGirisService _kullaniciService;
         public KullanicOlusturVm Vm { get; }
 
-        public UserBilgileriAlmaEkrani()
+        public UserBilgileriAlmaEkrani(KullanicOlusturVm vm)
         {
             InitializeComponent();
             _service = new VucutIndeksiService();
-        }
-
-        public UserBilgileriAlmaEkrani(KullanicOlusturVm vm)
-        {
+            _kullaniciService=new KullaniciGirisService();
             Vm = vm;
         }
+
 
         private void btnAnaEkranaGec_Click(object sender, EventArgs e)
         {
             Form frm = new OzetEkrani(_kullaniciService.KullaniciBul(Vm.KullaniciAdi));
-            frm.ShowDialog();
+            this.Hide();
+            frm.Show();
         }
 
         private void btnVucutIndeksiHesapla_Click(object sender, EventArgs e)
@@ -84,9 +83,9 @@ namespace DietApp.UI
             txtHedefKilo.Text = lblIdealKilo.Text;
             lblGunlukKaloriIhtiyaci.Text = "Gunluk kalori ihtiyacınız: " + _service.GunlukKaloriIhtiyaci(vivm);
 
-            _service.Create(vicm);
+            Vm.kullaniciKisiselID=_service.Create(vicm);
 
-           
+            new KullaniciGirisService().KullaniciYarat(Vm);
 
         }
 

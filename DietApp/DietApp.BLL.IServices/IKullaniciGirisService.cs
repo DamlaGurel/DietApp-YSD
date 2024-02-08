@@ -9,8 +9,9 @@ namespace DietApp.BLL.IServices
 {
     public interface IKullaniciGirisService
     {
-            public bool KullaniciYarat(KullanicOlusturVm vm, ref string errorMessage);
-            public bool KullaniciGirisYap(KullaniciGirisVm vm);
+        public void KullaniciYarat(KullanicOlusturVm vm);
+        bool KullaniciYaratabilirMi(KullanicOlusturVm vm, ref string errorMessage);
+        public bool KullaniciGirisYap(KullaniciGirisVm vm);
 
     }
 }

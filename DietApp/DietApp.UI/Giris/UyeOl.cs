@@ -18,7 +18,7 @@ namespace DietApp.UI
         public UyeOl()
         {
             InitializeComponent();
-            _service=new KullaniciGirisService();
+            _service = new KullaniciGirisService();
         }
         string hata;
         private void btnUyeOl_Click(object sender, EventArgs e)
@@ -30,8 +30,8 @@ namespace DietApp.UI
 
             KullanicOlusturVm vm = new KullanicOlusturVm()
             {
-                KullaniciAdi=txtKullaniciAdi.Text,
-                Sifre=txtSifre.Text,
+                KullaniciAdi = txtKullaniciAdi.Text,
+                Sifre = txtSifre.Text,
             };
 
             if (txtSifre.Text != txtSifreTekrari.Text)
@@ -40,11 +40,12 @@ namespace DietApp.UI
             }
 
 
-            if (_service.KullaniciYarat(vm, ref hata))
+            if (_service.KullaniciYaratabilirMi(vm, ref hata))
             {
                 Form frm = new UserBilgileriAlmaEkrani(vm);
-                frm.ShowDialog();
                 this.Hide();
+                frm.Show();
+
             }
             else
             {
@@ -53,6 +54,13 @@ namespace DietApp.UI
 
 
 
+        }
+
+
+
+        private void UyeOl_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

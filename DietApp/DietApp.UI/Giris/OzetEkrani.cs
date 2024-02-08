@@ -15,12 +15,12 @@ namespace DietApp.UI
 {
     public partial class OzetEkrani : Form
     {
-        public KullaniciGiris Kullanici;
+        public KullaniciKisisel _kullanici;
 
         public OzetEkrani(KullaniciGiris kullanici = null)
         {
             InitializeComponent();
-            Kullanici = kullanici;
+            _kullanici = kullanici.KullaniciKisisel;
             InitializeComboBox();
 
 
@@ -51,6 +51,7 @@ namespace DietApp.UI
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
+            if(cmbOgun.SelectedItem==null) return;
             string secilenOgun = cmbOgun.SelectedItem.ToString();
             UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun);
 

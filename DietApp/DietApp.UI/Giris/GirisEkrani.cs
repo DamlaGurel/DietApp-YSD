@@ -26,7 +26,8 @@ namespace DietApp.UI
         private void btnUyeOl_Click(object sender, EventArgs e)
         {
             Form frm = new UyeOl();
-            frm.ShowDialog();
+            this.Hide();
+            frm.ShowDialog(this);
         }
 
         private void btnGirisYap_Click(object sender, EventArgs e)
@@ -43,8 +44,9 @@ namespace DietApp.UI
 
 
                 Form frm = new OzetEkrani(_service.KullaniciBul(vm.KullaniciAdi));
-                frm.ShowDialog();
                 this.Hide();
+                frm.Show();
+               
             }
           else
             {

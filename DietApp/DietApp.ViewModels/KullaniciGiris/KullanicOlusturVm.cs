@@ -8,6 +8,7 @@ namespace DietApp.ViewModels.KullaniciGiris
 {
     public class KullanicOlusturVm
     {
+        public int kullaniciKisiselID;
         public string KullaniciAdi {  get; set; }
         public string Sifre { get; set; }
     }
