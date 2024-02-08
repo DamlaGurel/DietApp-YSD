@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace DietApp.BLL.Services
 {
-    public class YemekGuncelleService : IYemekGuncellemeService
+    public class YemekGuncelleService : IYemekGuncelleService
     {
 
         IOgunRepository _ogunRepo;
@@ -31,15 +31,12 @@ namespace DietApp.BLL.Services
             _yemekMiktariOgunRepo = new YemekMiktarOgunRepository();
             _kategoriRepo = new KategoriRepository();
         }
-        public int YemekGuncelle(YemekGuncelleVm vm)
+        public int YemekGuncelle(YemekListVm vm)
         {
-            Ogun guncellenmisYemek = new Ogun()
-            {
-                MiktarGr = vm.MiktarGr,
-                YemekID = vm.YemekID,
-             };
-
-            return _yemekRepo.Update(guncellenmisYemek);
+            YemekMiktari ym = _yemekMiktariRepo.GetByID(vm.YemekMiktarID);
+            Yemek ymk = _yemekRepo.GetByID(ym.YemekID);
+            ymk.Kategori = vm.Kat ;
+            return _yemekMiktariRepo.Update(vm);
         }
         public List<Yemek> YemekGetir(Kategori kat = null)
         {

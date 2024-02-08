@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 
 namespace DietApp.BLL.IServices
 {
-    public interface IYemekGuncellemeService
+    public interface IYemekGuncelleService
     {
         List<Yemek> YemekGetir(Kategori kat = null);
         List<Kategori> KategoriGetir();
         int YemekGuncelle(YemekGuncelleVm vm);
+       
+
     }
 }
