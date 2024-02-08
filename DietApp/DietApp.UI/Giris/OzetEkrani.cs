@@ -48,12 +48,11 @@ namespace DietApp.UI
             }
             else if (dataGridView1.SelectedRows.Count == 1)
             {
-                //YemekListesiVm?? olvm = (YemekListesiVm)dataGridView1.SelectedRows[0].DataBoundItem;
-                YemekGuncelleVm ygvm = new YemekGuncelleVm()
+                Ogun secilenOgun = (Yeme)dataGridView1.SelectedRows[0].DataBoundItem;
+
+                Yemek ygvm = new Yemek()
                 {
-                   MiktarGr = olvm.MiktarGr,
-                   YemekID = olvm.YemekID,
-                   OgunAdi = cmbOgun.SelectedItem.ToString(),
+                   ID = secilenOgun.,
                 };
                 YemekGuncelle form = new YemekGuncelle(ygvm);
                 form.ShowDialog();

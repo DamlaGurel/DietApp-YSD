@@ -18,7 +18,7 @@ namespace DietApp.UI
     public partial class YemekGuncelle : Form
     {
         IYemekGuncellemeService _service;
-        YemekGuncelleVm _ygvm;
+       
 
 
         public YemekGuncelle()
@@ -31,7 +31,7 @@ namespace DietApp.UI
         {
             InitializeComponent();
             _service = new YemekGuncelleService();
-            _ygvm = yemekGuncelleVm;
+           
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
