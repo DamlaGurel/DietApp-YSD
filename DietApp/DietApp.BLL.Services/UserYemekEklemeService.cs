@@ -4,11 +4,7 @@ using DietApp.DAL.Repositories;
 using DietApp.Entities;
 using DietApp.Enums;
 using DietApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DietApp.ViewModels.KullaniciKisiselVms;
 
 namespace DietApp.BLL.Services
 {
@@ -19,6 +15,7 @@ namespace DietApp.BLL.Services
         IYemekMiktariRepository _yemekMiktariRepo;
         IYemekMiktarOgunRepository _yemekMiktariOgunRepo;
         IKategoriRepository _kategoriRepo;
+        IKullaniciKisiselRepository _kullaniciKisiselRepo;
         public UserYemekEklemeService()
         {
             _ogunRepo = new OgunRepository();
@@ -26,11 +23,15 @@ namespace DietApp.BLL.Services
             _yemekMiktariRepo = new YemekMiktariRepository();
             _yemekMiktariOgunRepo = new YemekMiktarOgunRepository();
             _kategoriRepo = new KategoriRepository();
+            _kullaniciKisiselRepo = new KullaniciKisiselRepository();
+
         }
 
         public Ogun TariheGoreOgunBul(OgunCesitleri cesit, DateTime time, int KullaniciID)
         {
             Ogun ogun = _ogunRepo.GetAll().FirstOrDefault(x => x.Tarih == time && x.OgunAdi == cesit);
+
+            //KullaniciKisisel kkObj = _kullaniciKisiselRepo.GetByID(KullaniciID);
 
             if (ogun == null)
             {
@@ -42,7 +43,7 @@ namespace DietApp.BLL.Services
                     KarbonhidratMiktari = 0,
                     ProteinMiktari = 0,
                     Kalori = 0,
-                    YagMiktari = 0
+                    YagMiktari = 0,
                 };
                 _ogunRepo.Create(ogun);
             }
@@ -77,6 +78,7 @@ namespace DietApp.BLL.Services
                 YemekMiktarID = yemekMiktari.ID,
 
             };
+
 
             _ogunRepo.Update(ogun);
             _yemekMiktariOgunRepo.Create(yemekMiktarOgun);

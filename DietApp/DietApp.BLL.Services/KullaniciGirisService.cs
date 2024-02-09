@@ -1,4 +1,5 @@
 ﻿using DietApp.BLL.IServices;
+using DietApp.DAL.IRepositories;
 using DietApp.DAL.Repositories;
 using DietApp.Entities;
 using DietApp.ViewModels.KullaniciGiris;
@@ -15,12 +16,14 @@ namespace DietApp.BLL.Services
 {
     public class KullaniciGirisService : IKullaniciGirisService
     {
-        UserRepository _userRepo;
+        IUserRepository _userRepo;
+        IKullaniciKisiselRepository _kullaniciKisiselRepository;
         string[] special = new string[] { "!", ":", "+", "*" };
 
         public KullaniciGirisService()
         {
             _userRepo = new UserRepository();
+            _kullaniciKisiselRepository = new KullaniciKisiselRepository();
         }
 
 
@@ -89,7 +92,7 @@ namespace DietApp.BLL.Services
 
             return true;
         }
-        public void KullaniciYarat(KullanicOlusturVm vm)
+        public int KullaniciYarat(KullanicOlusturVm vm)
         {
             KullaniciGiris kullanici = new KullaniciGiris()
             {
@@ -97,7 +100,9 @@ namespace DietApp.BLL.Services
                 Sifre = sha256_hash(vm.Sifre),
             };
 
-            _userRepo.Create(kullanici);
+            int kgId = _userRepo.Create(kullanici);
+
+            return kgId;
         }
 
         public bool KullaniciGirisYap(KullaniciGirisVm vm)
@@ -124,7 +129,12 @@ namespace DietApp.BLL.Services
 
             return kullanici;
         }
+        public KullaniciGiris KullaniciGetById(int kullaniciId)
+        {
+            KullaniciGiris kullanici = _userRepo.GetByID(kullaniciId);
 
+            return kullanici;
+        }
 
     }
 }

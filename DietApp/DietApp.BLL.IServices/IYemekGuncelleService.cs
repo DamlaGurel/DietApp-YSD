@@ -1,6 +1,6 @@
 ﻿using DietApp.Entities;
 using DietApp.ViewModels;
-using DietApp.ViewModels.VucutIndeksiVms;
+using DietApp.ViewModels.KullaniciKisiselVms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +11,10 @@ namespace DietApp.BLL.IServices
 {
     public interface IYemekGuncelleService
     {
-        Yemek YemekGetir(int id);
-        YemekMiktari YemekMiktarGetir(int id);
-        int YemekGuncelle(YemekGuncelleVm vm);
+        public Yemek YemekGetir(int id);
+        public YemekMiktari YemekMiktarGetir(int id);
+        public Kategori KategoriGetir(int id);
+        public int YemekGuncelle(YemekGuncelleVm vm);
        
-
     }
 }

@@ -33,8 +33,8 @@
             rbKadin = new RadioButton();
             rbErkek = new RadioButton();
             label3 = new Label();
-            lblVucutIndeksi = new Label();
-            btnVucutIndeksiHesapla = new Button();
+            lblKullaniciKisisel = new Label();
+            btnKullaniciKisiselHesapla = new Button();
             txtBoy = new TextBox();
             txtKilo = new TextBox();
             label5 = new Label();
@@ -100,24 +100,24 @@
             label3.TabIndex = 4;
             label3.Text = "Vücut İndeksiniz:";
             // 
-            // lblVucutIndeksi
+            // lblKullaniciKisisel
             // 
-            lblVucutIndeksi.AutoSize = true;
-            lblVucutIndeksi.Location = new Point(189, 60);
-            lblVucutIndeksi.Name = "lblVucutIndeksi";
-            lblVucutIndeksi.Size = new Size(17, 25);
-            lblVucutIndeksi.TabIndex = 5;
-            lblVucutIndeksi.Text = " ";
+            lblKullaniciKisisel.AutoSize = true;
+            lblKullaniciKisisel.Location = new Point(189, 60);
+            lblKullaniciKisisel.Name = "lblKullaniciKisisel";
+            lblKullaniciKisisel.Size = new Size(17, 25);
+            lblKullaniciKisisel.TabIndex = 5;
+            lblKullaniciKisisel.Text = " ";
             // 
-            // btnVucutIndeksiHesapla
+            // btnKullaniciKisiselHesapla
             // 
-            btnVucutIndeksiHesapla.Location = new Point(94, 221);
-            btnVucutIndeksiHesapla.Name = "btnVucutIndeksiHesapla";
-            btnVucutIndeksiHesapla.Size = new Size(211, 74);
-            btnVucutIndeksiHesapla.TabIndex = 6;
-            btnVucutIndeksiHesapla.Text = "VÜCUT İNDEKSİ HESAPLA";
-            btnVucutIndeksiHesapla.UseVisualStyleBackColor = true;
-            btnVucutIndeksiHesapla.Click += btnVucutIndeksiHesapla_Click;
+            btnKullaniciKisiselHesapla.Location = new Point(94, 221);
+            btnKullaniciKisiselHesapla.Name = "btnKullaniciKisiselHesapla";
+            btnKullaniciKisiselHesapla.Size = new Size(211, 74);
+            btnKullaniciKisiselHesapla.TabIndex = 6;
+            btnKullaniciKisiselHesapla.Text = "VÜCUT İNDEKSİ HESAPLA";
+            btnKullaniciKisiselHesapla.UseVisualStyleBackColor = true;
+            btnKullaniciKisiselHesapla.Click += btnKullaniciKisiselHesapla_Click;
             // 
             // txtBoy
             // 
@@ -180,9 +180,9 @@
             // 
             grpVucutIndeksBilgi.Controls.Add(lblIdealKilo);
             grpVucutIndeksBilgi.Controls.Add(label6);
-            grpVucutIndeksBilgi.Controls.Add(lblVucutIndeksi);
+            grpVucutIndeksBilgi.Controls.Add(lblKullaniciKisisel);
             grpVucutIndeksBilgi.Controls.Add(label3);
-            grpVucutIndeksBilgi.Controls.Add(btnVucutIndeksiHesapla);
+            grpVucutIndeksBilgi.Controls.Add(btnKullaniciKisiselHesapla);
             grpVucutIndeksBilgi.Location = new Point(53, 265);
             grpVucutIndeksBilgi.Name = "grpVucutIndeksBilgi";
             grpVucutIndeksBilgi.Size = new Size(412, 325);
@@ -262,8 +262,8 @@
         private RadioButton rbKadin;
         private RadioButton rbErkek;
         private Label label3;
-        private Label lblVucutIndeksi;
-        private Button btnVucutIndeksiHesapla;
+        private Label lblKullaniciKisisel;
+        private Button btnKullaniciKisiselHesapla;
         private TextBox txtBoy;
         private TextBox txtKilo;
         private Label label5;
