@@ -13,15 +13,15 @@ namespace DietApp.ViewModels.KullaniciKisiselVms
         public string Soyisim { get; set; }
         public bool Cinsiyet { get; set; }
         public int Yas { get; set; }
-        public decimal Boy { get; set; }
-        public decimal Kilo { get; set; }
-        public decimal HedefKilo { get; set; }
+        public double Boy { get; set; }
+        public double Kilo { get; set; }
+        public double HedefKilo { get; set; }
         public double GunlukKalori { get; set; }
         public double SuMiktari { get; set; }
         public DateTime BaslangicTarihi { get; set; }
         public DateTime BitisTarihi { get; set; }
 
-        public decimal IdealKilo { get; set; }
+        public double IdealKilo { get; set; }
 
     }
 }

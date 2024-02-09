@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-    [Migration("20240208150431_a")]
-    partial class a
+    [Migration("20240208205049_mig1")]
+    partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -163,8 +163,8 @@ namespace DietApp.DAL.Migrations
                     b.Property<DateTime>("BitisTarihi")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Boy")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Boy")
+                        .HasColumnType("double(18,2)");
 
                     b.Property<bool>("Cinsiyet")
                         .HasColumnType("bit");
@@ -172,8 +172,8 @@ namespace DietApp.DAL.Migrations
                     b.Property<double>("GunlukKalori")
                         .HasColumnType("float");
 
-                    b.Property<decimal>("HedefKilo")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("HedefKilo")
+                        .HasColumnType("double(18,2)");
 
                     b.Property<double>("HedefSuMiktari")
                         .HasColumnType("float");
@@ -182,8 +182,8 @@ namespace DietApp.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Kilo")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Kilo")
+                        .HasColumnType("double(18,2)");
 
                     b.Property<int>("KullaniciGirisID")
                         .HasColumnType("int");
@@ -206,7 +206,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2034),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 23, 50, 49, 601, DateTimeKind.Local).AddTicks(2507),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -222,7 +222,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 2,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2043),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 23, 50, 49, 601, DateTimeKind.Local).AddTicks(2519),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -238,7 +238,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 3,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2044),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 23, 50, 49, 601, DateTimeKind.Local).AddTicks(2522),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -254,7 +254,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 4,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2046),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 23, 50, 49, 601, DateTimeKind.Local).AddTicks(2523),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -270,7 +270,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 5,
-                            BaslangicTarihi = new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2047),
+                            BaslangicTarihi = new DateTime(2024, 2, 8, 23, 50, 49, 601, DateTimeKind.Local).AddTicks(2525),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170m,
                             Cinsiyet = false,
@@ -355,6 +355,10 @@ namespace DietApp.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
+                    b.Property<string>("FotografYolu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<double>("Kalori")
                         .HasColumnType("float");
 
@@ -384,6 +388,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
+                            FotografYolu = "Fotograflar\\Elma.jpg",
                             Kalori = 95.0,
                             KarbonhidratMiktari = 19.0,
                             KategoriID = 1,
