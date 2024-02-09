@@ -17,6 +17,7 @@ namespace DietApp.UI
 {
     public partial class YemekGuncelle : Form
     {
+
         IYemekGuncellemeService _service;
        YemekListVm _vm;
         
@@ -46,8 +47,12 @@ namespace DietApp.UI
 
         private void YemekGuncelle_Load(object sender, EventArgs e)
         {
-            txtMiktar.Text = _ygvm.MiktarGr.ToString();
-                
+            cmbKategori.SelectedItem = _service.KategoriGetir(_vm.KategoriID);
+            cmbYemekGirisi.SelectedItem = _service.YemekGetir(_service.YemekMiktarGetir(_vm.YemekMiktarID).YemekID);
+            txtMiktar.Text = _vm.Miktar.ToString();
+
+            
+
         }
     }
 }

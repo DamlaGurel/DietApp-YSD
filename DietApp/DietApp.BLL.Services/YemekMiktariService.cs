@@ -52,7 +52,7 @@ namespace DietApp.BLL.Services
                             Karbonhidrat =yemek.KarbonhidratMiktari,
                             Protein=yemek.ProteinMiktari,
                             Yag=yemek.YagMiktari,
-                            
+                            Miktar=miktar.MiktarGr
 
                         };
 
@@ -69,7 +69,8 @@ namespace DietApp.BLL.Services
                     Kategori=a.Kategori,
                     KarbonhidratMiktari=a.Karbonhidrat,
                     ProteinMiktari=a.Protein,
-                    YagMiktari=a.Yag
+                    YagMiktari=a.Yag,
+                    Miktar=a.Miktar
                 };
                 vmlist.Add(vm);
             }

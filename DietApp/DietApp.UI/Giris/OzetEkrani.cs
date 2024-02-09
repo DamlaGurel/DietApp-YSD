@@ -38,6 +38,7 @@ namespace DietApp.UI
 
                 dgv_OgundekiYemekler.Columns["ID"].Visible = false;
                 dgv_OgundekiYemekler.Columns["YemekMiktarID"].Visible = false;
+                dgv_OgundekiYemekler.Columns["KategoriID"].Visible = false;
             }
 
         }
@@ -50,28 +51,24 @@ namespace DietApp.UI
         private void OzetEkrani_Load(object sender, EventArgs e)
         {
             RefreshDataGrid();
-
         }
 
         private void btnDegistir_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 0)
+            if (dgv_OgundekiYemekler.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Değiştirilmesini istediğiniz bir satırı seçiniz.");
                 return;
             }
-            else if (dataGridView1.SelectedRows.Count == 1)
+            else if (dgv_OgundekiYemekler.SelectedRows.Count == 1)
             {
-                Ogun secilenOgun = (Yeme)dataGridView1.SelectedRows[0].DataBoundItem;
+                YemekListVm secilenOgun = (YemekListVm)dgv_OgundekiYemekler.SelectedRows[0].DataBoundItem;
 
-                Yemek ygvm = new Yemek()
-                {
-                   ID = secilenOgun.,
-                };
-                YemekGuncelle form = new YemekGuncelle(ygvm);
-                form.ShowDialog();
+
+                YemekGuncelle form = new YemekGuncelle(secilenOgun);
+                form.ShowDialog(this);
             }
-            
+
         }
 
         int id;
@@ -95,6 +92,15 @@ namespace DietApp.UI
         private void cmbOgun_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshDataGrid();
+        }
+
+        private void btnKaldir_Click(object sender, EventArgs e)
+        {
+            if (cmbOgun.SelectedItem == null) return;
+
+            YemekListVm secilenOgun = (YemekListVm)dgv_OgundekiYemekler.SelectedRows[0].DataBoundItem;
+
+
         }
     }
 }

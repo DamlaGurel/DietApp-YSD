@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace DietApp.ViewModels
 {
-    public class YemekListVm:BesinDegeri
+    public class YemekListVm : BesinDegeri
     {
         public int YemekMiktarID { get; set; }
         public int KategoriID { get; set; }
         public string YemekAdi { get; set; }
         public string Kategori { get; set; }
+        public double Miktar { get; set; }
 
     }
 }
