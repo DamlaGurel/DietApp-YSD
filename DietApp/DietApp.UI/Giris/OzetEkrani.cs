@@ -2,6 +2,7 @@
 using DietApp.BLL.Services;
 using DietApp.Entities;
 using DietApp.Enums;
+using DietApp.UI.Rapor;
 using DietApp.ViewModels;
 using DietApp.ViewModels.KullaniciKisiselVms;
 
@@ -79,14 +80,11 @@ namespace DietApp.UI
             {
                 YemekListVm secilenOgun = (YemekListVm)dgv_OgundekiYemekler.SelectedRows[0].DataBoundItem;
 
-
                 YemekGuncelle form = new YemekGuncelle(secilenOgun);
                 form.ShowDialog(this);
             }
-
         }
 
-        int id;
         private void btnSuTakip_Click(object sender, EventArgs e)
         {
             SuTakipEkrani suTakipEkrani = new SuTakipEkrani(_kkId, dtpTarih.Value.Date);
@@ -117,6 +115,12 @@ namespace DietApp.UI
             new YemekGuncelleService().YemekSil(secilenOgun.YemekMiktarID);
             RefreshDataGrid();
 
+        }
+
+        private void btnRaporlar_Click(object sender, EventArgs e)
+        {
+            AnaRaporEkrani anaRaporEkrani = new AnaRaporEkrani(_kkId);
+            anaRaporEkrani.ShowDialog();
         }
     }
 }

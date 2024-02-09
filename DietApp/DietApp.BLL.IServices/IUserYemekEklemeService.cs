@@ -11,7 +11,7 @@ namespace DietApp.BLL.IServices
 {
     public interface IUserYemekEklemeService
     {
-        List<Yemek> YemekGetir(Kategori kat=null);
+        List<Yemek> YemekGetir(int katId);
         List<Kategori> KategoriGetir();
         Ogun TariheGoreOgunBul(OgunCesitleri cesit, DateTime time, int KullaniciID);
         void UserYemekEkleme(UserYemekEklemePaneliVm userYemekEkleme, Ogun ogun);

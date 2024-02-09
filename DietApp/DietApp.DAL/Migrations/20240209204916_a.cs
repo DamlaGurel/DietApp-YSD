@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DietApp.DAL.Migrations
 {
-    public partial class a : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -222,7 +222,14 @@ namespace DietApp.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "Kategori",
                 columns: new[] { "ID", "KategoriAdi" },
-                values: new object[] { 1, "Meyve" });
+                values: new object[,]
+                {
+                    { 1, "Meyve" },
+                    { 2, "Bakliyat" },
+                    { 3, "HazirYemek" },
+                    { 4, "Kahvaltilik" },
+                    { 5, "Sebze" }
+                });
 
             migrationBuilder.InsertData(
                 table: "KullaniciGiris",
@@ -241,17 +248,47 @@ namespace DietApp.DAL.Migrations
                 columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "KullaniciGirisID", "Soyisim", "Yas" },
                 values: new object[,]
                 {
+<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.cs
                     { 1, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7040), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 1, "mehmet", 18 },
                     { 2, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7048), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 2, "mehmet", 18 },
                     { 3, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7050), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 3, "mehmet", 18 },
                     { 4, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7051), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 4, "mehmet", 18 },
                     { 5, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7052), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "admin", 80.0, 5, "adminoğlu", 18 }
+========
+                    { 1, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9108), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 1, "mehmet", 18 },
+                    { 2, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9126), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 2, "mehmet", 18 },
+                    { 3, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9128), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 3, "mehmet", 18 },
+                    { 4, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9130), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 4, "mehmet", 18 },
+                    { 5, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9131), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "admin", 80.0, 5, "adminoğlu", 18 }
+>>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.cs
                 });
 
             migrationBuilder.InsertData(
                 table: "Yemek",
                 columns: new[] { "ID", "FotografYolu", "Kalori", "KarbonhidratMiktari", "KategoriID", "ProteinMiktari", "YagMiktari", "YemekAdi" },
-                values: new object[] { 1, "Fotograflar\\Elma.jpg", 95.0, 19.0, 1, 0.29999999999999999, 0.29999999999999999, "Elma" });
+                values: new object[,]
+                {
+                    { 1, "Fotograflar\\Elma.jpg", 95.0, 19.0, 1, 0.29999999999999999, 0.29999999999999999, "Elma" },
+                    { 2, "Fotograflar\\BeyazPeynir.jpg", 291.0, 22.0, 4, 3.5, 21.0, "BeyazPeynir" },
+                    { 3, "Fotograflar\\BezelyeProteini.jpg", 205.0, 18.5, 2, 33.200000000000003, 3.7999999999999998, "BezelyeProteini" },
+                    { 4, "Fotograflar\\SiyezBurguMakarna.jpg", 107.12, 21.940000000000001, 2, 3.04, 0.57999999999999996, "SiyezBurguMakarna " },
+                    { 5, "Fotograflar\\Tofu.jpg", 43.399999999999999, 0.29999999999999999, 4, 3.5499999999999998, 3.1200000000000001, "Tofu" },
+                    { 6, "Fotograflar\\PortakalliSekersizBitterCikolata.jpg", 563.39999999999998, 52.899999999999999, 3, 6.8200000000000003, 36.07, "PortakalliSekersizBitterCikolata" },
+                    { 7, "Fotograflar\\Portakal.jpg", 47.0, 11.800000000000001, 1, 0.90000000000000002, 0.10000000000000001, "Portakal" },
+                    { 8, "Fotograflar\\Brokoli.jpg", 39.0, 2.5099999999999998, 5, 3.2999999999999998, 0.20000000000000001, "Brokoli" },
+                    { 9, "Fotograflar\\BademSutu.jpg", 24.0, 3.0, 4, 0.5, 1.1000000000000001, "BademSutu" },
+                    { 10, "Fotograflar\\Patlican.jpg", 17.0, 2.4900000000000002, 5, 1.24, 0.17999999999999999, "Patlican " },
+                    { 11, "Fotograflar\\Hamburger.jpg", 106.38, 16.120000000000001, 3, 4.7300000000000004, 2.4900000000000002, "Hamburger" },
+                    { 12, "Fotograflar\\SiyahZeytin.jpg", 208.69999999999999, 1.1000000000000001, 4, 1.8, 2.1000000000000001, "SiyahZeytin" },
+                    { 13, "Fotograflar\\Sucuk.jpg", 189.00999999999999, 35.960000000000001, 4, 8.6300000000000008, 1.3799999999999999, "Sucuk" },
+                    { 14, "Fotograflar\\Avokado.jpg", 200.0, 8.5299999999999994, 5, 2.0, 14.66, "Avokado" },
+                    { 15, "Fotograflar\\Cilek.jpg", 32.0, 7.6799999999999997, 1, 0.67000000000000004, 0.29999999999999999, "Cilek" },
+                    { 16, "Fotograflar\\MeyveliYasPasta.jpg", 143.0, 21.530000000000001, 3, 3.5600000000000001, 4.5599999999999996, "MeyveliYasPasta" },
+                    { 17, "Fotograflar\\Mantar.jpg", 3.0, 3.2599999999999998, 5, 3.0899999999999999, 0.34000000000000002, "Mantar" },
+                    { 18, "Fotograflar\\Havuc.jpg", 41.0, 9.5800000000000001, 5, 0.93000000000000005, 0.23999999999999999, "Havuc" },
+                    { 19, "Fotograflar\\Nohut.jpg", 164.0, 27.420000000000002, 2, 8.8599999999999994, 2.5899999999999999, "Nohut" },
+                    { 20, "Fotograflar\\IspanakliPizza.jpg", 129.72, 20.57, 3, 3.48, 3.6000000000000001, "IspanakliPizza" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_GunlukRapor_KullaniciKisiselID",

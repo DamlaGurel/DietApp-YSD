@@ -12,8 +12,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
+<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
     [Migration("20240209204916_a")]
     partial class a
+========
+    [Migration("20240209211420_initial")]
+    partial class initial
+>>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -85,6 +90,26 @@ namespace DietApp.DAL.Migrations
                         {
                             ID = 1,
                             KategoriAdi = "Meyve"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            KategoriAdi = "Bakliyat"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            KategoriAdi = "HazirYemek"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            KategoriAdi = "Kahvaltilik"
+                        },
+                        new
+                        {
+                            ID = 5,
+                            KategoriAdi = "Sebze"
                         });
                 });
 
@@ -206,7 +231,11 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
+<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
                             BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7040),
+========
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9108),
+>>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -222,7 +251,11 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 2,
+<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
                             BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7048),
+========
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9126),
+>>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -238,7 +271,11 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 3,
+<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
                             BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7050),
+========
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9128),
+>>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -254,7 +291,11 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 4,
+<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
                             BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7051),
+========
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9130),
+>>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -270,7 +311,11 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 5,
+<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
                             BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7052),
+========
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9131),
+>>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -398,6 +443,215 @@ namespace DietApp.DAL.Migrations
                             ProteinMiktari = 0.29999999999999999,
                             YagMiktari = 0.29999999999999999,
                             YemekAdi = "Elma"
+                        },
+                        new
+                        {
+                            ID = 2,
+                            FotografYolu = "Fotograflar\\BeyazPeynir.jpg",
+                            Kalori = 291.0,
+                            KarbonhidratMiktari = 22.0,
+                            KategoriID = 4,
+                            ProteinMiktari = 3.5,
+                            YagMiktari = 21.0,
+                            YemekAdi = "BeyazPeynir"
+                        },
+                        new
+                        {
+                            ID = 3,
+                            FotografYolu = "Fotograflar\\BezelyeProteini.jpg",
+                            Kalori = 205.0,
+                            KarbonhidratMiktari = 18.5,
+                            KategoriID = 2,
+                            ProteinMiktari = 33.200000000000003,
+                            YagMiktari = 3.7999999999999998,
+                            YemekAdi = "BezelyeProteini"
+                        },
+                        new
+                        {
+                            ID = 4,
+                            FotografYolu = "Fotograflar\\SiyezBurguMakarna.jpg",
+                            Kalori = 107.12,
+                            KarbonhidratMiktari = 21.940000000000001,
+                            KategoriID = 2,
+                            ProteinMiktari = 3.04,
+                            YagMiktari = 0.57999999999999996,
+                            YemekAdi = "SiyezBurguMakarna "
+                        },
+                        new
+                        {
+                            ID = 5,
+                            FotografYolu = "Fotograflar\\Tofu.jpg",
+                            Kalori = 43.399999999999999,
+                            KarbonhidratMiktari = 0.29999999999999999,
+                            KategoriID = 4,
+                            ProteinMiktari = 3.5499999999999998,
+                            YagMiktari = 3.1200000000000001,
+                            YemekAdi = "Tofu"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            FotografYolu = "Fotograflar\\PortakalliSekersizBitterCikolata.jpg",
+                            Kalori = 563.39999999999998,
+                            KarbonhidratMiktari = 52.899999999999999,
+                            KategoriID = 3,
+                            ProteinMiktari = 6.8200000000000003,
+                            YagMiktari = 36.07,
+                            YemekAdi = "PortakalliSekersizBitterCikolata"
+                        },
+                        new
+                        {
+                            ID = 7,
+                            FotografYolu = "Fotograflar\\Portakal.jpg",
+                            Kalori = 47.0,
+                            KarbonhidratMiktari = 11.800000000000001,
+                            KategoriID = 1,
+                            ProteinMiktari = 0.90000000000000002,
+                            YagMiktari = 0.10000000000000001,
+                            YemekAdi = "Portakal"
+                        },
+                        new
+                        {
+                            ID = 8,
+                            FotografYolu = "Fotograflar\\Brokoli.jpg",
+                            Kalori = 39.0,
+                            KarbonhidratMiktari = 2.5099999999999998,
+                            KategoriID = 5,
+                            ProteinMiktari = 3.2999999999999998,
+                            YagMiktari = 0.20000000000000001,
+                            YemekAdi = "Brokoli"
+                        },
+                        new
+                        {
+                            ID = 9,
+                            FotografYolu = "Fotograflar\\BademSutu.jpg",
+                            Kalori = 24.0,
+                            KarbonhidratMiktari = 3.0,
+                            KategoriID = 4,
+                            ProteinMiktari = 0.5,
+                            YagMiktari = 1.1000000000000001,
+                            YemekAdi = "BademSutu"
+                        },
+                        new
+                        {
+                            ID = 10,
+                            FotografYolu = "Fotograflar\\Patlican.jpg",
+                            Kalori = 17.0,
+                            KarbonhidratMiktari = 2.4900000000000002,
+                            KategoriID = 5,
+                            ProteinMiktari = 1.24,
+                            YagMiktari = 0.17999999999999999,
+                            YemekAdi = "Patlican "
+                        },
+                        new
+                        {
+                            ID = 11,
+                            FotografYolu = "Fotograflar\\Hamburger.jpg",
+                            Kalori = 106.38,
+                            KarbonhidratMiktari = 16.120000000000001,
+                            KategoriID = 3,
+                            ProteinMiktari = 4.7300000000000004,
+                            YagMiktari = 2.4900000000000002,
+                            YemekAdi = "Hamburger"
+                        },
+                        new
+                        {
+                            ID = 12,
+                            FotografYolu = "Fotograflar\\SiyahZeytin.jpg",
+                            Kalori = 208.69999999999999,
+                            KarbonhidratMiktari = 1.1000000000000001,
+                            KategoriID = 4,
+                            ProteinMiktari = 1.8,
+                            YagMiktari = 2.1000000000000001,
+                            YemekAdi = "SiyahZeytin"
+                        },
+                        new
+                        {
+                            ID = 13,
+                            FotografYolu = "Fotograflar\\Sucuk.jpg",
+                            Kalori = 189.00999999999999,
+                            KarbonhidratMiktari = 35.960000000000001,
+                            KategoriID = 4,
+                            ProteinMiktari = 8.6300000000000008,
+                            YagMiktari = 1.3799999999999999,
+                            YemekAdi = "Sucuk"
+                        },
+                        new
+                        {
+                            ID = 14,
+                            FotografYolu = "Fotograflar\\Avokado.jpg",
+                            Kalori = 200.0,
+                            KarbonhidratMiktari = 8.5299999999999994,
+                            KategoriID = 5,
+                            ProteinMiktari = 2.0,
+                            YagMiktari = 14.66,
+                            YemekAdi = "Avokado"
+                        },
+                        new
+                        {
+                            ID = 15,
+                            FotografYolu = "Fotograflar\\Cilek.jpg",
+                            Kalori = 32.0,
+                            KarbonhidratMiktari = 7.6799999999999997,
+                            KategoriID = 1,
+                            ProteinMiktari = 0.67000000000000004,
+                            YagMiktari = 0.29999999999999999,
+                            YemekAdi = "Cilek"
+                        },
+                        new
+                        {
+                            ID = 16,
+                            FotografYolu = "Fotograflar\\MeyveliYasPasta.jpg",
+                            Kalori = 143.0,
+                            KarbonhidratMiktari = 21.530000000000001,
+                            KategoriID = 3,
+                            ProteinMiktari = 3.5600000000000001,
+                            YagMiktari = 4.5599999999999996,
+                            YemekAdi = "MeyveliYasPasta"
+                        },
+                        new
+                        {
+                            ID = 17,
+                            FotografYolu = "Fotograflar\\Mantar.jpg",
+                            Kalori = 3.0,
+                            KarbonhidratMiktari = 3.2599999999999998,
+                            KategoriID = 5,
+                            ProteinMiktari = 3.0899999999999999,
+                            YagMiktari = 0.34000000000000002,
+                            YemekAdi = "Mantar"
+                        },
+                        new
+                        {
+                            ID = 18,
+                            FotografYolu = "Fotograflar\\Havuc.jpg",
+                            Kalori = 41.0,
+                            KarbonhidratMiktari = 9.5800000000000001,
+                            KategoriID = 5,
+                            ProteinMiktari = 0.93000000000000005,
+                            YagMiktari = 0.23999999999999999,
+                            YemekAdi = "Havuc"
+                        },
+                        new
+                        {
+                            ID = 19,
+                            FotografYolu = "Fotograflar\\Nohut.jpg",
+                            Kalori = 164.0,
+                            KarbonhidratMiktari = 27.420000000000002,
+                            KategoriID = 2,
+                            ProteinMiktari = 8.8599999999999994,
+                            YagMiktari = 2.5899999999999999,
+                            YemekAdi = "Nohut"
+                        },
+                        new
+                        {
+                            ID = 20,
+                            FotografYolu = "Fotograflar\\IspanakliPizza.jpg",
+                            Kalori = 129.72,
+                            KarbonhidratMiktari = 20.57,
+                            KategoriID = 3,
+                            ProteinMiktari = 3.48,
+                            YagMiktari = 3.6000000000000001,
+                            YemekAdi = "IspanakliPizza"
                         });
                 });
 

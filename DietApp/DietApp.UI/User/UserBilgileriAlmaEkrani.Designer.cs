@@ -153,7 +153,7 @@
             // 
             txtHedefKilo.Location = new Point(747, 198);
             txtHedefKilo.Name = "txtHedefKilo";
-            txtHedefKilo.Size = new Size(150, 31);
+            txtHedefKilo.Size = new Size(282, 31);
             txtHedefKilo.TabIndex = 10;
             // 
             // label4
@@ -184,7 +184,7 @@
             grpVucutIndeksBilgi.Controls.Add(btnKullaniciKisiselHesapla);
             grpVucutIndeksBilgi.Location = new Point(53, 265);
             grpVucutIndeksBilgi.Name = "grpVucutIndeksBilgi";
-            grpVucutIndeksBilgi.Size = new Size(412, 325);
+            grpVucutIndeksBilgi.Size = new Size(527, 325);
             grpVucutIndeksBilgi.TabIndex = 14;
             grpVucutIndeksBilgi.TabStop = false;
             grpVucutIndeksBilgi.Text = "Bilgi Paneli";
