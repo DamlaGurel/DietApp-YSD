@@ -26,7 +26,7 @@ namespace DietApp.UI
             _kullanici = kullanici;
             InitializeComboBox();
 
-
+            _kkId = kullanici.KullaniciKisiselID;
             _kisiselService = new KullaniciKisiselService();
 
         }
