@@ -1,5 +1,6 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.BLL.Services;
+using DietApp.Entities;
 using DietApp.ViewModels.KullaniciGiris;
 using DietApp.ViewModels.KullaniciKisiselVms;
 
@@ -39,25 +40,32 @@ namespace DietApp.UI
 
 
             vivm.KullaniciGirisId = kullaniciGirisId;
-            vivm.Boy = decimal.Parse(txtBoy.Text);
-            vivm.Kilo = decimal.Parse(txtKilo.Text);
+            vivm.Boy = double.Parse(txtBoy.Text);
+            vivm.Kilo = double.Parse(txtKilo.Text);
+            vivm.BaslangicTarihi = dtpBaslangicTarihi.Value;
+            vivm.BitisTarihi = dtpBitisTarihi.Value;
+            vivm.Isim = txtIsim.Text;
+            vivm.Soyisim = txtSoyisim.Text;
+            vivm.Yas = int.Parse(txtYas.Text);
+            vivm.SuMiktari = 2000;
+          
+          
 
             if (rbErkek.Checked)
                 vivm.Cinsiyet = false;
             else if (rbKadin.Checked)
                 vivm.Cinsiyet = true;
 
-            vivm.SuMiktari = 0;
-            vivm.BitisTarihi = DateTime.Now;
-            vivm.BaslangicTarihi = DateTime.Now;
-            vivm.GunlukKalori = 0;
-            vivm.IdealKilo = 0;
-            vivm.Isim = "Install";
-            vivm.Soyisim = "Install";
-            vivm.Yas = 0;
+            //vivm.SuMiktari = 0;
+            //vivm.BitisTarihi = DateTime.Now;
+            //vivm.BaslangicTarihi = DateTime.Now;
+            //vivm.GunlukKalori = 0;
+            //vivm.IdealKilo = 0;
+            //vivm.Isim = "Install";
+            //vivm.Soyisim = "Install";
+            //vivm.Yas = 0;
 
 
-             kkId = _kullaniciKisiselService.Create(vivm);
 
             //kullaniciService.
             KullaniciKisiselVm kisiselVm = new KullaniciKisiselVm()
@@ -67,7 +75,7 @@ namespace DietApp.UI
                 Cinsiyet = vivm.Cinsiyet,
             };
 
-            decimal vki = _kullaniciKisiselService.VucutKitleIndeksiHesapla(kisiselVm);
+            double vki = _kullaniciKisiselService.VucutKitleIndeksiHesapla(kisiselVm);
             if (vki >= 20 && vki < 25)
             {
                 lblKullaniciKisisel.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığındasınız.";
@@ -83,16 +91,18 @@ namespace DietApp.UI
 
             lblIdealKilo.Text = "İdeal Kilonuz:" + _kullaniciKisiselService.IdealKiloHesapla(kisiselVm, vivm.Cinsiyet);
 
+            vivm.IdealKilo = vki;
+
             txtHedefKilo.Text = lblIdealKilo.Text;
-            lblGunlukKaloriIhtiyaci.Text = "Gunluk kalori ihtiyacınız: " + _kullaniciKisiselService.GunlukKaloriIhtiyaci(kisiselVm);
+            double gki = _kullaniciKisiselService.GunlukKaloriIhtiyaci(kisiselVm);
+            lblGunlukKaloriIhtiyaci.Text = "Gunluk kalori ihtiyacınız: " + gki;
+            vivm.GunlukKalori = gki;
 
+
+            kkId = _kullaniciKisiselService.Create(vivm);
         }
 
-        private void btnKaloriIhtiyaciniHesapla_Click(object sender, EventArgs e)
-        {
-
-
-        }
+        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

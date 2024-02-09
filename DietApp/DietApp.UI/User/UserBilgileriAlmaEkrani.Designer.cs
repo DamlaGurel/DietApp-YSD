@@ -41,20 +41,27 @@
             txtHedefKilo = new TextBox();
             label4 = new Label();
             lblGunlukKaloriIhtiyaci = new Label();
-            btnKaloriIhtiyaciniHesapla = new Button();
             grpVucutIndeksBilgi = new GroupBox();
             lblIdealKilo = new Label();
             label6 = new Label();
-            grpGunlukKalori = new GroupBox();
             btnAnaEkranaGec = new Button();
+            dtpBaslangicTarihi = new DateTimePicker();
+            label7 = new Label();
+            label8 = new Label();
+            dtpBitisTarihi = new DateTimePicker();
+            txtIsim = new TextBox();
+            label9 = new Label();
+            txtSoyisim = new TextBox();
+            label10 = new Label();
+            label11 = new Label();
+            txtYas = new TextBox();
             grpVucutIndeksBilgi.SuspendLayout();
-            grpGunlukKalori.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(167, 112);
+            label1.Location = new Point(129, 92);
             label1.Name = "label1";
             label1.Size = new Size(46, 25);
             label1.TabIndex = 0;
@@ -63,7 +70,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(167, 167);
+            label2.Location = new Point(129, 147);
             label2.Name = "label2";
             label2.Size = new Size(45, 25);
             label2.TabIndex = 1;
@@ -72,7 +79,7 @@
             // rbKadin
             // 
             rbKadin.AutoSize = true;
-            rbKadin.Location = new Point(168, 218);
+            rbKadin.Location = new Point(130, 198);
             rbKadin.Name = "rbKadin";
             rbKadin.Size = new Size(81, 29);
             rbKadin.TabIndex = 2;
@@ -83,7 +90,7 @@
             // rbErkek
             // 
             rbErkek.AutoSize = true;
-            rbErkek.Location = new Point(351, 218);
+            rbErkek.Location = new Point(313, 198);
             rbErkek.Name = "rbErkek";
             rbErkek.Size = new Size(79, 29);
             rbErkek.TabIndex = 3;
@@ -121,14 +128,14 @@
             // 
             // txtBoy
             // 
-            txtBoy.Location = new Point(280, 106);
+            txtBoy.Location = new Point(242, 86);
             txtBoy.Name = "txtBoy";
             txtBoy.Size = new Size(150, 31);
             txtBoy.TabIndex = 7;
             // 
             // txtKilo
             // 
-            txtKilo.Location = new Point(280, 161);
+            txtKilo.Location = new Point(242, 141);
             txtKilo.Name = "txtKilo";
             txtKilo.Size = new Size(150, 31);
             txtKilo.TabIndex = 8;
@@ -136,7 +143,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(557, 137);
+            label5.Location = new Point(602, 198);
             label5.Name = "label5";
             label5.Size = new Size(126, 25);
             label5.TabIndex = 9;
@@ -144,7 +151,7 @@
             // 
             // txtHedefKilo
             // 
-            txtHedefKilo.Location = new Point(702, 137);
+            txtHedefKilo.Location = new Point(747, 198);
             txtHedefKilo.Name = "txtHedefKilo";
             txtHedefKilo.Size = new Size(150, 31);
             txtHedefKilo.TabIndex = 10;
@@ -152,7 +159,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(31, 60);
+            label4.Location = new Point(16, 159);
             label4.Name = "label4";
             label4.Size = new Size(202, 25);
             label4.TabIndex = 11;
@@ -161,24 +168,16 @@
             // lblGunlukKaloriIhtiyaci
             // 
             lblGunlukKaloriIhtiyaci.AutoSize = true;
-            lblGunlukKaloriIhtiyaci.Location = new Point(284, 60);
+            lblGunlukKaloriIhtiyaci.Location = new Point(265, 159);
             lblGunlukKaloriIhtiyaci.Name = "lblGunlukKaloriIhtiyaci";
             lblGunlukKaloriIhtiyaci.Size = new Size(0, 25);
             lblGunlukKaloriIhtiyaci.TabIndex = 12;
             // 
-            // btnKaloriIhtiyaciniHesapla
-            // 
-            btnKaloriIhtiyaciniHesapla.Location = new Point(96, 122);
-            btnKaloriIhtiyaciniHesapla.Name = "btnKaloriIhtiyaciniHesapla";
-            btnKaloriIhtiyaciniHesapla.Size = new Size(207, 88);
-            btnKaloriIhtiyaciniHesapla.TabIndex = 13;
-            btnKaloriIhtiyaciniHesapla.Text = "GÜNLÜK KALORİ İHTİYACINI HESAPLA";
-            btnKaloriIhtiyaciniHesapla.UseVisualStyleBackColor = true;
-            btnKaloriIhtiyaciniHesapla.Click += btnKaloriIhtiyaciniHesapla_Click;
-            // 
             // grpVucutIndeksBilgi
             // 
+            grpVucutIndeksBilgi.Controls.Add(lblGunlukKaloriIhtiyaci);
             grpVucutIndeksBilgi.Controls.Add(lblIdealKilo);
+            grpVucutIndeksBilgi.Controls.Add(label4);
             grpVucutIndeksBilgi.Controls.Add(label6);
             grpVucutIndeksBilgi.Controls.Add(lblKullaniciKisisel);
             grpVucutIndeksBilgi.Controls.Add(label3);
@@ -188,7 +187,7 @@
             grpVucutIndeksBilgi.Size = new Size(412, 325);
             grpVucutIndeksBilgi.TabIndex = 14;
             grpVucutIndeksBilgi.TabStop = false;
-            grpVucutIndeksBilgi.Text = "Vücut İndeks Bilgi Paneli";
+            grpVucutIndeksBilgi.Text = "Bilgi Paneli";
             // 
             // lblIdealKilo
             // 
@@ -207,18 +206,6 @@
             label6.TabIndex = 7;
             label6.Text = "İdeal Kilo Aralığınız:";
             // 
-            // grpGunlukKalori
-            // 
-            grpGunlukKalori.Controls.Add(btnKaloriIhtiyaciniHesapla);
-            grpGunlukKalori.Controls.Add(lblGunlukKaloriIhtiyaci);
-            grpGunlukKalori.Controls.Add(label4);
-            grpGunlukKalori.Location = new Point(498, 265);
-            grpGunlukKalori.Name = "grpGunlukKalori";
-            grpGunlukKalori.Size = new Size(536, 216);
-            grpGunlukKalori.TabIndex = 7;
-            grpGunlukKalori.TabStop = false;
-            grpGunlukKalori.Text = "Günlük Kalori İhtiyacı Paneli";
-            // 
             // btnAnaEkranaGec
             // 
             btnAnaEkranaGec.Location = new Point(766, 523);
@@ -229,13 +216,102 @@
             btnAnaEkranaGec.UseVisualStyleBackColor = true;
             btnAnaEkranaGec.Click += btnAnaEkranaGec_Click;
             // 
+            // dtpBaslangicTarihi
+            // 
+            dtpBaslangicTarihi.Location = new Point(676, 273);
+            dtpBaslangicTarihi.Name = "dtpBaslangicTarihi";
+            dtpBaslangicTarihi.Size = new Size(300, 31);
+            dtpBaslangicTarihi.TabIndex = 16;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(524, 278);
+            label7.Name = "label7";
+            label7.Size = new Size(134, 25);
+            label7.TabIndex = 17;
+            label7.Text = "Başlangıç Tarihi:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(565, 320);
+            label8.Name = "label8";
+            label8.Size = new Size(93, 25);
+            label8.TabIndex = 19;
+            label8.Text = "Bitiş Tarihi:";
+            // 
+            // dtpBitisTarihi
+            // 
+            dtpBitisTarihi.Location = new Point(676, 320);
+            dtpBitisTarihi.Name = "dtpBitisTarihi";
+            dtpBitisTarihi.Size = new Size(300, 31);
+            dtpBitisTarihi.TabIndex = 18;
+            // 
+            // txtIsim
+            // 
+            txtIsim.Location = new Point(147, 12);
+            txtIsim.Name = "txtIsim";
+            txtIsim.Size = new Size(150, 31);
+            txtIsim.TabIndex = 21;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(34, 18);
+            label9.Name = "label9";
+            label9.Size = new Size(49, 25);
+            label9.TabIndex = 20;
+            label9.Text = "İsim:";
+            // 
+            // txtSoyisim
+            // 
+            txtSoyisim.Location = new Point(524, 10);
+            txtSoyisim.Name = "txtSoyisim";
+            txtSoyisim.Size = new Size(150, 31);
+            txtSoyisim.TabIndex = 23;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(425, 10);
+            label10.Name = "label10";
+            label10.Size = new Size(78, 25);
+            label10.TabIndex = 22;
+            label10.Text = "Soyisim:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(747, 18);
+            label11.Name = "label11";
+            label11.Size = new Size(41, 25);
+            label11.TabIndex = 24;
+            label11.Text = "Yaş:";
+            // 
+            // txtYas
+            // 
+            txtYas.Location = new Point(817, 18);
+            txtYas.Name = "txtYas";
+            txtYas.Size = new Size(150, 31);
+            txtYas.TabIndex = 25;
+            // 
             // UserBilgileriAlmaEkrani
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1035, 650);
+            Controls.Add(txtYas);
+            Controls.Add(label11);
+            Controls.Add(txtSoyisim);
+            Controls.Add(label10);
+            Controls.Add(txtIsim);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(dtpBitisTarihi);
+            Controls.Add(label7);
+            Controls.Add(dtpBaslangicTarihi);
             Controls.Add(btnAnaEkranaGec);
-            Controls.Add(grpGunlukKalori);
             Controls.Add(grpVucutIndeksBilgi);
             Controls.Add(txtHedefKilo);
             Controls.Add(label5);
@@ -249,8 +325,6 @@
             Text = "UserBilgileriAlmaEkrani";
             grpVucutIndeksBilgi.ResumeLayout(false);
             grpVucutIndeksBilgi.PerformLayout();
-            grpGunlukKalori.ResumeLayout(false);
-            grpGunlukKalori.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -270,11 +344,19 @@
         private TextBox txtHedefKilo;
         private Label label4;
         private Label lblGunlukKaloriIhtiyaci;
-        private Button btnKaloriIhtiyaciniHesapla;
         private GroupBox grpVucutIndeksBilgi;
-        private GroupBox grpGunlukKalori;
         private Button btnAnaEkranaGec;
         private Label lblIdealKilo;
         private Label label6;
+        private DateTimePicker dtpBaslangicTarihi;
+        private Label label7;
+        private Label label8;
+        private DateTimePicker dtpBitisTarihi;
+        private TextBox txtIsim;
+        private Label label9;
+        private TextBox txtSoyisim;
+        private Label label10;
+        private Label label11;
+        private TextBox txtYas;
     }
 }

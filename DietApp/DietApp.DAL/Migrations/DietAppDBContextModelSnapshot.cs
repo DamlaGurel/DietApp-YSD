@@ -161,8 +161,8 @@ namespace DietApp.DAL.Migrations
                     b.Property<DateTime>("BitisTarihi")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Boy")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Boy")
+                        .HasColumnType("float");
 
                     b.Property<bool>("Cinsiyet")
                         .HasColumnType("bit");
@@ -170,8 +170,8 @@ namespace DietApp.DAL.Migrations
                     b.Property<double>("GunlukKalori")
                         .HasColumnType("float");
 
-                    b.Property<decimal>("HedefKilo")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("HedefKilo")
+                        .HasColumnType("float");
 
                     b.Property<double>("HedefSuMiktari")
                         .HasColumnType("float");
@@ -180,8 +180,8 @@ namespace DietApp.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Kilo")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Kilo")
+                        .HasColumnType("float");
 
                     b.Property<int>("KullaniciGirisID")
                         .HasColumnType("int");
@@ -204,15 +204,15 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7283),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9540),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Boy = 170m,
+                            Boy = 170.0,
                             Cinsiyet = false,
                             GunlukKalori = 3000.0,
-                            HedefKilo = 70m,
+                            HedefKilo = 70.0,
                             HedefSuMiktari = 2000.0,
                             Isim = "ahmet",
-                            Kilo = 80m,
+                            Kilo = 80.0,
                             KullaniciGirisID = 1,
                             Soyisim = "mehmet",
                             Yas = 18
@@ -220,15 +220,15 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 2,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7301),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9548),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Boy = 170m,
+                            Boy = 170.0,
                             Cinsiyet = false,
                             GunlukKalori = 3000.0,
-                            HedefKilo = 70m,
+                            HedefKilo = 70.0,
                             HedefSuMiktari = 2000.0,
                             Isim = "ahmet",
-                            Kilo = 80m,
+                            Kilo = 80.0,
                             KullaniciGirisID = 2,
                             Soyisim = "mehmet",
                             Yas = 18
@@ -236,15 +236,15 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 3,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7304),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9549),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Boy = 170m,
+                            Boy = 170.0,
                             Cinsiyet = false,
                             GunlukKalori = 3000.0,
-                            HedefKilo = 70m,
+                            HedefKilo = 70.0,
                             HedefSuMiktari = 2000.0,
                             Isim = "ahmet",
-                            Kilo = 80m,
+                            Kilo = 80.0,
                             KullaniciGirisID = 3,
                             Soyisim = "mehmet",
                             Yas = 18
@@ -252,15 +252,15 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 4,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7306),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9550),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Boy = 170m,
+                            Boy = 170.0,
                             Cinsiyet = false,
                             GunlukKalori = 3000.0,
-                            HedefKilo = 70m,
+                            HedefKilo = 70.0,
                             HedefSuMiktari = 2000.0,
                             Isim = "ahmet",
-                            Kilo = 80m,
+                            Kilo = 80.0,
                             KullaniciGirisID = 4,
                             Soyisim = "mehmet",
                             Yas = 18
@@ -268,15 +268,15 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 5,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7308),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9551),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Boy = 170m,
+                            Boy = 170.0,
                             Cinsiyet = false,
                             GunlukKalori = 3000.0,
-                            HedefKilo = 70m,
+                            HedefKilo = 70.0,
                             HedefSuMiktari = 2000.0,
                             Isim = "admin",
-                            Kilo = 80m,
+                            Kilo = 80.0,
                             KullaniciGirisID = 5,
                             Soyisim = "adminoğlu",
                             Yas = 18

@@ -4,6 +4,7 @@ using DietApp.Entities;
 using DietApp.Enums;
 using DietApp.UI.Rapor;
 using DietApp.ViewModels;
+using DietApp.ViewModels.KullaniciKisiselVms;
 
 namespace DietApp.UI
 {
@@ -11,7 +12,7 @@ namespace DietApp.UI
     {
         public KullaniciGiris _kullanici;
         IKullaniciKisiselService _kisiselService;
-        YemekGuncelleService _yemekgnservice;
+
         int _kkId;
         public OzetEkrani(int kkId)
         {
@@ -26,9 +27,9 @@ namespace DietApp.UI
             _kullanici = kullanici;
             InitializeComboBox();
 
-
-            _kisiselService = new KullaniciKisiselService();
             _kkId = kullanici.KullaniciKisiselID;
+            _kisiselService = new KullaniciKisiselService();
+
         }
 
         public void RefreshDataGrid()
@@ -53,13 +54,24 @@ namespace DietApp.UI
         private void OzetEkrani_Load(object sender, EventArgs e)
         {
             RefreshDataGrid();
-            _yemekgnservice = new YemekGuncelleService();
-            //pbKaloriTakip.Maximum = (int)_kisiselService.GetByID().GunlukKalori;
-            // UpdateProgressBar();
+
+            pbKaloriTakip.Maximum = (int)_kisiselService.GetByID(_kkId).GunlukKalori;
+             UpdateProgressBar();
 
 
         }
+        private void UpdateProgressBar()
+        {
+            var kkObj = _kisiselService.GetByID(_kkId);
+            double guncelKalori;
+            if (kkObj == null)
+                guncelKalori = 0;
+            else
+                guncelKalori = kkObj.GunlukKalori;
 
+            pbKaloriTakip.Value = (int)guncelKalori;
+            lblGuncelKalori.Text = (pbKaloriTakip.Maximum - guncelKalori) + "kcal";
+        }
         private void btnDegistir_Click(object sender, EventArgs e)
         {
             if (dgv_OgundekiYemekler.SelectedRows.Count == 0)
@@ -103,7 +115,7 @@ namespace DietApp.UI
 
             YemekListVm secilenOgun = (YemekListVm)dgv_OgundekiYemekler.SelectedRows[0].DataBoundItem;
 
-            _yemekgnservice.YemekSil(secilenOgun.YemekMiktarID);
+            new YemekGuncelleService().YemekSil(secilenOgun.YemekMiktarID);
             RefreshDataGrid();
 
         }
