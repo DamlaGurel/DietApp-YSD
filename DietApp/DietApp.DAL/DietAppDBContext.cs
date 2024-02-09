@@ -41,7 +41,7 @@ namespace DietApp.DAL
             modelBuilder.ApplyConfiguration(new KullaniciGirisConfiguration());
        
             modelBuilder.ApplyConfiguration(new KategoriConfiguration());
-         //   modelBuilder.Entity<KullaniciGiris>();
+            modelBuilder.Entity<KullaniciGiris>();
             modelBuilder.ApplyConfiguration(new KullaniciKisiselConfiguration());
             modelBuilder.Entity<Ogun>();
        
