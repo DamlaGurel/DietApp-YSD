@@ -9,5 +9,6 @@ namespace DietApp.BLL.IServices
         bool KullaniciYaratabilirMi(KullanicOlusturVm vm, ref string errorMessage);
         public bool KullaniciGirisYap(KullaniciGirisVm vm);
         public KullaniciGiris KullaniciBul(string kullaniciAdi);
+        public KullaniciGiris KullaniciGetById(int kullaniciId);
     }
 }

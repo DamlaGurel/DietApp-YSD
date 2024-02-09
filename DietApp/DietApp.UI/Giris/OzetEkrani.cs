@@ -1,31 +1,32 @@
-﻿using DietApp.BLL.Services;
+﻿using DietApp.BLL.IServices;
+using DietApp.BLL.Services;
 using DietApp.Entities;
 using DietApp.Enums;
 using DietApp.ViewModels;
-using DietApp.ViewModels.KullaniciGiris;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DietApp.UI
 {
     public partial class OzetEkrani : Form
     {
         public KullaniciGiris _kullanici;
+        IKullaniciKisiselService _kisiselService;
 
+        int _kkId;
+        public OzetEkrani(int kkId)
+        {
+            InitializeComponent();
+            InitializeComboBox();
+
+            _kkId=kkId;
+        }
         public OzetEkrani(KullaniciGiris kullanici)
         {
             InitializeComponent();
             _kullanici = kullanici;
             InitializeComboBox();
 
+
+            _kisiselService = new KullaniciKisiselService();
 
         }
 
@@ -51,6 +52,11 @@ namespace DietApp.UI
         private void OzetEkrani_Load(object sender, EventArgs e)
         {
             RefreshDataGrid();
+          
+           //pbKaloriTakip.Maximum = (int)_kisiselService.GetByID().GunlukKalori;
+           // UpdateProgressBar();
+
+
         }
 
         private void btnDegistir_Click(object sender, EventArgs e)
@@ -84,8 +90,7 @@ namespace DietApp.UI
             string secilenOgun = cmbOgun.SelectedItem.ToString();
 
 
-
-            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun, dtpTarih.Value, _kullanici.KullaniciKisiselID);
+            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun, dtpTarih.Value, _kkId);
             userYemekEkleme.ShowDialog(this);
         }
 

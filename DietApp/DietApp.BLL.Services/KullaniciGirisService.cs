@@ -129,7 +129,12 @@ namespace DietApp.BLL.Services
 
             return kullanici;
         }
+        public KullaniciGiris KullaniciGetById(int kullaniciId)
+        {
+            KullaniciGiris kullanici = _userRepo.GetByID(kullaniciId);
 
+            return kullanici;
+        }
 
     }
 }

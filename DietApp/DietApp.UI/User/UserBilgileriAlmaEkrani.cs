@@ -11,8 +11,9 @@ namespace DietApp.UI
         IKullaniciKisiselService _kullaniciKisiselService;
 
         KullaniciKisiselCreateVm vivm;
-
+        int kkId;
         public KullanicOlusturVm Vm { get; }
+        private int kullaniciGirisId;
 
         public UserBilgileriAlmaEkrani(KullanicOlusturVm vm)
         {
@@ -27,26 +28,38 @@ namespace DietApp.UI
 
         private void btnAnaEkranaGec_Click(object sender, EventArgs e)
         {
-            Form frm = new OzetEkrani(_kullaniciService.KullaniciBul(Vm.KullaniciAdi));
+            Form frm = new OzetEkrani(kkId);
             this.Hide();
             frm.Show();
         }
 
         private void btnKullaniciKisiselHesapla_Click(object sender, EventArgs e)
         {
-            int kullaniciKisiselId = new KullaniciGirisService().KullaniciYarat(Vm);
+             kullaniciGirisId = _kullaniciService.KullaniciYarat(Vm);
 
 
-            vivm.KullaniciGirisId = kullaniciKisiselId;
+            vivm.KullaniciGirisId = kullaniciGirisId;
             vivm.Boy = decimal.Parse(txtBoy.Text);
             vivm.Kilo = decimal.Parse(txtKilo.Text);
-            
+
             if (rbErkek.Checked)
                 vivm.Cinsiyet = false;
             else if (rbKadin.Checked)
                 vivm.Cinsiyet = true;
 
+            vivm.SuMiktari = 0;
+            vivm.BitisTarihi = DateTime.Now;
+            vivm.BaslangicTarihi = DateTime.Now;
+            vivm.GunlukKalori = 0;
+            vivm.IdealKilo = 0;
+            vivm.Isim = "Install";
+            vivm.Soyisim = "Install";
+            vivm.Yas = 0;
 
+
+             kkId = _kullaniciKisiselService.Create(vivm);
+
+            //kullaniciService.
             KullaniciKisiselVm kisiselVm = new KullaniciKisiselVm()
             {
                 Boy = vivm.Boy,
@@ -72,7 +85,6 @@ namespace DietApp.UI
 
             txtHedefKilo.Text = lblIdealKilo.Text;
             lblGunlukKaloriIhtiyaci.Text = "Gunluk kalori ihtiyacınız: " + _kullaniciKisiselService.GunlukKaloriIhtiyaci(kisiselVm);
-
 
         }
 

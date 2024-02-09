@@ -14,14 +14,18 @@ namespace DietApp.BLL.Services
     public class KullaniciKisiselService : IKullaniciKisiselService
     {
         IKullaniciKisiselRepository _repo;
+        IUserRepository _KGrepo;
 
         public KullaniciKisiselService()
         {
             _repo = new KullaniciKisiselRepository();
+            _KGrepo = new UserRepository();
         }
 
         public int Create(KullaniciKisiselCreateVm vm)
         {
+            KullaniciGiris kullaniciGiris = _KGrepo.GetByID(vm.KullaniciGirisId);
+
             KullaniciKisisel kkVucutIndeksi = new KullaniciKisisel()
             {
                 BaslangicTarihi = vm.BaslangicTarihi,
@@ -35,7 +39,17 @@ namespace DietApp.BLL.Services
                 Soyisim = vm.Soyisim,
                 HedefSuMiktari = vm.SuMiktari,
                 Yas = vm.Yas,
-            }; return _repo.Create(kkVucutIndeksi);
+                KullaniciGirisID = vm.KullaniciGirisId,
+            };
+
+
+            int kkId = _repo.Create(kkVucutIndeksi);
+
+            kullaniciGiris.KullaniciKisiselID= kkId;
+
+            _KGrepo.Update(kullaniciGiris);
+
+            return kkId;
 
         }
 

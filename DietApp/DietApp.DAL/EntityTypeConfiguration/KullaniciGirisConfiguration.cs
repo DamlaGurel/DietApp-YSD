@@ -25,11 +25,11 @@ namespace DietApp.DAL.EntityTypeConfiguration
             builder.Property(x => x.ID).UseIdentityColumn();
 
             builder.HasData(
-new KullaniciGiris { ID = 1, KullaniciAdi = "YalinTuzmen", Sifre = sha256_hash("123"),KullaniciKisiselID=1},
+new KullaniciGiris { ID = 1, KullaniciAdi = "YalinTuzmen", Sifre = sha256_hash("123"), KullaniciKisiselID = 1 },
 new KullaniciGiris { ID = 2, KullaniciAdi = "SilaYildirim", Sifre = sha256_hash("123"), KullaniciKisiselID = 2 },
 new KullaniciGiris { ID = 3, KullaniciAdi = "DamlaGurel", Sifre = sha256_hash("123"), KullaniciKisiselID = 3 },
-new KullaniciGiris { ID=4,KullaniciAdi="admin",Sifre= sha256_hash("admin"), KullaniciKisiselID = 4 },
-new KullaniciGiris { ID=5,KullaniciAdi="a",Sifre= sha256_hash("a"), KullaniciKisiselID = 5 }
+new KullaniciGiris { ID = 4, KullaniciAdi = "admin", Sifre = sha256_hash("admin"), KullaniciKisiselID = 4 },
+new KullaniciGiris { ID = 5, KullaniciAdi = "a", Sifre = sha256_hash("a"), KullaniciKisiselID = 5 }
 );
 
         }
