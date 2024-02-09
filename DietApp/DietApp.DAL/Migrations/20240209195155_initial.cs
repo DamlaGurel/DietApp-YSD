@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DietApp.DAL.Migrations
 {
-    public partial class a : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,6 +44,7 @@ namespace DietApp.DAL.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     YemekAdi = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FotografYolu = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     KategoriID = table.Column<int>(type: "int", nullable: false),
                     Kalori = table.Column<double>(type: "float", nullable: false),
                     KarbonhidratMiktari = table.Column<double>(type: "float", nullable: false),
@@ -147,7 +148,8 @@ namespace DietApp.DAL.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     SuMiktari = table.Column<double>(type: "float", nullable: false),
-                    KullaniciKisiselId = table.Column<int>(type: "int", nullable: false)
+                    KullaniciKisiselId = table.Column<int>(type: "int", nullable: false),
+                    Tarih = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -239,17 +241,17 @@ namespace DietApp.DAL.Migrations
                 columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "KullaniciGirisID", "Soyisim", "Yas" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2034), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 1, "mehmet", 18 },
-                    { 2, new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2043), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 2, "mehmet", 18 },
-                    { 3, new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2044), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 3, "mehmet", 18 },
-                    { 4, new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2046), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 4, "mehmet", 18 },
-                    { 5, new DateTime(2024, 2, 8, 18, 4, 31, 45, DateTimeKind.Local).AddTicks(2047), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "admin", 80m, 5, "adminoğlu", 18 }
+                    { 1, new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7283), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 1, "mehmet", 18 },
+                    { 2, new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7301), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 2, "mehmet", 18 },
+                    { 3, new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7304), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 3, "mehmet", 18 },
+                    { 4, new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7306), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "ahmet", 80m, 4, "mehmet", 18 },
+                    { 5, new DateTime(2024, 2, 9, 22, 51, 54, 727, DateTimeKind.Local).AddTicks(7308), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170m, false, 3000.0, 70m, 2000.0, "admin", 80m, 5, "adminoğlu", 18 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Yemek",
-                columns: new[] { "ID", "Kalori", "KarbonhidratMiktari", "KategoriID", "ProteinMiktari", "YagMiktari", "YemekAdi" },
-                values: new object[] { 1, 95.0, 19.0, 1, 0.29999999999999999, 0.29999999999999999, "Elma" });
+                columns: new[] { "ID", "FotografYolu", "Kalori", "KarbonhidratMiktari", "KategoriID", "ProteinMiktari", "YagMiktari", "YemekAdi" },
+                values: new object[] { 1, "Fotograflar\\Elma.jpg", 95.0, 19.0, 1, 0.29999999999999999, 0.29999999999999999, "Elma" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_GunlukRapor_KullaniciKisiselID",

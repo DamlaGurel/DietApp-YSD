@@ -49,6 +49,7 @@ namespace DietApp.UI
                 var owner = (this.Owner) as OzetEkrani;
                 owner.RefreshDataGrid();
             }
+            KaloriHesaplamaPaneli();
         }
 
 
@@ -64,6 +65,7 @@ namespace DietApp.UI
             grpOgunAdi.Text = _ogunCesidi;
 
             pbGorsel.Image = null;
+
         }
 
         private void cmbYemekGirisi_KeyPress(object sender, KeyPressEventArgs e)
@@ -79,6 +81,16 @@ namespace DietApp.UI
                 string path = Path.Combine(Application.StartupPath, seciliYemek.FotografYolu);
                 pbGorsel.Image = Image.FromFile(path);
             }
+        }
+
+        private void KaloriHesaplamaPaneli()
+        {
+            Yemek yemek = cmbYemekGirisi.SelectedItem as Yemek;
+
+            lblKalori.Text = (yemek.Kalori * double.Parse(txtMiktar.Text) / 100).ToString();
+            lblKarbonhidrat.Text = (yemek.KarbonhidratMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
+            lblProtein.Text = (yemek.ProteinMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
+            lblYag.Text = (yemek.YagMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
         }
 
     }
