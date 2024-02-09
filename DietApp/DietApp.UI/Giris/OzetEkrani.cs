@@ -3,6 +3,7 @@ using DietApp.BLL.Services;
 using DietApp.Entities;
 using DietApp.Enums;
 using DietApp.ViewModels;
+using DietApp.ViewModels.KullaniciKisiselVms;
 
 namespace DietApp.UI
 {
@@ -52,13 +53,24 @@ namespace DietApp.UI
         private void OzetEkrani_Load(object sender, EventArgs e)
         {
             RefreshDataGrid();
-          
-           //pbKaloriTakip.Maximum = (int)_kisiselService.GetByID().GunlukKalori;
-           // UpdateProgressBar();
+
+            pbKaloriTakip.Maximum = (int)_kisiselService.GetByID(_kkId).GunlukKalori;
+             UpdateProgressBar();
 
 
         }
+        private void UpdateProgressBar()
+        {
+            var kkObj = _kisiselService.GetByID(_kkId);
+            double guncelKalori;
+            if (kkObj == null)
+                guncelKalori = 0;
+            else
+                guncelKalori = kkObj.GunlukKalori;
 
+            pbKaloriTakip.Value = (int)guncelKalori;
+            lblGuncelKalori.Text = (pbKaloriTakip.Maximum - guncelKalori) + "kcal";
+        }
         private void btnDegistir_Click(object sender, EventArgs e)
         {
             if (dgv_OgundekiYemekler.SelectedRows.Count == 0)

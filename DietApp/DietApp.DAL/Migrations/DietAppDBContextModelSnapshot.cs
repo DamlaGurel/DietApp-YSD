@@ -161,8 +161,8 @@ namespace DietApp.DAL.Migrations
                     b.Property<DateTime>("BitisTarihi")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("Boy")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Boy")
+                        .HasColumnType("double(18,2)");
 
                     b.Property<bool>("Cinsiyet")
                         .HasColumnType("bit");
@@ -170,8 +170,8 @@ namespace DietApp.DAL.Migrations
                     b.Property<double>("GunlukKalori")
                         .HasColumnType("float");
 
-                    b.Property<decimal>("HedefKilo")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("HedefKilo")
+                        .HasColumnType("double(18,2)");
 
                     b.Property<double>("HedefSuMiktari")
                         .HasColumnType("float");
@@ -180,8 +180,8 @@ namespace DietApp.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Kilo")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<double>("Kilo")
+                        .HasColumnType("double(18,2)");
 
                     b.Property<int>("KullaniciGirisID")
                         .HasColumnType("int");
