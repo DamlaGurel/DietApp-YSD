@@ -27,8 +27,8 @@ namespace DietApp.DAL
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-          // optionsBuilder.UseSqlServer(@"Server=DESKTOP-LLGUTIH; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
-             optionsBuilder.UseSqlServer(@"Server=DESKTOP-VU62QDF\SQLSERVERMS; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
+         optionsBuilder.UseSqlServer(@"Server=DESKTOP-LLGUTIH; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
+         //    optionsBuilder.UseSqlServer(@"Server=DESKTOP-VU62QDF\SQLSERVERMS; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
 
             //optionsBuilder.UseSqlServer(@"Server=DESKTOP-G2S16HQ; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
 
@@ -41,7 +41,7 @@ namespace DietApp.DAL
             modelBuilder.ApplyConfiguration(new KullaniciGirisConfiguration());
        
             modelBuilder.ApplyConfiguration(new KategoriConfiguration());
-            modelBuilder.Entity<KullaniciGiris>();
+         //   modelBuilder.Entity<KullaniciGiris>();
             modelBuilder.ApplyConfiguration(new KullaniciKisiselConfiguration());
             modelBuilder.Entity<Ogun>();
        

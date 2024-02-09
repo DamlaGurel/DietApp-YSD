@@ -1,6 +1,7 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.BLL.Services;
 using DietApp.Entities;
+using DietApp.Enums;
 using DietApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -20,35 +21,29 @@ namespace DietApp.UI
         IKullaniciSuTakipService _suTakipService;
         IKullaniciKisiselService _kisiselService;
         int KullaniciKisiselId;
-
-        public SuTakipEkrani(int id = 1)
+        DateTime Tarih;
+        public SuTakipEkrani(int id = 1, DateTime dt = new DateTime())
         {
             InitializeComponent();
             _suTakipService = new KullaniciSuTakipService();
             _kisiselService = new KullaniciKisiselService();
             KullaniciKisiselId = id;
+            Tarih = dt;
         }
+
+
 
         private void btnSuEkle_Click(object sender, EventArgs e)
         {
-            if (_suTakipService.GetById(KullaniciKisiselId) == null)
+            Su su = _suTakipService.SuKontrol(KullaniciKisiselId, Tarih);
+
+            SuTakipVm suTakipVm = new SuTakipVm()
             {
-                SuTakipVm suTakipVm = new SuTakipVm()
-                {
-                    ID = KullaniciKisiselId,
-                    SuMiktari = double.Parse(txtSu.Text)
-                };
-                _suTakipService.Create(suTakipVm);
-            }
-            else
-            {
-                SuTakipVm suTakipVm = new SuTakipVm()
-                {
-                    ID = KullaniciKisiselId,
-                    SuMiktari = double.Parse(txtSu.Text)
-                };
-                _suTakipService.SuEkleUpdate(suTakipVm);
-            }
+                ID = su.ID,
+                SuMiktari = double.Parse(txtSu.Text)
+            };
+            _suTakipService.SuEkleUpdate(suTakipVm);
+
             UpdateProgressBar();
         }
 
@@ -65,20 +60,29 @@ namespace DietApp.UI
 
         private void SuTakipEkrani_Load(object sender, EventArgs e)
         {
-            pbSuTakip.Maximum =(int)_kisiselService.GetByIdKisiselSuTakipVm(KullaniciKisiselId).HedefSuMiktari;
+            pbSuTakip.Maximum = (int)_kisiselService.GetByIdKisiselSuTakipVm(KullaniciKisiselId).HedefSuMiktari;
             UpdateProgressBar();
         }
 
         private void UpdateProgressBar()
         {
             double mevcutSuMiktari;
-            if (_suTakipService.GetById(KullaniciKisiselId) == null)
-                mevcutSuMiktari = 0;
-            else
-                 mevcutSuMiktari = _suTakipService.GetById(KullaniciKisiselId).SuMiktari;
 
-            pbSuTakip.Value = (int)mevcutSuMiktari;
-            lblKalanSu.Text = (pbSuTakip.Maximum - mevcutSuMiktari) + ("mL");
+            Su su = _suTakipService.SuKontrol(KullaniciKisiselId, Tarih);
+            mevcutSuMiktari = su.SuMiktari;
+
+
+            if ((int)mevcutSuMiktari > pbSuTakip.Maximum)
+            {
+                pbSuTakip.Value = pbSuTakip.Maximum;
+                lblKalanSu.Text = "";
+                MessageBox.Show("Tebrikler 2 litre su içtiniz!");
+            }
+            else
+            {
+                pbSuTakip.Value = (int)mevcutSuMiktari;
+                lblKalanSu.Text = (pbSuTakip.Maximum - mevcutSuMiktari) + ("mL");
+            }
         }
     }
 }

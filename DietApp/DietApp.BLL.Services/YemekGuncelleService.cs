@@ -41,6 +41,10 @@ namespace DietApp.BLL.Services
 
             return _yemekMiktariRepo.Update(ymk);
         }
+        public int YemekSil(int id)
+        {
+            return _yemekMiktariRepo.Delete(_yemekMiktariRepo.GetByID(id));
+        }
 
         public Yemek YemekGetir(int id)
         {

@@ -32,32 +32,35 @@ namespace DietApp.BLL.Services
         {
             Su su = _repo.GetByID(id);
 
-            if (su == null) return null;
-
-            Su suTakip = new Su()
-            {
-                ID = id,
-                SuMiktari = su.SuMiktari
-            }; return suTakip;
+            return su;
         }
 
         public int SuEkleUpdate(SuTakipVm vm)
         {
             Su su = _repo.GetByID(vm.ID);
-
-            su.KullaniciKisiselId = vm.ID;
             su.SuMiktari += vm.SuMiktari;
 
             return _repo.Update(su);
         }
 
+        public Su SuKontrol(int kkID, DateTime tarih)
+        {
+
+            Su aranansu = _repo.GetAll().ToList().FirstOrDefault(x => x.KullaniciKisiselId == kkID && x.Tarih == tarih);
+
+            if (aranansu == null)
+            {
+                aranansu = new Su() { KullaniciKisiselId = kkID, Tarih = tarih };
+                _repo.Create(aranansu);
+            }
+
+            return aranansu;
+        }
+
         public int SuCikarUpdate(SuTakipVm vm)
         {
             Su su = _repo.GetByID(vm.ID);
-
-            su.KullaniciKisiselId = vm.ID;
             su.SuMiktari -= vm.SuMiktari;
-
             return _repo.Update(su);
         }
     }

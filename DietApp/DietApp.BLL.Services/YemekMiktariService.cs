@@ -18,6 +18,7 @@ namespace DietApp.BLL.Services
         OgunRepository _ogunrepo;
         YemekMiktarOgunRepository _yemekOgunRepo;
         KategoriRepository _kategoriRepo;
+        KullaniciKisiselRepository _kullaniciKisiselRepo;
 
         public YemekMiktariService()
         {
@@ -26,8 +27,9 @@ namespace DietApp.BLL.Services
             _yemekOgunRepo=new YemekMiktarOgunRepository();
             _yemekrepo=new YemekRepository();
             _kategoriRepo=new KategoriRepository();
+            _kullaniciKisiselRepo=new KullaniciKisiselRepository();
         }
-        public List<YemekListVm> YemekleriGetir(DateTime tarih,OgunCesitleri ogunCesidi)
+        public List<YemekListVm> YemekleriGetir(DateTime tarih,OgunCesitleri ogunCesidi,int id=0)
         {
 
             List<YemekMiktari> miktarlar= _yemekmiktarrepo.GetAll().ToList();
@@ -35,13 +37,15 @@ namespace DietApp.BLL.Services
             List<YemekMiktarOgun> yemekmiktarogunler= _yemekOgunRepo.GetAll().ToList();
             List<Yemek> yemekler= _yemekrepo.GetAll().ToList();
             List<Kategori> kategoriler= _kategoriRepo.GetAll().ToList();
+            List<KullaniciKisisel> kullanicilar= _kullaniciKisiselRepo.GetAll().ToList();   
 
             var query = from miktar in miktarlar
                         join aratablo in yemekmiktarogunler on miktar.ID equals aratablo.YemekMiktarID
                         join ogun in ogunler on aratablo.OgunID equals ogun.ID
                         join yemek in yemekler on miktar.YemekID equals yemek.ID
                         join kategori in kategoriler on yemek.KategoriID equals kategori.ID
-                        where ogun.Tarih.Date==tarih.Date && ogun.OgunAdi== ogunCesidi
+                        join kullanici in kullanicilar on ogun.KullaniciKisiselID equals kullanici.ID
+                        where ogun.Tarih.Date==tarih.Date && ogun.OgunAdi== ogunCesidi && kullanici.ID==id
                         select new
                         {
                             YemekMiktarID = miktar.ID,
