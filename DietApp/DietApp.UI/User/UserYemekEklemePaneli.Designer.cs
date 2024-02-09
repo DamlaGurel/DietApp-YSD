@@ -114,6 +114,7 @@
             cmbKategori.Name = "cmbKategori";
             cmbKategori.Size = new Size(121, 28);
             cmbKategori.TabIndex = 22;
+            cmbKategori.SelectedIndexChanged += cmbKategori_SelectedIndexChanged;
             cmbKategori.KeyPress += cmbYemekGirisi_KeyPress;
             // 
             // label3

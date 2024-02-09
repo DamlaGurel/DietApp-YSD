@@ -30,7 +30,7 @@ namespace DietApp.UI
 
             _ymkservice = new UserYemekEklemeService();
 
-            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir();
+            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir(-1);
             cmbYemekGirisi.DisplayMember = "YemekAdi";
             cmbYemekGirisi.Text = string.Empty;
 
