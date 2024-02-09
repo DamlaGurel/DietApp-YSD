@@ -84,11 +84,12 @@ namespace DietApp.BLL.Services
             _yemekMiktariOgunRepo.Create(yemekMiktarOgun);
         }
 
-        public List<Yemek> YemekGetir(Kategori kat = null)
+        public List<Yemek> YemekGetir(int katId)
         {
-            if (kat == null) { return _yemekRepo.GetAll().ToList(); }
+            if (katId == -1) 
+                return _yemekRepo.GetAll().ToList(); 
 
-            return _yemekRepo.GetAll().Where(x => x.Kategori == kat).ToList();
+            return _yemekRepo.GetAll().Where(x => x.KategoriID == katId).ToList();
         }
 
         public List<Kategori> KategoriGetir()

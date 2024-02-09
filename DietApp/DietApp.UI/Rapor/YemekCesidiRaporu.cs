@@ -12,7 +12,7 @@ namespace DietApp.UI
 {
     public partial class YemekCesidiRaporu : Form
     {
-        public YemekCesidiRaporu()
+        public YemekCesidiRaporu(int id)
         {
             InitializeComponent();
         }
