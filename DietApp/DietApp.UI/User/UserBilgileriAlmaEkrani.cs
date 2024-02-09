@@ -9,6 +9,9 @@ namespace DietApp.UI
     {
         IKullaniciGirisService _kullaniciService;
         IKullaniciKisiselService _kullaniciKisiselService;
+
+        KullaniciKisiselCreateVm vivm;
+
         public KullanicOlusturVm Vm { get; }
 
         public UserBilgileriAlmaEkrani(KullanicOlusturVm vm)
@@ -17,6 +20,7 @@ namespace DietApp.UI
             _kullaniciService = new KullaniciGirisService();
             _kullaniciKisiselService = new KullaniciKisiselService();
 
+            vivm = new KullaniciKisiselCreateVm();
             Vm = vm;
         }
 
@@ -32,19 +36,15 @@ namespace DietApp.UI
         {
             int kullaniciKisiselId = new KullaniciGirisService().KullaniciYarat(Vm);
 
-            KullaniciKisiselUpdateVm vivm = new KullaniciKisiselUpdateVm()
-            {
-                ID = kullaniciKisiselId,
-                Boy = decimal.Parse(txtBoy.Text),
-                Kilo = decimal.Parse(txtKilo.Text),
-            };
 
+            vivm.KullaniciGirisId = kullaniciKisiselId;
+            vivm.Boy = decimal.Parse(txtBoy.Text);
+            vivm.Kilo = decimal.Parse(txtKilo.Text);
+            
             if (rbErkek.Checked)
                 vivm.Cinsiyet = false;
             else if (rbKadin.Checked)
                 vivm.Cinsiyet = true;
-
-            Vm.kullaniciKisiselID = _kullaniciKisiselService.Update(vivm);
 
 
             KullaniciKisiselVm kisiselVm = new KullaniciKisiselVm()
@@ -53,7 +53,7 @@ namespace DietApp.UI
                 Kilo = vivm.Kilo,
                 Cinsiyet = vivm.Cinsiyet,
             };
-            
+
             decimal vki = _kullaniciKisiselService.VucutKitleIndeksiHesapla(kisiselVm);
             if (vki >= 20 && vki < 25)
             {
@@ -73,8 +73,6 @@ namespace DietApp.UI
             txtHedefKilo.Text = lblIdealKilo.Text;
             lblGunlukKaloriIhtiyaci.Text = "Gunluk kalori ihtiyacınız: " + _kullaniciKisiselService.GunlukKaloriIhtiyaci(kisiselVm);
 
-
-            
 
         }
 

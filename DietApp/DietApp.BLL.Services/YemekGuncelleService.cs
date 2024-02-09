@@ -31,7 +31,8 @@ namespace DietApp.BLL.Services
             _yemekMiktariOgunRepo = new YemekMiktarOgunRepository();
             _kategoriRepo = new KategoriRepository();
         }
-        public int YemekGuncelle(YemekListVm vm)
+
+        public int YemekGuncelle(YemekGuncelleVm vm)
         {
 
             YemekMiktari ymk = _yemekMiktariRepo.GetByID(vm.YemekMiktarID);
@@ -51,11 +52,10 @@ namespace DietApp.BLL.Services
             return _yemekMiktariRepo.GetByID(id);
         }
      
-    
-
         public Kategori KategoriGetir(int id)
         {
             return _kategoriRepo.GetByID(id);
         }
+
     }
 }

@@ -11,11 +11,10 @@ namespace DietApp.BLL.IServices
 {
     public interface IYemekGuncelleService
     {
-        Yemek YemekGetir(int id);
-        YemekMiktari YemekMiktarGetir(int id);
-        Kategori KategoriGetir(int id);
-        int YemekGuncelle(YemekGuncelleVm vm);
+        public Yemek YemekGetir(int id);
+        public YemekMiktari YemekMiktarGetir(int id);
+        public Kategori KategoriGetir(int id);
+        public int YemekGuncelle(YemekGuncelleVm vm);
        
-
     }
 }
