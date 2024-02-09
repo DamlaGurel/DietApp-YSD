@@ -1,25 +1,24 @@
-﻿using DietApp.BLL.Services;
+﻿using DietApp.BLL.IServices;
+using DietApp.BLL.Services;
 using DietApp.Entities;
 using DietApp.Enums;
 using DietApp.ViewModels;
-using DietApp.ViewModels.KullaniciGiris;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DietApp.UI
 {
     public partial class OzetEkrani : Form
     {
         public KullaniciGiris _kullanici;
+        IKullaniciKisiselService _kisiselService;
+        YemekGuncelleService _yemekgnservice;
+        int _kkId;
+        public OzetEkrani(int kkId)
+        {
+            InitializeComponent();
+            InitializeComboBox();
 
+            _kkId=kkId;
+        }
         public OzetEkrani(KullaniciGiris kullanici)
         {
             InitializeComponent();
@@ -27,6 +26,8 @@ namespace DietApp.UI
             InitializeComboBox();
 
 
+            _kisiselService = new KullaniciKisiselService();
+            _kkId = kullanici.KullaniciKisiselID;
         }
 
         public void RefreshDataGrid()
@@ -34,7 +35,7 @@ namespace DietApp.UI
             if (cmbOgun.SelectedItem == null) return;
             if (Enum.TryParse(cmbOgun.SelectedItem.ToString(), out OgunCesitleri ogunCesiti))
             {
-                dgv_OgundekiYemekler.DataSource = new YemekMiktariService().YemekleriGetir(dtpTarih.Value, ogunCesiti);
+                dgv_OgundekiYemekler.DataSource = new YemekMiktariService().YemekleriGetir(dtpTarih.Value, ogunCesiti, _kkId);
 
                 dgv_OgundekiYemekler.Columns["ID"].Visible = false;
                 dgv_OgundekiYemekler.Columns["YemekMiktarID"].Visible = false;
@@ -51,6 +52,11 @@ namespace DietApp.UI
         private void OzetEkrani_Load(object sender, EventArgs e)
         {
             RefreshDataGrid();
+            _yemekgnservice=new YemekGuncelleService();
+           //pbKaloriTakip.Maximum = (int)_kisiselService.GetByID().GunlukKalori;
+           // UpdateProgressBar();
+
+
         }
 
         private void btnDegistir_Click(object sender, EventArgs e)
@@ -74,7 +80,7 @@ namespace DietApp.UI
         int id;
         private void btnSuTakip_Click(object sender, EventArgs e)
         {
-            SuTakipEkrani suTakipEkrani = new SuTakipEkrani(id = 1);
+            SuTakipEkrani suTakipEkrani = new SuTakipEkrani(_kkId,dtpTarih.Value.Date);
             suTakipEkrani.ShowDialog();
         }
 
@@ -84,8 +90,7 @@ namespace DietApp.UI
             string secilenOgun = cmbOgun.SelectedItem.ToString();
 
 
-
-            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun, dtpTarih.Value, _kullanici.KullaniciKisiselID);
+            UserYemekEklemePaneli userYemekEkleme = new UserYemekEklemePaneli(secilenOgun, dtpTarih.Value, _kkId);
             userYemekEkleme.ShowDialog(this);
         }
 
@@ -100,6 +105,8 @@ namespace DietApp.UI
 
             YemekListVm secilenOgun = (YemekListVm)dgv_OgundekiYemekler.SelectedRows[0].DataBoundItem;
 
+            _yemekgnservice.YemekSil(secilenOgun.YemekMiktarID);
+            RefreshDataGrid();
 
         }
     }

@@ -12,5 +12,6 @@ namespace DietApp.Entities
         public double SuMiktari { get; set; }
         public KullaniciKisisel KullaniciKisisel { get; set; }
         public int KullaniciKisiselId { get; set; }
+        public DateTime Tarih {  get; set; }
     }
 }

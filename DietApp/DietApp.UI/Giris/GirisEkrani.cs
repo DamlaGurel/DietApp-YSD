@@ -42,7 +42,7 @@ namespace DietApp.UI
           if (_service.KullaniciGirisYap(vm))
             {
 
-
+                var a = _service.KullaniciBul(vm.KullaniciAdi);
                 Form frm = new OzetEkrani(_service.KullaniciBul(vm.KullaniciAdi));
                 this.Hide();
                 frm.Show();

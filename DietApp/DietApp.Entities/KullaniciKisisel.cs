@@ -23,6 +23,7 @@ namespace DietApp.Entities
         public List<Ogun>? KullanicininOgunleri { get; set; }
         public List<Su>? IcilenSu { get; set; }
         public List<GunlukRapor>? KullanicininRaporlari {  get; set; }   
+
         public  int KullaniciGirisID;
         public KullaniciGiris KullaniciGiris { get; set; }
     }

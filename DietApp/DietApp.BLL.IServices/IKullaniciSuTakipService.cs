@@ -14,5 +14,6 @@ namespace DietApp.BLL.IServices
         int SuEkleUpdate(SuTakipVm vm);
         int SuCikarUpdate(SuTakipVm vm);
         Su GetById(int id);
+        Su SuKontrol(int kkID, DateTime tarih);
     }
 }

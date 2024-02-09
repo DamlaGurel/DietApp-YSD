@@ -18,14 +18,9 @@ namespace DietApp.UI
     public partial class YemekGuncelle : Form
     {
 
-        IYemekGuncellemeService _service;
-
+        IYemekGuncelleService _service;
         IUserYemekEklemeService _ymkservice;
         YemekListVm _vm;
-
-
-
-
 
         public YemekGuncelle(YemekListVm yemekList)
         {

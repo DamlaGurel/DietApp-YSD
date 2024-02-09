@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace DietApp.BLL.Services
 {
-    public class YemekGuncelleService : IYemekGuncellemeService
+    public class YemekGuncelleService : IYemekGuncelleService
     {
 
         IOgunRepository _ogunRepo;
@@ -31,6 +31,7 @@ namespace DietApp.BLL.Services
             _yemekMiktariOgunRepo = new YemekMiktarOgunRepository();
             _kategoriRepo = new KategoriRepository();
         }
+
         public int YemekGuncelle(YemekGuncelleVm vm)
         {
 
@@ -39,6 +40,10 @@ namespace DietApp.BLL.Services
             ymk.YemekID = vm.YemekID;
 
             return _yemekMiktariRepo.Update(ymk);
+        }
+        public int YemekSil(int id)
+        {
+            return _yemekMiktariRepo.Delete(_yemekMiktariRepo.GetByID(id));
         }
 
         public Yemek YemekGetir(int id)
@@ -51,11 +56,10 @@ namespace DietApp.BLL.Services
             return _yemekMiktariRepo.GetByID(id);
         }
      
-    
-
         public Kategori KategoriGetir(int id)
         {
             return _kategoriRepo.GetByID(id);
         }
+
     }
 }

@@ -13,9 +13,9 @@ namespace DietApp.Entities
         public OgunCesitleri OgunAdi { get; set; }
 
         public DateTime Tarih { get; set; }
-        public virtual int KullaniciKisiselID { get; set; }
-        public virtual KullaniciKisisel? KullaniciKisisel { get; set; }
-        public virtual List<YemekMiktarOgun>? OgununYemekleri { get; set; }
+        public int KullaniciKisiselID { get; set; }
+        public KullaniciKisisel? KullaniciKisisel { get; set; }
+        public List<YemekMiktarOgun>? OgununYemekleri { get; set; }
 
 
 

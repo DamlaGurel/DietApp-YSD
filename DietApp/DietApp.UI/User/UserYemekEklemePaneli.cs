@@ -3,27 +3,19 @@ using DietApp.BLL.Services;
 using DietApp.Entities;
 using DietApp.Enums;
 using DietApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using DietApp.ViewModels.KullaniciKisiselVms;
 
 namespace DietApp.UI
 {
     public partial class UserYemekEklemePaneli : Form
     {
         IUserYemekEklemeService _service;
+        KullaniciKisiselCreateVm _kkCreateVM;
         string _ogunCesidi;
 
         public DateTime DtpTarih;
 
-        public int ID { get; }
+        public int kkID ;
 
         public UserYemekEklemePaneli(string ogunCesidi, DateTime tarih, int id)
         {
@@ -32,7 +24,7 @@ namespace DietApp.UI
 
             _ogunCesidi = ogunCesidi;
             DtpTarih = tarih;
-            ID = id;
+            kkID = id;
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -40,7 +32,7 @@ namespace DietApp.UI
 
             Yemek yemek = cmbYemekGirisi.SelectedItem as Yemek;
 
-            UserYemekEklemePaneliVm userYemekEkleme = new UserYemekEklemePaneliVm()
+            UserYemekEklemePaneliVm userYemekEklemeVM = new UserYemekEklemePaneliVm()
             {
                 YemekID = yemek.ID,
                 MiktarGr = double.Parse(txtMiktar.Text)
@@ -50,10 +42,11 @@ namespace DietApp.UI
             if (Enum.TryParse(_ogunCesidi, out OgunCesitleri ogunCesiti))
             {
 
-                Ogun ogun = _service.TariheGoreOgunBul(ogunCesiti, DtpTarih.Date, ID);
-                _service.UserYemekEkleme(userYemekEkleme, ogun);
+                Ogun ogun = _service.TariheGoreOgunBul(ogunCesiti, DtpTarih.Date, kkID);
+                ogun.KullaniciKisiselID = kkID;
+                _service.UserYemekEkleme(userYemekEklemeVM, ogun);
 
-              var owner = (this.Owner) as OzetEkrani;
+                var owner = (this.Owner) as OzetEkrani;
                 owner.RefreshDataGrid();
             }
         }
@@ -68,13 +61,25 @@ namespace DietApp.UI
             cmbKategori.DataSource = _service.KategoriGetir();
             cmbKategori.DisplayMember = "KategoriAdi";
             cmbKategori.Text = string.Empty;
-
             grpOgunAdi.Text = _ogunCesidi;
+
+            pbGorsel.Image = null;
         }
 
         private void cmbYemekGirisi_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = true;
         }
+
+        private void cmbYemekGirisi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Yemek seciliYemek = cmbYemekGirisi.SelectedItem as Yemek;
+            if (seciliYemek != null)
+            {
+                string path = Path.Combine(Application.StartupPath, seciliYemek.FotografYolu);
+                pbGorsel.Image = Image.FromFile(path);
+            }
+        }
+
     }
 }
