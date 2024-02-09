@@ -18,7 +18,7 @@ namespace DietApp.UI
             InitializeComponent();
             InitializeComboBox();
 
-            _kkId=kkId;
+            _kkId = kkId;
         }
         public OzetEkrani(KullaniciGiris kullanici)
         {
@@ -33,6 +33,7 @@ namespace DietApp.UI
 
         public void RefreshDataGrid()
         {
+            UpdateProgressBar();
             if (cmbOgun.SelectedItem == null) return;
             if (Enum.TryParse(cmbOgun.SelectedItem.ToString(), out OgunCesitleri ogunCesiti))
             {
@@ -43,6 +44,7 @@ namespace DietApp.UI
                 dgv_OgundekiYemekler.Columns["KategoriID"].Visible = false;
             }
 
+
         }
 
         private void InitializeComboBox()
@@ -52,24 +54,19 @@ namespace DietApp.UI
 
         private void OzetEkrani_Load(object sender, EventArgs e)
         {
-            RefreshDataGrid();
 
             pbKaloriTakip.Maximum = (int)_kisiselService.GetByID(_kkId).GunlukKalori;
-             UpdateProgressBar();
-
-
+            RefreshDataGrid();
         }
         private void UpdateProgressBar()
         {
-            var kkObj = _kisiselService.GetByID(_kkId);
-            double guncelKalori;
-            if (kkObj == null)
-                guncelKalori = 0;
+            double guncelKalori = new KaloriHesapService().GunlukKaloriHesabi(_kkId, dtpTarih.Value.Date);
+            if (guncelKalori < pbKaloriTakip.Maximum)
+                pbKaloriTakip.Value = (int)guncelKalori;
             else
-                guncelKalori = kkObj.GunlukKalori;
-
-            pbKaloriTakip.Value = (int)guncelKalori;
-            lblGuncelKalori.Text = (pbKaloriTakip.Maximum - guncelKalori) + "kcal";
+                pbKaloriTakip.Value = pbKaloriTakip.Maximum;
+            lblGuncelKalori.Text = guncelKalori + "kcal";
+            lblHedefKalori.Text = pbKaloriTakip.Maximum + "kcal";
         }
         private void btnDegistir_Click(object sender, EventArgs e)
         {
@@ -92,7 +89,7 @@ namespace DietApp.UI
         int id;
         private void btnSuTakip_Click(object sender, EventArgs e)
         {
-            SuTakipEkrani suTakipEkrani = new SuTakipEkrani(_kkId,dtpTarih.Value.Date);
+            SuTakipEkrani suTakipEkrani = new SuTakipEkrani(_kkId, dtpTarih.Value.Date);
             suTakipEkrani.ShowDialog();
         }
 

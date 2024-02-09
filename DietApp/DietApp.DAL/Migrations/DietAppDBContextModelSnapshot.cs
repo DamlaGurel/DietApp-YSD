@@ -204,7 +204,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9540),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7040),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -220,7 +220,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 2,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9548),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7048),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -236,7 +236,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 3,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9549),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7050),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -252,7 +252,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 4,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9550),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7051),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -268,7 +268,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 5,
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 5, 21, 721, DateTimeKind.Local).AddTicks(9551),
+                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7052),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,

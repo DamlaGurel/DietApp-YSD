@@ -35,15 +35,28 @@ namespace DietApp.BLL.Services
         public int YemekGuncelle(YemekGuncelleVm vm)
         {
 
-            YemekMiktari ymk = _yemekMiktariRepo.GetByID(vm.YemekMiktarID);
-            ymk.MiktarGr = vm.Miktar;
-            ymk.YemekID = vm.YemekID;
-
-            return _yemekMiktariRepo.Update(ymk);
+            YemekMiktari ymkMiktar = _yemekMiktariRepo.GetByID(vm.YemekMiktarID);
+            Yemek ymk = _yemekRepo.GetByID(vm.YemekID);
+            ymkMiktar.MiktarGr = vm.Miktar;
+            ymkMiktar.YemekID = vm.YemekID;
+            ymkMiktar.Kalori = ymk.Kalori * ymkMiktar.MiktarGr / 100;
+            ymkMiktar.KarbonhidratMiktari = ymk.KarbonhidratMiktari * ymkMiktar.MiktarGr / 100;
+            ymkMiktar.ProteinMiktari = ymk.ProteinMiktari * ymkMiktar.MiktarGr / 100;
+            ymkMiktar.YagMiktari = ymk.YagMiktari * ymkMiktar.MiktarGr / 100;
+            return _yemekMiktariRepo.Update(ymkMiktar);
         }
         public int YemekSil(int id)
         {
-            return _yemekMiktariRepo.Delete(_yemekMiktariRepo.GetByID(id));
+            YemekMiktari ym = _yemekMiktariRepo.GetByID(id);
+            
+            Ogun ogun = _ogunRepo.GetByID(new YemekMiktarOgunRepository().GetAll().FirstOrDefault(x => x.YemekMiktarID == ym.ID).OgunID);
+            ogun.Kalori -= ym.Kalori;
+            ogun.ProteinMiktari -= ym.ProteinMiktari;
+            ogun.KarbonhidratMiktari -= ym.KarbonhidratMiktari;
+            ogun.YagMiktari -= ym.YagMiktari;
+
+            _ogunRepo.Update(ogun);
+            return _yemekMiktariRepo.Delete(ym);
         }
 
         public Yemek YemekGetir(int id)
@@ -55,7 +68,7 @@ namespace DietApp.BLL.Services
         {
             return _yemekMiktariRepo.GetByID(id);
         }
-     
+
         public Kategori KategoriGetir(int id)
         {
             return _kategoriRepo.GetByID(id);

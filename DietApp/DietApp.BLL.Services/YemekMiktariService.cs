@@ -36,6 +36,7 @@ namespace DietApp.BLL.Services
             List<Ogun> ogunler= _ogunrepo.GetAll().ToList();
             List<YemekMiktarOgun> yemekmiktarogunler= _yemekOgunRepo.GetAll().ToList();
             List<Yemek> yemekler= _yemekrepo.GetAll().ToList();
+            List<YemekMiktari> ymler= _yemekmiktarrepo.GetAll().ToList();
             List<Kategori> kategoriler= _kategoriRepo.GetAll().ToList();
             List<KullaniciKisisel> kullanicilar= _kullaniciKisiselRepo.GetAll().ToList();   
 
@@ -51,13 +52,12 @@ namespace DietApp.BLL.Services
                             YemekMiktarID = miktar.ID,
                             KategoriID = kategori.ID,
                             YemekAdi=yemek.YemekAdi,
-                            Kalori=yemek.Kalori,
+                            Kalori= miktar.Kalori,
                             Kategori= kategori.KategoriAdi,
-                            Karbonhidrat =yemek.KarbonhidratMiktari,
-                            Protein=yemek.ProteinMiktari,
-                            Yag=yemek.YagMiktari,
+                            Karbonhidrat = miktar.KarbonhidratMiktari,
+                            Protein= miktar.ProteinMiktari,
+                            Yag= miktar.YagMiktari,
                             Miktar=miktar.MiktarGr
-
                         };
 
             List < YemekListVm > vmlist= new List < YemekListVm >();
@@ -78,10 +78,6 @@ namespace DietApp.BLL.Services
                 };
                 vmlist.Add(vm);
             }
-
-
-
-
             return vmlist;
 
         }
