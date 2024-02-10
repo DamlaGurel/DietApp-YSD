@@ -24,7 +24,6 @@ namespace DietApp.BLL.Services
         YemekMiktarOgunRepository _yemekOgunRepo;
         KategoriRepository _kategoriRepo;
         KullaniciKisiselRepository _kullaniciKisiselRepo;
-        KategoriRepository _kategoriRepo;
         KullaniciKisiselRepository _kisiselRepo;
 
         public RaporlarService()
