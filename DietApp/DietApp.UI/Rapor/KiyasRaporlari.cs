@@ -1,5 +1,6 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.BLL.Services;
+using DietApp.Entities;
 using DietApp.Enums;
 using System;
 using System.Collections.Generic;
@@ -72,6 +73,30 @@ namespace DietApp.UI
             }
 
             lblKategoriKullaniciOrtalama.Text = (digerOrtKalori / DigerList.Count).ToString();
+        }
+
+
+
+        private void KiyasRaporlari_Load(object sender, EventArgs e)
+        {
+            cmbKategori.DataSource = new RaporlarService().KategoriGetAll();
+            cmbKategori.DisplayMember = "KategoriAdi";
+        }
+
+        private void btnHesaplaKategori_Click(object sender, EventArgs e)
+        {
+            if (cmbKategori.SelectedItem == null) return;
+
+            double ortalamaKisi, ortalamaGenel;
+
+
+            new RaporlarService().KiyasRaporOgun(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date,
+(Kategori)cmbKategori.SelectedItem, _kkId, out ortalamaGenel, out ortalamaKisi);
+
+
+            lblKategoriOrtalama.Text = ortalamaGenel.ToString();
+            lblKategoriKullaniciOrtalama.Text = ortalamaKisi.ToString();
+
         }
     }
 }

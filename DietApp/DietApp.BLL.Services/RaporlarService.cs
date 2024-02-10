@@ -1,7 +1,7 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.DAL.Repositories;
-using DietApp.Enums;
 using DietApp.Entities;
+using DietApp.Enums;
 using DietApp.ViewModels.Raporlar;
 using System;
 using System.Collections.Generic;
@@ -30,7 +30,7 @@ namespace DietApp.BLL.Services
             {
                 OgunAdi = x.OgunAdi,
                 Kalori = x.Kalori
-            }).ToList(); 
+            }).ToList();
             return gunlukRapors;
         }
 
@@ -42,7 +42,7 @@ namespace DietApp.BLL.Services
                 OgunAdi = (int)s.OgunAdi,
                 KullaniciId = s.KullaniciKisiselID,
                 Kalori = s.Kalori
-            }).ToList(); 
+            }).ToList();
             return kiyasRaporOgun;
         }
 
@@ -59,33 +59,57 @@ namespace DietApp.BLL.Services
 
         public void KiyasRaporOgun(DateTime baslangicTarih, DateTime bitistarih, Kategori kat, int kisiID, out double GenelOrtalamaKalori, out double KisiOrtalamaKalori)
         {
-            var query = 
+            var query =
                 from kisisel in _kisiselRepo.GetAll()
                 join ogun in _ogunRepo.GetAll() on kisisel.ID equals ogun.KullaniciKisiselID
                 join ymkogun in new YemekMiktarOgunRepository().GetAll() on ogun.ID equals ymkogun.OgunID
                 join miktar in new YemekMiktariRepository().GetAll() on ymkogun.YemekMiktarID equals miktar.ID
                 join yemek in new YemekRepository().GetAll() on miktar.YemekID equals yemek.ID
                 join kategori in new KategoriRepository().GetAll() on yemek.KategoriID equals kategori.ID
-                where kategori == kat
+                where kat.ID == kategori.ID && ogun.Tarih>=baslangicTarih && ogun.Tarih<=bitistarih
                 select new
                 {
-                 yemek.Kalori
+                    yemek.Kalori
                 };
-            GenelOrtalamaKalori = 1; // query.Average();
 
-           var query2 = 
-                from kisisel in _kisiselRepo.GetAll()
-                join ogun in _ogunRepo.GetAll() on kisisel.ID equals ogun.KullaniciKisiselID
-                join ymkogun in new YemekMiktarOgunRepository().GetAll() on ogun.ID equals ymkogun.OgunID
-                join miktar in new YemekMiktariRepository().GetAll() on ymkogun.YemekMiktarID equals miktar.ID
-                join yemek in new YemekRepository().GetAll() on miktar.YemekID equals yemek.ID
-                join kategori in new KategoriRepository().GetAll() on yemek.KategoriID equals kategori.ID
-                where kategori == kat && kisisel.ID == kisiID
-                select new
-                {
-                    kalori = yemek.Kalori
-                };
-            KisiOrtalamaKalori = 1;//query.Average();
+
+
+            List<double> genelKategoriler= new List<double>();
+            foreach (var kal in query)
+            {
+                genelKategoriler.Add(kal.Kalori);
+            }
+            if (genelKategoriler.Count != 0)
+                GenelOrtalamaKalori = genelKategoriler.Average();
+            else GenelOrtalamaKalori = 0;
+
+
+
+            var query2 =
+                   from kisisel in _kisiselRepo.GetAll()
+                   join ogun in _ogunRepo.GetAll() on kisisel.ID equals ogun.KullaniciKisiselID
+                   join ymkogun in new YemekMiktarOgunRepository().GetAll() on ogun.ID equals ymkogun.OgunID
+                   join miktar in new YemekMiktariRepository().GetAll() on ymkogun.YemekMiktarID equals miktar.ID
+                   join yemek in new YemekRepository().GetAll() on miktar.YemekID equals yemek.ID
+                   join kategori in new KategoriRepository().GetAll() on yemek.KategoriID equals kategori.ID
+                   
+                  where kategori.ID == kat.ID && kisisel.ID == kisiID && ogun.Tarih >= baslangicTarih && ogun.Tarih <= bitistarih
+                  
+                   select new
+                   {
+                       kalori = yemek.Kalori
+                   };
+
+
+            List<double> KisiKategoriler = new List<double>();
+            foreach (var kal in query2)
+            {
+                KisiKategoriler.Add(kal.kalori);
+            }
+            if(KisiKategoriler.Count!=0)
+            KisiOrtalamaKalori = KisiKategoriler.Average();//query.Average();
+            else
+                KisiOrtalamaKalori=0;
         }
     }
 }
