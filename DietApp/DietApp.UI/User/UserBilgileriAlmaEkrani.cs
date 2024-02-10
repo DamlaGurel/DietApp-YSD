@@ -78,24 +78,24 @@ namespace DietApp.UI
             double vki = _kullaniciKisiselService.VucutKitleIndeksiHesapla(kisiselVm);
             if (vki >= 20 && vki < 25)
             {
-                lblKullaniciKisisel.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığındasınız.";
+                lblKullaniciKisisel.Text = $" {vki:N2} Ortalama vucüt kitle indeks aralığındasınız.";
             }
             else if (vki >= 25)
             {
-                lblKullaniciKisisel.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığının üstündesiniz.";
+                lblKullaniciKisisel.Text = $" {vki:N2} Ortalama vucüt kitle indeks aralığının üstündesiniz.";
             }
             else if (vki < 20)
             {
-                lblKullaniciKisisel.Text = $"Vücut Kitle İndeksiniz: {vki}. Ortalama vucüt kitle indeks aralığının üstündesiniz.";
+                lblKullaniciKisisel.Text = $" {vki:N2} Ortalama vucüt kitle indeks aralığının üstündesiniz.";
             }
 
-            lblIdealKilo.Text = "İdeal Kilonuz:" + _kullaniciKisiselService.IdealKiloHesapla(kisiselVm, vivm.Cinsiyet);
+            lblIdealKilo.Text = _kullaniciKisiselService.IdealKiloHesapla(kisiselVm, vivm.Cinsiyet).ToString("N2");
 
             vivm.IdealKilo = vki;
 
             txtHedefKilo.Text = lblIdealKilo.Text;
             double gki = _kullaniciKisiselService.GunlukKaloriIhtiyaci(kisiselVm);
-            lblGunlukKaloriIhtiyaci.Text = "Gunluk kalori ihtiyacınız: " + gki;
+            lblGunlukKaloriIhtiyaci.Text = $" {gki:N2}";
             vivm.GunlukKalori = gki;
 
 
