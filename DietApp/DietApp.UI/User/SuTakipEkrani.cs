@@ -22,7 +22,7 @@ namespace DietApp.UI
         IKullaniciKisiselService _kisiselService;
         int KullaniciKisiselId;
         DateTime Tarih;
-        public SuTakipEkrani(int id = 1, DateTime dt = new DateTime())
+        public SuTakipEkrani(int id, DateTime dt = new DateTime())
         {
             InitializeComponent();
             _suTakipService = new KullaniciSuTakipService();
@@ -49,9 +49,11 @@ namespace DietApp.UI
 
         private void btnSuCikar_Click(object sender, EventArgs e)
         {
+            Su su = _suTakipService.SuKontrol(KullaniciKisiselId, Tarih);
+
             SuTakipVm suTakipVm = new SuTakipVm()
             {
-                ID = KullaniciKisiselId,
+                ID = su.ID,
                 SuMiktari = double.Parse(txtSu.Text)
             };
             _suTakipService.SuCikarUpdate(suTakipVm);
@@ -81,7 +83,7 @@ namespace DietApp.UI
             else
             {
                 pbSuTakip.Value = (int)mevcutSuMiktari;
-                lblKalanSu.Text = (pbSuTakip.Maximum - mevcutSuMiktari) + ("mL");
+                lblKalanSu.Text = (pbSuTakip.Maximum - mevcutSuMiktari) + (" mL");
             }
         }
     }

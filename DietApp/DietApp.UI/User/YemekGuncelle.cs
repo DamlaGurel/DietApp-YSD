@@ -38,7 +38,6 @@ namespace DietApp.UI
             cmbKategori.DisplayMember = "KategoriAdi";
             cmbKategori.Text = string.Empty;
 
-
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -48,7 +47,7 @@ namespace DietApp.UI
             {
                 YemekGuncelleVm vm = new YemekGuncelleVm()
                 {
-                    YemekMiktarID=_vm.YemekMiktarID,
+                    YemekMiktarID = _vm.YemekMiktarID,
                     YemekID = (cmbYemekGirisi.SelectedItem as Yemek).ID,
                     Miktar = miktar
                 };
@@ -60,16 +59,44 @@ namespace DietApp.UI
             else
                 MessageBox.Show("Bir sayı giriniz!");
 
+            KaloriHesaplamaPaneli();
             MessageBox.Show("Yemeğiniz Öğününüze Başarıyla Güncellendi!", "Bilgilendirme Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         private void YemekGuncelle_Load(object sender, EventArgs e)
         {
             cmbKategori.SelectedItem = _service.KategoriGetir(_vm.KategoriID);
             cmbYemekGirisi.SelectedItem = _service.YemekGetir(_service.YemekMiktarGetir(_vm.YemekMiktarID).YemekID);
             txtMiktar.Text = _vm.Miktar.ToString();
+           
+            string path = Path.Combine(Application.StartupPath, _service.YemekGetir(_service.YemekMiktarGetir(_vm.YemekMiktarID).YemekID).FotografYolu);
+            pbGorsel.Image = Image.FromFile(path);
+        }
 
-            
+        private void KaloriHesaplamaPaneli()
+        {
+            Yemek yemek = cmbYemekGirisi.SelectedItem as Yemek;
+
+            lblKalori.Text = (yemek.Kalori * double.Parse(txtMiktar.Text) / 100).ToString();
+            lblKarbonhidrat.Text = (yemek.KarbonhidratMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
+            lblProtein.Text = (yemek.ProteinMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
+            lblYag.Text = (yemek.YagMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
+        }
+
+        private void cmbYemekGirisi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Yemek seciliYemek = cmbYemekGirisi.SelectedItem as Yemek;
+            if (seciliYemek.ID != 0)
+            {
+                pbGorsel.Visible = true;
+                string path = Path.Combine(Application.StartupPath, seciliYemek.FotografYolu);
+                pbGorsel.Image = Image.FromFile(path);
+            }
+        }
+
+        private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -61,7 +61,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(103, 74);
+            label1.Location = new Point(103, 99);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(37, 20);
@@ -71,7 +71,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(103, 118);
+            label2.Location = new Point(103, 143);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(38, 20);
@@ -81,8 +81,8 @@
             // rbKadin
             // 
             rbKadin.AutoSize = true;
-            rbKadin.Location = new Point(104, 158);
-            rbKadin.Margin = new Padding(2, 2, 2, 2);
+            rbKadin.Location = new Point(104, 183);
+            rbKadin.Margin = new Padding(2);
             rbKadin.Name = "rbKadin";
             rbKadin.Size = new Size(68, 24);
             rbKadin.TabIndex = 2;
@@ -93,8 +93,8 @@
             // rbErkek
             // 
             rbErkek.AutoSize = true;
-            rbErkek.Location = new Point(250, 158);
-            rbErkek.Margin = new Padding(2, 2, 2, 2);
+            rbErkek.Location = new Point(250, 183);
+            rbErkek.Margin = new Padding(2);
             rbErkek.Name = "rbErkek";
             rbErkek.Size = new Size(65, 24);
             rbErkek.TabIndex = 3;
@@ -125,7 +125,7 @@
             // btnKullaniciKisiselHesapla
             // 
             btnKullaniciKisiselHesapla.Location = new Point(28, 183);
-            btnKullaniciKisiselHesapla.Margin = new Padding(2, 2, 2, 2);
+            btnKullaniciKisiselHesapla.Margin = new Padding(2);
             btnKullaniciKisiselHesapla.Name = "btnKullaniciKisiselHesapla";
             btnKullaniciKisiselHesapla.Size = new Size(169, 59);
             btnKullaniciKisiselHesapla.TabIndex = 6;
@@ -135,16 +135,16 @@
             // 
             // txtBoy
             // 
-            txtBoy.Location = new Point(194, 69);
-            txtBoy.Margin = new Padding(2, 2, 2, 2);
+            txtBoy.Location = new Point(194, 94);
+            txtBoy.Margin = new Padding(2);
             txtBoy.Name = "txtBoy";
             txtBoy.Size = new Size(121, 27);
             txtBoy.TabIndex = 7;
             // 
             // txtKilo
             // 
-            txtKilo.Location = new Point(194, 113);
-            txtKilo.Margin = new Padding(2, 2, 2, 2);
+            txtKilo.Location = new Point(194, 138);
+            txtKilo.Margin = new Padding(2);
             txtKilo.Name = "txtKilo";
             txtKilo.Size = new Size(121, 27);
             txtKilo.TabIndex = 8;
@@ -152,7 +152,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(418, 159);
+            label5.Location = new Point(418, 184);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(106, 20);
@@ -161,8 +161,8 @@
             // 
             // txtHedefKilo
             // 
-            txtHedefKilo.Location = new Point(534, 159);
-            txtHedefKilo.Margin = new Padding(2, 2, 2, 2);
+            txtHedefKilo.Location = new Point(534, 184);
+            txtHedefKilo.Margin = new Padding(2);
             txtHedefKilo.Name = "txtHedefKilo";
             txtHedefKilo.Size = new Size(226, 27);
             txtHedefKilo.TabIndex = 10;
@@ -196,10 +196,10 @@
             grpVucutIndeksBilgi.Controls.Add(label3);
             grpVucutIndeksBilgi.Controls.Add(btnKullaniciKisiselHesapla);
             grpVucutIndeksBilgi.Controls.Add(btnAnaEkranaGec);
-            grpVucutIndeksBilgi.Location = new Point(42, 212);
-            grpVucutIndeksBilgi.Margin = new Padding(2, 2, 2, 2);
+            grpVucutIndeksBilgi.Location = new Point(42, 237);
+            grpVucutIndeksBilgi.Margin = new Padding(2);
             grpVucutIndeksBilgi.Name = "grpVucutIndeksBilgi";
-            grpVucutIndeksBilgi.Padding = new Padding(2, 2, 2, 2);
+            grpVucutIndeksBilgi.Padding = new Padding(2);
             grpVucutIndeksBilgi.Size = new Size(791, 260);
             grpVucutIndeksBilgi.TabIndex = 14;
             grpVucutIndeksBilgi.TabStop = false;
@@ -227,7 +227,7 @@
             // btnAnaEkranaGec
             // 
             btnAnaEkranaGec.Location = new Point(570, 177);
-            btnAnaEkranaGec.Margin = new Padding(2, 2, 2, 2);
+            btnAnaEkranaGec.Margin = new Padding(2);
             btnAnaEkranaGec.Name = "btnAnaEkranaGec";
             btnAnaEkranaGec.Size = new Size(201, 70);
             btnAnaEkranaGec.TabIndex = 15;
@@ -237,8 +237,8 @@
             // 
             // dtpBaslangicTarihi
             // 
-            dtpBaslangicTarihi.Location = new Point(534, 71);
-            dtpBaslangicTarihi.Margin = new Padding(2, 2, 2, 2);
+            dtpBaslangicTarihi.Location = new Point(534, 96);
+            dtpBaslangicTarihi.Margin = new Padding(2);
             dtpBaslangicTarihi.Name = "dtpBaslangicTarihi";
             dtpBaslangicTarihi.Size = new Size(241, 27);
             dtpBaslangicTarihi.TabIndex = 16;
@@ -246,7 +246,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(401, 76);
+            label7.Location = new Point(401, 101);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(114, 20);
@@ -256,7 +256,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(434, 110);
+            label8.Location = new Point(434, 135);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(79, 20);
@@ -265,16 +265,16 @@
             // 
             // dtpBitisTarihi
             // 
-            dtpBitisTarihi.Location = new Point(534, 110);
-            dtpBitisTarihi.Margin = new Padding(2, 2, 2, 2);
+            dtpBitisTarihi.Location = new Point(534, 135);
+            dtpBitisTarihi.Margin = new Padding(2);
             dtpBitisTarihi.Name = "dtpBitisTarihi";
             dtpBitisTarihi.Size = new Size(241, 27);
             dtpBitisTarihi.TabIndex = 18;
             // 
             // txtIsim
             // 
-            txtIsim.Location = new Point(118, 10);
-            txtIsim.Margin = new Padding(2, 2, 2, 2);
+            txtIsim.Location = new Point(118, 35);
+            txtIsim.Margin = new Padding(2);
             txtIsim.Name = "txtIsim";
             txtIsim.Size = new Size(121, 27);
             txtIsim.TabIndex = 21;
@@ -282,7 +282,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(27, 14);
+            label9.Location = new Point(27, 39);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(39, 20);
@@ -291,8 +291,8 @@
             // 
             // txtSoyisim
             // 
-            txtSoyisim.Location = new Point(419, 8);
-            txtSoyisim.Margin = new Padding(2, 2, 2, 2);
+            txtSoyisim.Location = new Point(419, 33);
+            txtSoyisim.Margin = new Padding(2);
             txtSoyisim.Name = "txtSoyisim";
             txtSoyisim.Size = new Size(121, 27);
             txtSoyisim.TabIndex = 23;
@@ -300,7 +300,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(340, 8);
+            label10.Location = new Point(340, 33);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(63, 20);
@@ -310,7 +310,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(598, 14);
+            label11.Location = new Point(598, 39);
             label11.Margin = new Padding(2, 0, 2, 0);
             label11.Name = "label11";
             label11.Size = new Size(33, 20);
@@ -319,8 +319,8 @@
             // 
             // txtYas
             // 
-            txtYas.Location = new Point(654, 14);
-            txtYas.Margin = new Padding(2, 2, 2, 2);
+            txtYas.Location = new Point(654, 39);
+            txtYas.Margin = new Padding(2);
             txtYas.Name = "txtYas";
             txtYas.Size = new Size(121, 27);
             txtYas.TabIndex = 25;
@@ -329,7 +329,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(857, 520);
+            ClientSize = new Size(857, 531);
             Controls.Add(txtYas);
             Controls.Add(label11);
             Controls.Add(txtSoyisim);
@@ -349,7 +349,7 @@
             Controls.Add(rbKadin);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "UserBilgileriAlmaEkrani";
             Text = "UserBilgileriAlmaEkrani";
             grpVucutIndeksBilgi.ResumeLayout(false);
