@@ -43,17 +43,19 @@
             // lblSifre
             // 
             lblSifre.AutoSize = true;
-            lblSifre.Location = new Point(474, 124);
+            lblSifre.Location = new Point(379, 99);
+            lblSifre.Margin = new Padding(2, 0, 2, 0);
             lblSifre.Name = "lblSifre";
-            lblSifre.Size = new Size(0, 25);
+            lblSifre.Size = new Size(0, 20);
             lblSifre.TabIndex = 10;
             // 
             // lblKullaniciAdi
             // 
             lblKullaniciAdi.AutoSize = true;
-            lblKullaniciAdi.Location = new Point(474, 56);
+            lblKullaniciAdi.Location = new Point(379, 45);
+            lblKullaniciAdi.Margin = new Padding(2, 0, 2, 0);
             lblKullaniciAdi.Name = "lblKullaniciAdi";
-            lblKullaniciAdi.Size = new Size(0, 25);
+            lblKullaniciAdi.Size = new Size(0, 20);
             lblKullaniciAdi.TabIndex = 8;
             // 
             // grpGiris
@@ -64,25 +66,29 @@
             grpGiris.Controls.Add(btnUyeOl);
             grpGiris.Controls.Add(label1);
             grpGiris.Controls.Add(label2);
-            grpGiris.Location = new Point(34, 25);
+            grpGiris.Location = new Point(27, 20);
+            grpGiris.Margin = new Padding(2);
             grpGiris.Name = "grpGiris";
-            grpGiris.Size = new Size(339, 399);
+            grpGiris.Padding = new Padding(2);
+            grpGiris.Size = new Size(271, 319);
             grpGiris.TabIndex = 9;
             grpGiris.TabStop = false;
             grpGiris.Text = "Giriş Paneli";
             // 
             // txtKullaniciAdi
             // 
-            txtKullaniciAdi.Location = new Point(141, 30);
+            txtKullaniciAdi.Location = new Point(113, 24);
+            txtKullaniciAdi.Margin = new Padding(2);
             txtKullaniciAdi.Name = "txtKullaniciAdi";
-            txtKullaniciAdi.Size = new Size(150, 31);
+            txtKullaniciAdi.Size = new Size(121, 27);
             txtKullaniciAdi.TabIndex = 0;
             // 
             // btnGirisYap
             // 
-            btnGirisYap.Location = new Point(40, 180);
+            btnGirisYap.Location = new Point(32, 144);
+            btnGirisYap.Margin = new Padding(2);
             btnGirisYap.Name = "btnGirisYap";
-            btnGirisYap.Size = new Size(251, 34);
+            btnGirisYap.Size = new Size(201, 27);
             btnGirisYap.TabIndex = 5;
             btnGirisYap.Text = "GİRİŞ YAP";
             btnGirisYap.UseVisualStyleBackColor = true;
@@ -90,16 +96,19 @@
             // 
             // txtSifre
             // 
-            txtSifre.Location = new Point(141, 98);
+            txtSifre.Location = new Point(113, 78);
+            txtSifre.Margin = new Padding(2);
             txtSifre.Name = "txtSifre";
-            txtSifre.Size = new Size(150, 31);
+            txtSifre.PasswordChar = '*';
+            txtSifre.Size = new Size(121, 27);
             txtSifre.TabIndex = 1;
             // 
             // btnUyeOl
             // 
-            btnUyeOl.Location = new Point(40, 247);
+            btnUyeOl.Location = new Point(32, 198);
+            btnUyeOl.Margin = new Padding(2);
             btnUyeOl.Name = "btnUyeOl";
-            btnUyeOl.Size = new Size(251, 34);
+            btnUyeOl.Size = new Size(201, 27);
             btnUyeOl.TabIndex = 4;
             btnUyeOl.Text = "ÜYE OL";
             btnUyeOl.UseVisualStyleBackColor = true;
@@ -108,29 +117,32 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 33);
+            label1.Location = new Point(5, 26);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(111, 25);
+            label1.Size = new Size(95, 20);
             label1.TabIndex = 2;
             label1.Text = "Kullanıcı Adı:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(66, 104);
+            label2.Location = new Point(53, 83);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(51, 25);
+            label2.Size = new Size(42, 20);
             label2.TabIndex = 3;
             label2.Text = "Şifre:";
             // 
             // GirisEkrani
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(640, 360);
             Controls.Add(lblSifre);
             Controls.Add(lblKullaniciAdi);
             Controls.Add(grpGiris);
+            Margin = new Padding(2);
             Name = "GirisEkrani";
             Text = "GirisEkrani";
             grpGiris.ResumeLayout(false);

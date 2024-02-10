@@ -32,28 +32,26 @@ namespace DietApp.UI
 
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
-            KullaniciGirisVm vm=    new KullaniciGirisVm()
+            KullaniciGirisVm vm = new KullaniciGirisVm()
             {
-                KullaniciAdi=txtKullaniciAdi.Text,
-                Password=txtSifre.Text
+                KullaniciAdi = txtKullaniciAdi.Text,
+                Password = txtSifre.Text
             };
 
 
-          if (_service.KullaniciGirisYap(vm))
+            if (_service.KullaniciGirisYap(vm))
             {
 
                 var a = _service.KullaniciBul(vm.KullaniciAdi);
                 Form frm = new OzetEkrani(_service.KullaniciBul(vm.KullaniciAdi));
                 this.Hide();
                 frm.Show();
-               
+
             }
-          else
+            else
             {
                 MessageBox.Show("Yanlış kullanıcı adı ya da şifre!");
             }
-
-           
         }
     }
 }
