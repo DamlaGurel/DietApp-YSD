@@ -1,5 +1,6 @@
 ﻿using DietApp.BLL.IServices;
 using DietApp.DAL.Repositories;
+using DietApp.Enums;
 using DietApp.ViewModels.Raporlar;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,25 @@ namespace DietApp.BLL.Services
             {
                 OgunAdi = x.OgunAdi,
                 Kalori = x.Kalori
-            }).ToList(); return gunlukRapors;
+            }).ToList(); 
+            return gunlukRapors;
+        }
+
+        public List<KiyasRaporOgunVm> KiyasRaporOgun(DateTime baslangicTarihi, DateTime bitisTarihi, OgunCesitleri ogun)
+        {
+
+            List<KiyasRaporOgunVm> kiyasRaporOgun = _ogunRepo.GetAll().Where(x => x.Tarih >= baslangicTarihi && x.Tarih <= bitisTarihi).Select(s => new KiyasRaporOgunVm()
+            {
+                OgunAdi = (int)s.OgunAdi,
+                KullaniciId = s.KullaniciKisiselID,
+                Kalori = s.Kalori
+            }).ToList(); 
+            return kiyasRaporOgun;
+        }
+
+        public List<KiyasRaporYemekVm> KiyasRaporYemek()
+        {
+            throw new NotImplementedException();
         }
     }
 }

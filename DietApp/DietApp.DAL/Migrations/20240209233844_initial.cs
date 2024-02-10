@@ -248,19 +248,11 @@ namespace DietApp.DAL.Migrations
                 columns: new[] { "ID", "BaslangicTarihi", "BitisTarihi", "Boy", "Cinsiyet", "GunlukKalori", "HedefKilo", "HedefSuMiktari", "Isim", "Kilo", "KullaniciGirisID", "Soyisim", "Yas" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.cs
-                    { 1, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7040), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 1, "mehmet", 18 },
-                    { 2, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7048), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 2, "mehmet", 18 },
-                    { 3, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7050), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 3, "mehmet", 18 },
-                    { 4, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7051), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 4, "mehmet", 18 },
-                    { 5, new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7052), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "admin", 80.0, 5, "adminoğlu", 18 }
-========
-                    { 1, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9108), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 1, "mehmet", 18 },
-                    { 2, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9126), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 2, "mehmet", 18 },
-                    { 3, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9128), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 3, "mehmet", 18 },
-                    { 4, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9130), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 4, "mehmet", 18 },
-                    { 5, new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9131), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "admin", 80.0, 5, "adminoğlu", 18 }
->>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.cs
+                    { 1, new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3309), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 1, "mehmet", 18 },
+                    { 2, new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3322), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 2, "mehmet", 18 },
+                    { 3, new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3324), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 3, "mehmet", 18 },
+                    { 4, new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3325), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "ahmet", 80.0, 4, "mehmet", 18 },
+                    { 5, new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3327), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 170.0, false, 3000.0, 70.0, 2000.0, "admin", 80.0, 5, "adminoğlu", 18 }
                 });
 
             migrationBuilder.InsertData(

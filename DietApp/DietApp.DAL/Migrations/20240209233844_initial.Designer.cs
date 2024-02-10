@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DietApp.DAL.Migrations
 {
     [DbContext(typeof(DietAppDBContext))]
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
-    [Migration("20240209204916_a")]
-    partial class a
-========
-    [Migration("20240209211420_initial")]
+    [Migration("20240209233844_initial")]
     partial class initial
->>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -231,11 +226,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 1,
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7040),
-========
-                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9108),
->>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3309),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -251,11 +242,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 2,
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7048),
-========
-                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9126),
->>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3322),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -271,11 +258,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 3,
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7050),
-========
-                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9128),
->>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3324),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -291,11 +274,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 4,
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7051),
-========
-                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9130),
->>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3325),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
@@ -311,11 +290,7 @@ namespace DietApp.DAL.Migrations
                         new
                         {
                             ID = 5,
-<<<<<<<< HEAD:DietApp/DietApp.DAL/Migrations/20240209204916_a.Designer.cs
-                            BaslangicTarihi = new DateTime(2024, 2, 9, 23, 49, 16, 304, DateTimeKind.Local).AddTicks(7052),
-========
-                            BaslangicTarihi = new DateTime(2024, 2, 10, 0, 14, 19, 327, DateTimeKind.Local).AddTicks(9131),
->>>>>>>> sila:DietApp/DietApp.DAL/Migrations/20240209211420_initial.Designer.cs
+                            BaslangicTarihi = new DateTime(2024, 2, 10, 2, 38, 44, 530, DateTimeKind.Local).AddTicks(3327),
                             BitisTarihi = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Boy = 170.0,
                             Cinsiyet = false,
