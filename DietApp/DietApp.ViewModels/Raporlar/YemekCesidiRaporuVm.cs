@@ -14,7 +14,6 @@ namespace DietApp.ViewModels.Raporlar
         public double Miktar { get; set; }
         public string YemekAdi { get; set; }
         public double Kalori { get; set; }
-        public string EnCokTercihYemek { get; set; }
 
     }
 }
