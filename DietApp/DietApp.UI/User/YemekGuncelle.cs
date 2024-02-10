@@ -30,13 +30,17 @@ namespace DietApp.UI
 
             _ymkservice = new UserYemekEklemeService();
 
-            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir(-1);
-            cmbYemekGirisi.DisplayMember = "YemekAdi";
-            cmbYemekGirisi.Text = string.Empty;
+
 
             cmbKategori.DataSource = _ymkservice.KategoriGetir();
             cmbKategori.DisplayMember = "KategoriAdi";
+
             cmbKategori.Text = string.Empty;
+
+            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir(((Kategori)(cmbKategori.SelectedItem)).ID);
+            cmbYemekGirisi.DisplayMember = "YemekAdi";
+
+            cmbYemekGirisi.Text = string.Empty;
 
         }
 
@@ -66,38 +70,20 @@ namespace DietApp.UI
 
         private void YemekGuncelle_Load(object sender, EventArgs e)
         {
-            cmbKategori.SelectedItem = _service.KategoriGetir(_vm.KategoriID);
-            cmbYemekGirisi.SelectedItem = _service.YemekGetir(_service.YemekMiktarGetir(_vm.YemekMiktarID).YemekID);
+            cmbKategori.SelectedItem = _ymkservice.KategoriGetir(_vm.KategoriID)[0];
+            cmbYemekGirisi.SelectedItem = _ymkservice.YemekGetir(_ymkservice.YemekMiktarGetir(_vm.YemekMiktarID).YemekID)[0];
             txtMiktar.Text = _vm.Miktar.ToString();
-           
-            string path = Path.Combine(Application.StartupPath, _service.YemekGetir(_service.YemekMiktarGetir(_vm.YemekMiktarID).YemekID).FotografYolu);
-            pbGorsel.Image = Image.FromFile(path);
-        }
 
-        private void KaloriHesaplamaPaneli()
-        {
-            Yemek yemek = cmbYemekGirisi.SelectedItem as Yemek;
 
-            lblKalori.Text = (yemek.Kalori * double.Parse(txtMiktar.Text) / 100).ToString();
-            lblKarbonhidrat.Text = (yemek.KarbonhidratMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
-            lblProtein.Text = (yemek.ProteinMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
-            lblYag.Text = (yemek.YagMiktari * double.Parse(txtMiktar.Text) / 100).ToString();
-        }
 
-        private void cmbYemekGirisi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Yemek seciliYemek = cmbYemekGirisi.SelectedItem as Yemek;
-            if (seciliYemek.ID != 0)
-            {
-                pbGorsel.Visible = true;
-                string path = Path.Combine(Application.StartupPath, seciliYemek.FotografYolu);
-                pbGorsel.Image = Image.FromFile(path);
-            }
         }
 
         private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir(((Kategori)(cmbKategori.SelectedItem)).ID);
+            cmbYemekGirisi.DisplayMember = "YemekAdi";
+            cmbYemekGirisi.Text = string.Empty;
         }
     }
 }

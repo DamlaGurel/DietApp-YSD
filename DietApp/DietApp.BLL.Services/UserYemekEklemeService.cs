@@ -29,7 +29,7 @@ namespace DietApp.BLL.Services
 
         public Ogun TariheGoreOgunBul(OgunCesitleri cesit, DateTime time, int KullaniciID)
         {
-            Ogun ogun = _ogunRepo.GetAll().FirstOrDefault(x => x.Tarih == time && x.OgunAdi == cesit &&x.KullaniciKisiselID==KullaniciID);
+            Ogun ogun = _ogunRepo.GetAll().FirstOrDefault(x => x.Tarih == time && x.OgunAdi == cesit && x.KullaniciKisiselID == KullaniciID);
 
             //KullaniciKisisel kkObj = _kullaniciKisiselRepo.GetByID(KullaniciID);
 
@@ -80,21 +80,28 @@ namespace DietApp.BLL.Services
             };
 
 
-            
+
             _yemekMiktariOgunRepo.Create(yemekMiktarOgun);
         }
 
-        public List<Yemek> YemekGetir(int katId)
+        public List<Yemek> YemekGetir(int katId = -1)
         {
-            if (katId == -1) 
-                return _yemekRepo.GetAll().ToList(); 
+            if (katId == -1)
+                return _yemekRepo.GetAll().ToList();
 
             return _yemekRepo.GetAll().Where(x => x.KategoriID == katId).ToList();
         }
 
-        public List<Kategori> KategoriGetir()
+        public List<Kategori> KategoriGetir(int katId = -1)
         {
-            return _kategoriRepo.GetAll().ToList();
+            if (katId == -1)
+                return _kategoriRepo.GetAll().ToList();
+
+            return _kategoriRepo.GetAll().Where(x => x.ID == katId).ToList();
+        }
+        public YemekMiktari YemekMiktarGetir(int id = 0)
+        {
+            return _yemekMiktariRepo.GetByID(id);
         }
     }
 }

@@ -3,6 +3,8 @@ using DietApp.DAL.Repositories;
 using DietApp.Entities;
 using DietApp.Enums;
 using DietApp.ViewModels;
+using DietApp.Entities;
+using DietApp.Enums;
 using DietApp.ViewModels.Raporlar;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,8 @@ namespace DietApp.BLL.Services
         YemekMiktarOgunRepository _yemekOgunRepo;
         KategoriRepository _kategoriRepo;
         KullaniciKisiselRepository _kullaniciKisiselRepo;
+        KullaniciKisiselRepository _kisiselRepo;
+
         public RaporlarService()
         {
             _ogunRepo = new OgunRepository();
@@ -31,6 +35,8 @@ namespace DietApp.BLL.Services
             _yemekrepo = new YemekRepository();
             _kategoriRepo = new KategoriRepository();
             _kullaniciKisiselRepo = new KullaniciKisiselRepository();
+            _kategoriRepo = new KategoriRepository();
+            _kisiselRepo = new KullaniciKisiselRepository();
         }
 
         public List<GunlukRaporVm> GunlukRapor(int id, DateTime gun)

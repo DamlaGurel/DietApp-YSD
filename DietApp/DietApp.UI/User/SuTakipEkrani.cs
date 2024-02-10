@@ -50,7 +50,6 @@ namespace DietApp.UI
         private void btnSuCikar_Click(object sender, EventArgs e)
         {
             Su su = _suTakipService.SuKontrol(KullaniciKisiselId, Tarih);
-
             SuTakipVm suTakipVm = new SuTakipVm()
             {
                 ID = su.ID,
