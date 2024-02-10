@@ -63,7 +63,7 @@
             grpOgunAdi.Margin = new Padding(2, 3, 2, 3);
             grpOgunAdi.Name = "grpOgunAdi";
             grpOgunAdi.Padding = new Padding(2, 3, 2, 3);
-            grpOgunAdi.Size = new Size(334, 207);
+            grpOgunAdi.Size = new Size(356, 207);
             grpOgunAdi.TabIndex = 30;
             grpOgunAdi.TabStop = false;
             // 
@@ -90,7 +90,7 @@
             // cmbYemekGirisi
             // 
             cmbYemekGirisi.FormattingEnabled = true;
-            cmbYemekGirisi.Location = new Point(187, 99);
+            cmbYemekGirisi.Location = new Point(210, 99);
             cmbYemekGirisi.Margin = new Padding(2, 3, 2, 3);
             cmbYemekGirisi.Name = "cmbYemekGirisi";
             cmbYemekGirisi.Size = new Size(121, 28);
@@ -100,7 +100,7 @@
             // 
             // txtMiktar
             // 
-            txtMiktar.Location = new Point(187, 152);
+            txtMiktar.Location = new Point(210, 152);
             txtMiktar.Margin = new Padding(2, 3, 2, 3);
             txtMiktar.Name = "txtMiktar";
             txtMiktar.Size = new Size(121, 27);
@@ -109,7 +109,7 @@
             // cmbKategori
             // 
             cmbKategori.FormattingEnabled = true;
-            cmbKategori.Location = new Point(187, 44);
+            cmbKategori.Location = new Point(210, 44);
             cmbKategori.Margin = new Padding(2, 3, 2, 3);
             cmbKategori.Name = "cmbKategori";
             cmbKategori.Size = new Size(121, 28);
@@ -123,9 +123,9 @@
             label3.Location = new Point(15, 152);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(163, 20);
+            label3.Size = new Size(191, 20);
             label3.TabIndex = 19;
-            label3.Text = "Yemek Miktarını Giriniz:";
+            label3.Text = "Yemek Miktarını Giriniz (gr):";
             // 
             // btnEkle
             // 

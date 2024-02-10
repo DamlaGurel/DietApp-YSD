@@ -39,58 +39,64 @@
             // dgvYemekCesidiRaporu
             // 
             dgvYemekCesidiRaporu.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvYemekCesidiRaporu.Location = new Point(1, 239);
+            dgvYemekCesidiRaporu.Location = new Point(1, 191);
+            dgvYemekCesidiRaporu.Margin = new Padding(2, 2, 2, 2);
             dgvYemekCesidiRaporu.Name = "dgvYemekCesidiRaporu";
             dgvYemekCesidiRaporu.RowHeadersWidth = 62;
             dgvYemekCesidiRaporu.RowTemplate.Height = 33;
-            dgvYemekCesidiRaporu.Size = new Size(800, 393);
+            dgvYemekCesidiRaporu.Size = new Size(794, 314);
             dgvYemekCesidiRaporu.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(95, 148);
+            label1.Location = new Point(76, 118);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(125, 25);
+            label1.Size = new Size(105, 20);
             label1.TabIndex = 1;
             label1.Text = "Yemek Seçiniz:";
             // 
             // cmbKategori
             // 
             cmbKategori.FormattingEnabled = true;
-            cmbKategori.Location = new Point(255, 78);
+            cmbKategori.Location = new Point(204, 62);
+            cmbKategori.Margin = new Padding(2, 2, 2, 2);
             cmbKategori.Name = "cmbKategori";
-            cmbKategori.Size = new Size(182, 33);
+            cmbKategori.Size = new Size(146, 28);
             cmbKategori.TabIndex = 2;
             // 
             // cmbYemek
             // 
             cmbYemek.FormattingEnabled = true;
-            cmbYemek.Location = new Point(255, 140);
+            cmbYemek.Location = new Point(204, 112);
+            cmbYemek.Margin = new Padding(2, 2, 2, 2);
             cmbYemek.Name = "cmbYemek";
-            cmbYemek.Size = new Size(182, 33);
+            cmbYemek.Size = new Size(146, 28);
             cmbYemek.TabIndex = 4;
             cmbYemek.SelectedIndexChanged += cmbYemek_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(95, 81);
+            label2.Location = new Point(76, 65);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(140, 25);
+            label2.Size = new Size(119, 20);
             label2.TabIndex = 3;
             label2.Text = "Kategori Seçiniz:";
             // 
             // YemekCesidiRaporu
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 635);
+            ClientSize = new Size(796, 508);
             Controls.Add(cmbYemek);
             Controls.Add(label2);
             Controls.Add(cmbKategori);
             Controls.Add(label1);
             Controls.Add(dgvYemekCesidiRaporu);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "YemekCesidiRaporu";
             Text = "YemekCesidiRaporu";
             Load += YemekCesidiRaporu_Load;
