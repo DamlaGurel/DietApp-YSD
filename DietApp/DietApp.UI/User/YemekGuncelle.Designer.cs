@@ -53,9 +53,10 @@
             // 
             // btnGuncelle
             // 
-            btnGuncelle.Location = new Point(523, 293);
+            btnGuncelle.Location = new Point(366, 176);
+            btnGuncelle.Margin = new Padding(2, 2, 2, 2);
             btnGuncelle.Name = "btnGuncelle";
-            btnGuncelle.Size = new Size(160, 80);
+            btnGuncelle.Size = new Size(112, 48);
             btnGuncelle.TabIndex = 24;
             btnGuncelle.Text = "GÜNCELLE";
             btnGuncelle.UseVisualStyleBackColor = true;
@@ -71,9 +72,11 @@
             grpYemekDetay.Controls.Add(label7);
             grpYemekDetay.Controls.Add(label6);
             grpYemekDetay.Controls.Add(label8);
-            grpYemekDetay.Location = new Point(41, 271);
+            grpYemekDetay.Location = new Point(29, 163);
+            grpYemekDetay.Margin = new Padding(2, 2, 2, 2);
             grpYemekDetay.Name = "grpYemekDetay";
-            grpYemekDetay.Size = new Size(397, 310);
+            grpYemekDetay.Padding = new Padding(2, 2, 2, 2);
+            grpYemekDetay.Size = new Size(278, 186);
             grpYemekDetay.TabIndex = 23;
             grpYemekDetay.TabStop = false;
             grpYemekDetay.Text = "Kalori Detay Paneli";
@@ -81,68 +84,76 @@
             // lblProtein
             // 
             lblProtein.AutoSize = true;
-            lblProtein.Location = new Point(228, 273);
+            lblProtein.Location = new Point(160, 164);
+            lblProtein.Margin = new Padding(2, 0, 2, 0);
             lblProtein.Name = "lblProtein";
-            lblProtein.Size = new Size(0, 25);
+            lblProtein.Size = new Size(0, 15);
             lblProtein.TabIndex = 20;
             // 
             // lblYag
             // 
             lblYag.AutoSize = true;
-            lblYag.Location = new Point(228, 205);
+            lblYag.Location = new Point(160, 123);
+            lblYag.Margin = new Padding(2, 0, 2, 0);
             lblYag.Name = "lblYag";
-            lblYag.Size = new Size(0, 25);
+            lblYag.Size = new Size(0, 15);
             lblYag.TabIndex = 19;
             // 
             // lblKarbonhidrat
             // 
             lblKarbonhidrat.AutoSize = true;
-            lblKarbonhidrat.Location = new Point(228, 127);
+            lblKarbonhidrat.Location = new Point(160, 76);
+            lblKarbonhidrat.Margin = new Padding(2, 0, 2, 0);
             lblKarbonhidrat.Name = "lblKarbonhidrat";
-            lblKarbonhidrat.Size = new Size(0, 25);
+            lblKarbonhidrat.Size = new Size(0, 15);
             lblKarbonhidrat.TabIndex = 18;
             // 
             // lblKalori
             // 
             lblKalori.AutoSize = true;
-            lblKalori.Location = new Point(228, 50);
+            lblKalori.Location = new Point(160, 30);
+            lblKalori.Margin = new Padding(2, 0, 2, 0);
             lblKalori.Name = "lblKalori";
-            lblKalori.Size = new Size(0, 25);
+            lblKalori.Size = new Size(0, 15);
             lblKalori.TabIndex = 17;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(58, 273);
+            label5.Location = new Point(41, 164);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(131, 25);
+            label5.Size = new Size(88, 15);
             label5.TabIndex = 16;
             label5.Text = "Protein Miktarı:";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(11, 127);
+            label7.Location = new Point(8, 76);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(178, 25);
+            label7.Size = new Size(119, 15);
             label7.TabIndex = 14;
             label7.Text = "Karbonhidrat Miktarı:";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(86, 205);
+            label6.Location = new Point(60, 123);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(103, 25);
+            label6.Size = new Size(69, 15);
             label6.TabIndex = 15;
             label6.Text = "Yağ Miktarı:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(72, 50);
+            label8.Location = new Point(50, 30);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(117, 25);
+            label8.Size = new Size(77, 15);
             label8.TabIndex = 13;
             label8.Text = "Kalori Değeri:";
             // 
@@ -150,59 +161,67 @@
             // 
             cmbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbKategori.FormattingEnabled = true;
-            cmbKategori.Location = new Point(234, 55);
+            cmbKategori.Location = new Point(164, 33);
+            cmbKategori.Margin = new Padding(2, 2, 2, 2);
             cmbKategori.Name = "cmbKategori";
-            cmbKategori.Size = new Size(150, 33);
+            cmbKategori.Size = new Size(106, 23);
             cmbKategori.TabIndex = 22;
+            cmbKategori.SelectedIndexChanged += cmbKategori_SelectedIndexChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(72, 55);
+            label4.Location = new Point(50, 33);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(140, 25);
+            label4.Size = new Size(93, 15);
             label4.TabIndex = 21;
             label4.Text = "Kategori Seçiniz:";
             // 
             // pbGorsel
             // 
-            pbGorsel.Location = new Point(512, 54);
+            pbGorsel.Location = new Point(358, 32);
+            pbGorsel.Margin = new Padding(2, 2, 2, 2);
             pbGorsel.Name = "pbGorsel";
-            pbGorsel.Size = new Size(156, 173);
+            pbGorsel.Size = new Size(109, 104);
             pbGorsel.TabIndex = 20;
             pbGorsel.TabStop = false;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(19, 190);
+            label3.Location = new Point(13, 114);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(193, 25);
+            label3.Size = new Size(131, 15);
             label3.TabIndex = 19;
             label3.Text = "Yemek Miktarını Giriniz:";
             // 
             // txtMiktar
             // 
-            txtMiktar.Location = new Point(234, 190);
+            txtMiktar.Location = new Point(164, 114);
+            txtMiktar.Margin = new Padding(2, 2, 2, 2);
             txtMiktar.Name = "txtMiktar";
-            txtMiktar.Size = new Size(150, 31);
+            txtMiktar.Size = new Size(106, 23);
             txtMiktar.TabIndex = 18;
             // 
             // cmbYemekGirisi
             // 
             cmbYemekGirisi.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbYemekGirisi.FormattingEnabled = true;
-            cmbYemekGirisi.Location = new Point(234, 124);
+            cmbYemekGirisi.Location = new Point(164, 74);
+            cmbYemekGirisi.Margin = new Padding(2, 2, 2, 2);
             cmbYemekGirisi.Name = "cmbYemekGirisi";
-            cmbYemekGirisi.Size = new Size(150, 33);
+            cmbYemekGirisi.Size = new Size(106, 23);
             cmbYemekGirisi.TabIndex = 17;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(43, 124);
+            label2.Location = new Point(30, 74);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(169, 25);
+            label2.Size = new Size(114, 15);
             label2.TabIndex = 16;
             label2.Text = "Yemek Girişi Yapınız:";
             // 
@@ -214,21 +233,24 @@
             grpOgunAdi.Controls.Add(txtMiktar);
             grpOgunAdi.Controls.Add(cmbKategori);
             grpOgunAdi.Controls.Add(label3);
-            grpOgunAdi.Location = new Point(32, 12);
+            grpOgunAdi.Location = new Point(22, 7);
+            grpOgunAdi.Margin = new Padding(2, 2, 2, 2);
             grpOgunAdi.Name = "grpOgunAdi";
-            grpOgunAdi.Size = new Size(418, 234);
+            grpOgunAdi.Padding = new Padding(2, 2, 2, 2);
+            grpOgunAdi.Size = new Size(293, 140);
             grpOgunAdi.TabIndex = 26;
             grpOgunAdi.TabStop = false;
             // 
             // YemekGuncelle
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(777, 715);
+            ClientSize = new Size(544, 429);
             Controls.Add(grpOgunAdi);
             Controls.Add(btnGuncelle);
             Controls.Add(grpYemekDetay);
             Controls.Add(pbGorsel);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "YemekGuncelle";
             Text = "YemekGuncelle";
             Load += YemekGuncelle_Load;

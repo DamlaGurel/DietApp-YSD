@@ -30,14 +30,17 @@ namespace DietApp.UI
 
             _ymkservice = new UserYemekEklemeService();
 
-            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir(-1);
-            cmbYemekGirisi.DisplayMember = "YemekAdi";
-            cmbYemekGirisi.Text = string.Empty;
+
 
             cmbKategori.DataSource = _ymkservice.KategoriGetir();
             cmbKategori.DisplayMember = "KategoriAdi";
+
             cmbKategori.Text = string.Empty;
 
+            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir(((Kategori)(cmbKategori.SelectedItem)).ID);
+            cmbYemekGirisi.DisplayMember = "YemekAdi";
+
+            cmbYemekGirisi.Text = string.Empty;
 
         }
 
@@ -48,7 +51,7 @@ namespace DietApp.UI
             {
                 YemekGuncelleVm vm = new YemekGuncelleVm()
                 {
-                    YemekMiktarID=_vm.YemekMiktarID,
+                    YemekMiktarID = _vm.YemekMiktarID,
                     YemekID = (cmbYemekGirisi.SelectedItem as Yemek).ID,
                     Miktar = miktar
                 };
@@ -65,12 +68,20 @@ namespace DietApp.UI
 
         private void YemekGuncelle_Load(object sender, EventArgs e)
         {
-            cmbKategori.SelectedItem = _service.KategoriGetir(_vm.KategoriID);
-            cmbYemekGirisi.SelectedItem = _service.YemekGetir(_service.YemekMiktarGetir(_vm.YemekMiktarID).YemekID);
+            cmbKategori.SelectedItem = _ymkservice.KategoriGetir(_vm.KategoriID)[0];
+            cmbYemekGirisi.SelectedItem = _ymkservice.YemekGetir(_ymkservice.YemekMiktarGetir(_vm.YemekMiktarID).YemekID)[0];
             txtMiktar.Text = _vm.Miktar.ToString();
 
-            
 
+
+        }
+
+        private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            cmbYemekGirisi.DataSource = _ymkservice.YemekGetir(((Kategori)(cmbKategori.SelectedItem)).ID);
+            cmbYemekGirisi.DisplayMember = "YemekAdi";
+            cmbYemekGirisi.Text = string.Empty;
         }
     }
 }
