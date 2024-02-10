@@ -33,6 +33,26 @@ namespace DietApp.UI
             cmbKategori.DisplayMember = "KategoriAdi";
             cmbKategori.Text = string.Empty;
 
+
+
+        }
+
+        private void cmbYemek_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            if (cmbKategori.SelectedItem != null)
+            {
+                string yemekAdi = (cmbYemek.SelectedItem as Yemek)?.YemekAdi ?? string.Empty;
+                var rapor = _raporService.YemekCesidiRapor(_kkId, yemekAdi);
+
+                dgvYemekCesidiRaporu.DataSource = rapor;
+            }
+        }
+
+        private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
             if (cmbKategori.SelectedItem != null)
             {
                 cmbYemek.Enabled = true;
@@ -42,19 +62,6 @@ namespace DietApp.UI
                 cmbYemek.DataSource = list;
                 cmbYemek.DisplayMember = "YemekAdi";
                 cmbYemek.Text = string.Empty;
-            }
-
-            
-        }
-
-        private void cmbYemek_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbKategori.SelectedItem != null)
-            {
-                string yemekAdi = (cmbYemek.SelectedItem as Yemek)?.YemekAdi ?? string.Empty;
-                var rapor = _raporService.YemekCesidiRapor(_kkId, yemekAdi);
-
-                dgvYemekCesidiRaporu.DataSource = rapor;
             }
         }
     }

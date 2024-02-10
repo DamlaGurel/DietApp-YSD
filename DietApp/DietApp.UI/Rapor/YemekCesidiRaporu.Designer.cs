@@ -62,6 +62,7 @@
             cmbKategori.Name = "cmbKategori";
             cmbKategori.Size = new Size(182, 33);
             cmbKategori.TabIndex = 2;
+            cmbKategori.SelectedIndexChanged += cmbKategori_SelectedIndexChanged;
             // 
             // cmbYemek
             // 
