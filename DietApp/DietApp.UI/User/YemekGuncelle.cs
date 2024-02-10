@@ -60,8 +60,7 @@ namespace DietApp.UI
             else
                 MessageBox.Show("Bir sayı giriniz!");
 
-
-
+            MessageBox.Show("Yemeğiniz Öğününüze Başarıyla Güncellendi!", "Bilgilendirme Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void YemekGuncelle_Load(object sender, EventArgs e)

@@ -49,7 +49,7 @@ namespace DietApp.BLL.Services
             return gunlukRapors;
         }
 
-        public List<KiyasRaporOgunVm> KiyasRaporOgun(DateTime baslangicTarihi, DateTime bitisTarihi, OgunCesitleri ogun)
+        public List<KiyasRaporOgunVm> KiyasRaporOgun(DateTime baslangicTarihi, DateTime bitisTarihi)
         {
 
             List<KiyasRaporOgunVm> kiyasRaporOgun = _ogunRepo.GetAll().Where(x => x.Tarih >= baslangicTarihi && x.Tarih <= bitisTarihi).Select(s => new KiyasRaporOgunVm()
@@ -75,13 +75,13 @@ namespace DietApp.BLL.Services
         public void KiyasRaporOgun(DateTime baslangicTarih, DateTime bitistarih, Kategori kat, int kisiID, out double GenelOrtalamaKalori, out double KisiOrtalamaKalori)
         {
             var query =
-                from kisisel in _kisiselRepo.GetAll()
+                from kisisel in _kullaniciKisiselRepo.GetAll()
                 join ogun in _ogunRepo.GetAll() on kisisel.ID equals ogun.KullaniciKisiselID
                 join ymkogun in new YemekMiktarOgunRepository().GetAll() on ogun.ID equals ymkogun.OgunID
                 join miktar in new YemekMiktariRepository().GetAll() on ymkogun.YemekMiktarID equals miktar.ID
                 join yemek in new YemekRepository().GetAll() on miktar.YemekID equals yemek.ID
                 join kategori in new KategoriRepository().GetAll() on yemek.KategoriID equals kategori.ID
-                where kat.ID == kategori.ID && ogun.Tarih>=baslangicTarih && ogun.Tarih<=bitistarih
+                where kat.ID == kategori.ID && ogun.Tarih >= baslangicTarih && ogun.Tarih <= bitistarih
                 select new
                 {
                     yemek.Kalori
@@ -101,7 +101,7 @@ namespace DietApp.BLL.Services
 
 
             var query2 =
-                   from kisisel in _kisiselRepo.GetAll()
+                   from kisisel in _kullaniciKisiselRepo.GetAll()
                    join ogun in _ogunRepo.GetAll() on kisisel.ID equals ogun.KullaniciKisiselID
                    join ymkogun in new YemekMiktarOgunRepository().GetAll() on ogun.ID equals ymkogun.OgunID
                    join miktar in new YemekMiktariRepository().GetAll() on ymkogun.YemekMiktarID equals miktar.ID

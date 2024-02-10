@@ -132,7 +132,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(558, 152);
+            label5.Location = new Point(636, 152);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(194, 20);
@@ -142,7 +142,7 @@
             // lblHedefKalori
             // 
             lblHedefKalori.AutoSize = true;
-            lblHedefKalori.Location = new Point(759, 177);
+            lblHedefKalori.Location = new Point(834, 152);
             lblHedefKalori.Margin = new Padding(2, 0, 2, 0);
             lblHedefKalori.Name = "lblHedefKalori";
             lblHedefKalori.Size = new Size(0, 20);
@@ -202,7 +202,7 @@
             // 
             // pbKaloriTakip
             // 
-            pbKaloriTakip.Location = new Point(262, 135);
+            pbKaloriTakip.Location = new Point(334, 137);
             pbKaloriTakip.Margin = new Padding(2, 3, 2, 3);
             pbKaloriTakip.Name = "pbKaloriTakip";
             pbKaloriTakip.Size = new Size(270, 51);

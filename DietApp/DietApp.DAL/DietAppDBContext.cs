@@ -31,28 +31,27 @@ namespace DietApp.DAL
          //    optionsBuilder.UseSqlServer(@"Server=DESKTOP-VU62QDF\SQLSERVERMS; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
 
           //  optionsBuilder.UseSqlServer(@"Server=DESKTOP-G2S16HQ; Database=WF1DB-YSD; Uid=sa; Pwd=123;");
+>>>>>>>>> Temporary merge branch 2
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+
             modelBuilder.Entity<GunlukRapor>();
             modelBuilder.Entity<Kategori>();
             modelBuilder.ApplyConfiguration(new KullaniciGirisConfiguration());
-       
+
             modelBuilder.ApplyConfiguration(new KategoriConfiguration());
             modelBuilder.Entity<KullaniciGiris>();
             modelBuilder.ApplyConfiguration(new KullaniciKisiselConfiguration());
             modelBuilder.Entity<Ogun>();
-       
+
             modelBuilder.ApplyConfiguration(new KullaniciSuTakipConfiguration());
-          
+
             modelBuilder.ApplyConfiguration(new UserYemekEklemeConfiguration());
-    
+
             modelBuilder.ApplyConfiguration(new YemekMiktariConfiguration());
             modelBuilder.Entity<YemekMiktarOgun>().HasOne(yo => yo.Yemek).WithMany(y => y.YemeginOgunleri).HasForeignKey(yo => yo.OgunID).HasForeignKey(yo => yo.YemekMiktarID);
-
-
 
         }
     }

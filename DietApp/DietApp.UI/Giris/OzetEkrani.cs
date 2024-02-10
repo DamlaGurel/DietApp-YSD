@@ -115,7 +115,7 @@ namespace DietApp.UI
 
             new YemekGuncelleService().YemekSil(secilenOgun.YemekMiktarID);
             RefreshDataGrid();
-
+            MessageBox.Show("Yemeğiniz Öğününüze Başarıyla Kaldırıldı!", "Bilgilendirme Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnRaporlar_Click(object sender, EventArgs e)

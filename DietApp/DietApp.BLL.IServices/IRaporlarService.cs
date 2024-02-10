@@ -17,5 +17,8 @@ namespace DietApp.BLL.IServices
         List<KiyasRaporOgunVm> KiyasRaporOgun(DateTime baslangicTarihi, DateTime bitisTarihi, OgunCesitleri ogun);
         List<KiyasRaporYemekVm> KiyasRaporYemek();
         List<YemekCesidiRaporuVm> YemekCesidiRapor(int id,string yemek);
+        List<KiyasRaporOgunVm> KiyasRaporOgun(DateTime baslangicTarihi, DateTime bitisTarihi);
+        List<KiyasRaporYemekVm> KiyasRaporYemek();
+        List<YemekCesidiRaporuVm> YemekCesidiRapor(int id,string yemek);
     }
 }
