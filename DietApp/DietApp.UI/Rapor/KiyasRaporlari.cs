@@ -86,13 +86,20 @@ namespace DietApp.UI
 
         private void btnHesaplaKategori_Click(object sender, EventArgs e)
         {
-            if (cmbKategori.SelectedItem == null) return;
-
             double ortalamaKisi, ortalamaGenel;
 
+            if (cmbKategori.SelectedIndex < 0)
+            {
+                MessageBox.Show("Bir kategori seçiniz!", "Uyarı Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (dtpBaslangicTarihi.Value >= dtpBitisTarihi.Value)
+            {
+                MessageBox.Show("Başlangıç tarihi, bitiş tarihinden büyük veya eşit olamaz!", "Uyarı Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             new RaporlarService().KiyasRaporOgun(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date, (Kategori)cmbKategori.SelectedItem, _kkId, out ortalamaGenel, out ortalamaKisi);
-
 
             lblKategoriOrtalama.Text = ortalamaGenel.ToString();
             lblKategoriKullaniciOrtalama.Text = ortalamaKisi.ToString();

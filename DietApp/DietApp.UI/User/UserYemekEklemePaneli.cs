@@ -51,6 +51,8 @@ namespace DietApp.UI
                 owner.RefreshDataGrid();
             }
             KaloriHesaplamaPaneli();
+
+            MessageBox.Show("Yemeğiniz Öğününüze Başarıyla Eklendi!", "Bilgilendirme Mesajı", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
