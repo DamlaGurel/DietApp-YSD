@@ -43,7 +43,7 @@ namespace DietApp.BLL.Services
             return gunlukRapors;
         }
 
-        public List<KiyasRaporOgunVm> KiyasRaporOgun(DateTime baslangicTarihi, DateTime bitisTarihi, OgunCesitleri ogun)
+        public List<KiyasRaporOgunVm> KiyasRaporOgun(DateTime baslangicTarihi, DateTime bitisTarihi)
         {
 
             List<KiyasRaporOgunVm> kiyasRaporOgun = _ogunRepo.GetAll().Where(x => x.Tarih >= baslangicTarihi && x.Tarih <= bitisTarihi).Select(s => new KiyasRaporOgunVm()

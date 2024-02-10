@@ -43,7 +43,7 @@ namespace DietApp.UI
             OgunCesitleri ogunCesitleri = (OgunCesitleri)Enum.Parse(typeof(OgunCesitleri), secilenOgun);
             int ogunID = (int)ogunCesitleri;
 
-            var list = _raporlarService.KiyasRaporOgun(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date, ogunCesitleri);
+            var list = _raporlarService.KiyasRaporOgun(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date);
             var KullaniciList = list.FindAll(x => x.KullaniciId == _kkId && x.OgunAdi == ogunID);
             var DigerList = list.FindAll(x => x.KullaniciId != _kkId && x.OgunAdi == ogunID);
 
@@ -58,13 +58,14 @@ namespace DietApp.UI
                 return;
             }
 
+            TimeSpan tarihFarki = dtpBitisTarihi.Value - dtpBaslangicTarihi.Value; 
             double kullaniciOrtKalori = 0;
             foreach (var item in KullaniciList)
             {
                 kullaniciOrtKalori += item.Kalori;
             }
 
-            lblKategoriKullaniciOrtalama.Text = (kullaniciOrtKalori / KullaniciList.Count).ToString();
+            lblOgunKullaniciOrtalama.Text = (kullaniciOrtKalori / tarihFarki.Days).ToString();
 
             double digerOrtKalori = 0;
             foreach (var item in DigerList)
@@ -72,7 +73,7 @@ namespace DietApp.UI
                 digerOrtKalori += item.Kalori;
             }
 
-            lblKategoriKullaniciOrtalama.Text = (digerOrtKalori / DigerList.Count).ToString();
+            lblOgunOrtalama.Text = (digerOrtKalori / tarihFarki.Days).ToString();
         }
 
 
@@ -90,8 +91,7 @@ namespace DietApp.UI
             double ortalamaKisi, ortalamaGenel;
 
 
-            new RaporlarService().KiyasRaporOgun(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date,
-(Kategori)cmbKategori.SelectedItem, _kkId, out ortalamaGenel, out ortalamaKisi);
+            new RaporlarService().KiyasRaporOgun(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date, (Kategori)cmbKategori.SelectedItem, _kkId, out ortalamaGenel, out ortalamaKisi);
 
 
             lblKategoriOrtalama.Text = ortalamaGenel.ToString();
