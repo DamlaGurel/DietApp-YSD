@@ -78,10 +78,6 @@ namespace DietApp.BLL.Services
                 };
                 vmlist.Add(vm);
             }
-
-
-
-
             return vmlist;
 
         }
