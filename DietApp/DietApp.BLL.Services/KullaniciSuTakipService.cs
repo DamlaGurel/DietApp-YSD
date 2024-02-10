@@ -60,7 +60,9 @@ namespace DietApp.BLL.Services
         public int SuCikarUpdate(SuTakipVm vm)
         {
             Su su = _repo.GetByID(vm.ID);
-            su.SuMiktari -= vm.SuMiktari;
+
+            if (su.SuMiktari > vm.SuMiktari)
+                su.SuMiktari -= vm.SuMiktari;
             return _repo.Update(su);
         }
     }
