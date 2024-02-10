@@ -28,7 +28,7 @@ namespace DietApp.UI
             double ortalamaKisi, ortalamaGenel;
 
 
-            new RaporlarService().KiyasRaporOgun(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date,  
+            new RaporlarService().KiyasRaporOgun(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date,
 (Kategori)cmbKategori.SelectedItem, kisiID, out ortalamaGenel, out ortalamaKisi);
         }
 

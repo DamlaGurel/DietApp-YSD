@@ -20,6 +20,7 @@ namespace DietApp.UI
             InitializeComboBox();
 
             _kkId = kkId;
+            _kisiselService = new KullaniciKisiselService();
         }
         public OzetEkrani(KullaniciGiris kullanici)
         {

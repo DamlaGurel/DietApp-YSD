@@ -29,7 +29,7 @@ namespace DietApp.BLL.Services
 
         public Ogun TariheGoreOgunBul(OgunCesitleri cesit, DateTime time, int KullaniciID)
         {
-            Ogun ogun = _ogunRepo.GetAll().FirstOrDefault(x => x.Tarih == time && x.OgunAdi == cesit);
+            Ogun ogun = _ogunRepo.GetAll().FirstOrDefault(x => x.Tarih == time && x.OgunAdi == cesit &&x.KullaniciKisiselID==KullaniciID);
 
             //KullaniciKisisel kkObj = _kullaniciKisiselRepo.GetByID(KullaniciID);
 
@@ -55,7 +55,7 @@ namespace DietApp.BLL.Services
         public void UserYemekEkleme(UserYemekEklemePaneliVm userYemekEkleme, Ogun ogun)
         {
             Yemek yemek = _yemekRepo.GetByID(userYemekEkleme.YemekID);
-
+            _ogunRepo = new OgunRepository();
             YemekMiktari yemekMiktari = new YemekMiktari()
             {
                 YemekID = userYemekEkleme.YemekID,
@@ -71,7 +71,7 @@ namespace DietApp.BLL.Services
             ogun.ProteinMiktari += yemekMiktari.ProteinMiktari;
             ogun.KarbonhidratMiktari += yemekMiktari.KarbonhidratMiktari;
             ogun.YagMiktari += yemekMiktari.YagMiktari;
-
+            _ogunRepo.Update(ogun);
             YemekMiktarOgun yemekMiktarOgun = new YemekMiktarOgun()
             {
                 OgunID = ogun.ID,
@@ -80,7 +80,7 @@ namespace DietApp.BLL.Services
             };
 
 
-            _ogunRepo.Update(ogun);
+            
             _yemekMiktariOgunRepo.Create(yemekMiktarOgun);
         }
 

@@ -40,7 +40,7 @@ namespace DietApp.BLL.Services
 
         public void KiyasRaporOgun(DateTime baslangicTarih, DateTime bitistarih, Kategori kat, int kisiID, out double GenelOrtalamaKalori, out double KisiOrtalamaKalori)
         {
-            List<double> query = (List<double>)
+            var query = 
                 from kisisel in _kisiselRepo.GetAll()
                 join ogun in _ogunRepo.GetAll() on kisisel.ID equals ogun.KullaniciKisiselID
                 join ymkogun in new YemekMiktarOgunRepository().GetAll() on ogun.ID equals ymkogun.OgunID
@@ -50,11 +50,11 @@ namespace DietApp.BLL.Services
                 where kategori == kat
                 select new
                 {
-                    kalori = yemek.Kalori
+                 yemek.Kalori
                 };
-            GenelOrtalamaKalori = query.Average();
+            GenelOrtalamaKalori = 1; // query.Average();
 
-            query = (List<double>)
+           var query2 = 
                 from kisisel in _kisiselRepo.GetAll()
                 join ogun in _ogunRepo.GetAll() on kisisel.ID equals ogun.KullaniciKisiselID
                 join ymkogun in new YemekMiktarOgunRepository().GetAll() on ogun.ID equals ymkogun.OgunID
@@ -66,7 +66,7 @@ namespace DietApp.BLL.Services
                 {
                     kalori = yemek.Kalori
                 };
-            KisiOrtalamaKalori = query.Average();
+            KisiOrtalamaKalori = 1;//query.Average();
         }
     }
 }
