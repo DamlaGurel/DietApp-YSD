@@ -49,40 +49,40 @@
             // 
             // dtpTarih
             // 
-            dtpTarih.Location = new Point(458, 196);
-            dtpTarih.Margin = new Padding(2);
+            dtpTarih.Location = new Point(523, 261);
+            dtpTarih.Margin = new Padding(2, 3, 2, 3);
             dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(211, 23);
+            dtpTarih.Size = new Size(241, 27);
             dtpTarih.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(361, 197);
+            label1.Location = new Point(413, 263);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(74, 15);
+            label1.Size = new Size(93, 20);
             label1.TabIndex = 1;
             label1.Text = "Tarih Seçiniz:";
             // 
             // dgv_OgundekiYemekler
             // 
             dgv_OgundekiYemekler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv_OgundekiYemekler.Location = new Point(2, 223);
+            dgv_OgundekiYemekler.Location = new Point(2, 297);
             dgv_OgundekiYemekler.Margin = new Padding(1);
             dgv_OgundekiYemekler.Name = "dgv_OgundekiYemekler";
             dgv_OgundekiYemekler.RowHeadersWidth = 62;
             dgv_OgundekiYemekler.RowTemplate.Height = 33;
             dgv_OgundekiYemekler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_OgundekiYemekler.Size = new Size(842, 207);
+            dgv_OgundekiYemekler.Size = new Size(962, 276);
             dgv_OgundekiYemekler.TabIndex = 2;
             // 
             // btnEkle
             // 
-            btnEkle.Location = new Point(34, 21);
-            btnEkle.Margin = new Padding(2);
+            btnEkle.Location = new Point(39, 28);
+            btnEkle.Margin = new Padding(2, 3, 2, 3);
             btnEkle.Name = "btnEkle";
-            btnEkle.Size = new Size(93, 38);
+            btnEkle.Size = new Size(106, 51);
             btnEkle.TabIndex = 5;
             btnEkle.Text = "YEMEK EKLE";
             btnEkle.UseVisualStyleBackColor = true;
@@ -90,10 +90,10 @@
             // 
             // btnDegistir
             // 
-            btnDegistir.Location = new Point(170, 21);
-            btnDegistir.Margin = new Padding(2);
+            btnDegistir.Location = new Point(194, 28);
+            btnDegistir.Margin = new Padding(2, 3, 2, 3);
             btnDegistir.Name = "btnDegistir";
-            btnDegistir.Size = new Size(136, 38);
+            btnDegistir.Size = new Size(155, 51);
             btnDegistir.TabIndex = 6;
             btnDegistir.Text = "YEMEĞİ GÜNCELLE";
             btnDegistir.UseVisualStyleBackColor = true;
@@ -101,10 +101,10 @@
             // 
             // btnKaldir
             // 
-            btnKaldir.Location = new Point(374, 21);
-            btnKaldir.Margin = new Padding(2);
+            btnKaldir.Location = new Point(427, 28);
+            btnKaldir.Margin = new Padding(2, 3, 2, 3);
             btnKaldir.Name = "btnKaldir";
-            btnKaldir.Size = new Size(92, 38);
+            btnKaldir.Size = new Size(105, 51);
             btnKaldir.TabIndex = 7;
             btnKaldir.Text = "KALDIR";
             btnKaldir.UseVisualStyleBackColor = true;
@@ -113,57 +113,57 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(69, 88);
+            label3.Location = new Point(79, 117);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(0, 15);
+            label3.Size = new Size(0, 20);
             label3.TabIndex = 8;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(34, 114);
+            label4.Location = new Point(39, 152);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(117, 15);
+            label4.Size = new Size(149, 20);
             label4.TabIndex = 9;
             label4.Text = "Güncel Kalori Değeri:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(488, 114);
+            label5.Location = new Point(558, 152);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(153, 15);
+            label5.Size = new Size(194, 20);
             label5.TabIndex = 10;
             label5.Text = "Günlük Hedef Kalori Değeri:";
             // 
             // lblHedefKalori
             // 
             lblHedefKalori.AutoSize = true;
-            lblHedefKalori.Location = new Point(664, 133);
+            lblHedefKalori.Location = new Point(759, 177);
             lblHedefKalori.Margin = new Padding(2, 0, 2, 0);
             lblHedefKalori.Name = "lblHedefKalori";
-            lblHedefKalori.Size = new Size(0, 15);
+            lblHedefKalori.Size = new Size(0, 20);
             lblHedefKalori.TabIndex = 13;
             // 
             // lblGuncelKalori
             // 
             lblGuncelKalori.AutoSize = true;
-            lblGuncelKalori.Location = new Point(170, 114);
+            lblGuncelKalori.Location = new Point(194, 152);
             lblGuncelKalori.Margin = new Padding(2, 0, 2, 0);
             lblGuncelKalori.Name = "lblGuncelKalori";
-            lblGuncelKalori.Size = new Size(0, 15);
+            lblGuncelKalori.Size = new Size(0, 20);
             lblGuncelKalori.TabIndex = 14;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(16, 199);
+            label2.Location = new Point(18, 265);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(124, 15);
+            label2.Size = new Size(154, 20);
             label2.TabIndex = 16;
             label2.Text = "Öğün Çeşidini Seçiniz:";
             // 
@@ -171,19 +171,19 @@
             // 
             cmbOgun.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbOgun.FormattingEnabled = true;
-            cmbOgun.Location = new Point(161, 197);
-            cmbOgun.Margin = new Padding(2);
+            cmbOgun.Location = new Point(184, 263);
+            cmbOgun.Margin = new Padding(2, 3, 2, 3);
             cmbOgun.Name = "cmbOgun";
-            cmbOgun.Size = new Size(106, 23);
+            cmbOgun.Size = new Size(121, 28);
             cmbOgun.TabIndex = 15;
             cmbOgun.SelectedIndexChanged += cmbOgun_SelectedIndexChanged;
             // 
             // btnRaporlar
             // 
-            btnRaporlar.Location = new Point(705, 21);
-            btnRaporlar.Margin = new Padding(2);
+            btnRaporlar.Location = new Point(806, 28);
+            btnRaporlar.Margin = new Padding(2, 3, 2, 3);
             btnRaporlar.Name = "btnRaporlar";
-            btnRaporlar.Size = new Size(79, 38);
+            btnRaporlar.Size = new Size(90, 51);
             btnRaporlar.TabIndex = 17;
             btnRaporlar.Text = "RAPORLAR";
             btnRaporlar.UseVisualStyleBackColor = true;
@@ -191,10 +191,10 @@
             // 
             // btnSuTakip
             // 
-            btnSuTakip.Location = new Point(530, 21);
-            btnSuTakip.Margin = new Padding(2);
+            btnSuTakip.Location = new Point(606, 28);
+            btnSuTakip.Margin = new Padding(2, 3, 2, 3);
             btnSuTakip.Name = "btnSuTakip";
-            btnSuTakip.Size = new Size(79, 38);
+            btnSuTakip.Size = new Size(90, 51);
             btnSuTakip.TabIndex = 18;
             btnSuTakip.Text = "SU TAKİP";
             btnSuTakip.UseVisualStyleBackColor = true;
@@ -202,18 +202,18 @@
             // 
             // pbKaloriTakip
             // 
-            pbKaloriTakip.Location = new Point(229, 101);
-            pbKaloriTakip.Margin = new Padding(2);
+            pbKaloriTakip.Location = new Point(262, 135);
+            pbKaloriTakip.Margin = new Padding(2, 3, 2, 3);
             pbKaloriTakip.Name = "pbKaloriTakip";
-            pbKaloriTakip.Size = new Size(236, 38);
+            pbKaloriTakip.Size = new Size(270, 51);
             pbKaloriTakip.TabIndex = 12;
             pbKaloriTakip.Value = 100;
             // 
             // OzetEkrani
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(842, 434);
+            ClientSize = new Size(962, 579);
             Controls.Add(btnSuTakip);
             Controls.Add(btnRaporlar);
             Controls.Add(label2);
@@ -230,7 +230,7 @@
             Controls.Add(dgv_OgundekiYemekler);
             Controls.Add(label1);
             Controls.Add(dtpTarih);
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "OzetEkrani";
             Text = "OzetEkrani";
             Load += OzetEkrani_Load;

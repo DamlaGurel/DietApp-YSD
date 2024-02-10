@@ -18,7 +18,7 @@ namespace DietApp.UI
         {
             InitializeComponent();
             InitializeComboBox();
-
+            _kisiselService = new KullaniciKisiselService();
             _kkId = kkId;
             _kisiselService = new KullaniciKisiselService();
         }
@@ -123,5 +123,6 @@ namespace DietApp.UI
             AnaRaporEkrani anaRaporEkrani = new AnaRaporEkrani(_kkId);
             anaRaporEkrani.ShowDialog();
         }
+
     }
 }
