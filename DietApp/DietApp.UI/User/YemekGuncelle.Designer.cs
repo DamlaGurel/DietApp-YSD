@@ -54,7 +54,7 @@
             // btnGuncelle
             // 
             btnGuncelle.Location = new Point(366, 176);
-            btnGuncelle.Margin = new Padding(2, 2, 2, 2);
+            btnGuncelle.Margin = new Padding(2);
             btnGuncelle.Name = "btnGuncelle";
             btnGuncelle.Size = new Size(112, 48);
             btnGuncelle.TabIndex = 24;
@@ -73,9 +73,9 @@
             grpYemekDetay.Controls.Add(label6);
             grpYemekDetay.Controls.Add(label8);
             grpYemekDetay.Location = new Point(29, 163);
-            grpYemekDetay.Margin = new Padding(2, 2, 2, 2);
+            grpYemekDetay.Margin = new Padding(2);
             grpYemekDetay.Name = "grpYemekDetay";
-            grpYemekDetay.Padding = new Padding(2, 2, 2, 2);
+            grpYemekDetay.Padding = new Padding(2);
             grpYemekDetay.Size = new Size(278, 186);
             grpYemekDetay.TabIndex = 23;
             grpYemekDetay.TabStop = false;
@@ -162,7 +162,7 @@
             cmbKategori.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbKategori.FormattingEnabled = true;
             cmbKategori.Location = new Point(164, 33);
-            cmbKategori.Margin = new Padding(2, 2, 2, 2);
+            cmbKategori.Margin = new Padding(2);
             cmbKategori.Name = "cmbKategori";
             cmbKategori.Size = new Size(106, 23);
             cmbKategori.TabIndex = 22;
@@ -181,7 +181,7 @@
             // pbGorsel
             // 
             pbGorsel.Location = new Point(358, 32);
-            pbGorsel.Margin = new Padding(2, 2, 2, 2);
+            pbGorsel.Margin = new Padding(2);
             pbGorsel.Name = "pbGorsel";
             pbGorsel.Size = new Size(109, 104);
             pbGorsel.TabIndex = 20;
@@ -190,7 +190,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(13, 114);
+            label3.Location = new Point(12, 117);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(131, 15);
@@ -200,7 +200,7 @@
             // txtMiktar
             // 
             txtMiktar.Location = new Point(164, 114);
-            txtMiktar.Margin = new Padding(2, 2, 2, 2);
+            txtMiktar.Margin = new Padding(2);
             txtMiktar.Name = "txtMiktar";
             txtMiktar.Size = new Size(106, 23);
             txtMiktar.TabIndex = 18;
@@ -210,7 +210,7 @@
             cmbYemekGirisi.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbYemekGirisi.FormattingEnabled = true;
             cmbYemekGirisi.Location = new Point(164, 74);
-            cmbYemekGirisi.Margin = new Padding(2, 2, 2, 2);
+            cmbYemekGirisi.Margin = new Padding(2);
             cmbYemekGirisi.Name = "cmbYemekGirisi";
             cmbYemekGirisi.Size = new Size(106, 23);
             cmbYemekGirisi.TabIndex = 17;
@@ -234,9 +234,9 @@
             grpOgunAdi.Controls.Add(cmbKategori);
             grpOgunAdi.Controls.Add(label3);
             grpOgunAdi.Location = new Point(22, 7);
-            grpOgunAdi.Margin = new Padding(2, 2, 2, 2);
+            grpOgunAdi.Margin = new Padding(2);
             grpOgunAdi.Name = "grpOgunAdi";
-            grpOgunAdi.Padding = new Padding(2, 2, 2, 2);
+            grpOgunAdi.Padding = new Padding(2);
             grpOgunAdi.Size = new Size(293, 140);
             grpOgunAdi.TabIndex = 26;
             grpOgunAdi.TabStop = false;
@@ -250,7 +250,7 @@
             Controls.Add(btnGuncelle);
             Controls.Add(grpYemekDetay);
             Controls.Add(pbGorsel);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "YemekGuncelle";
             Text = "YemekGuncelle";
             Load += YemekGuncelle_Load;
